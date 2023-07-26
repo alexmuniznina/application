@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="container">
+  <mat-form-field class="col-12">
+    <mat-label>Profissional ou empresa</mat-label>
+    <input matInput type="search" />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <h1 class="title">Filtrar serviços</h1>
+  <div class="filters">
+    <mat-button-toggle value="limpeza">Limpeza</mat-button-toggle>
+    <mat-button-toggle value="conserto">Conserto</mat-button-toggle>
+    <mat-button-toggle value="eletrica">Elétrica</mat-button-toggle>
+    <mat-button-toggle value="instalacao">Instalação</mat-button-toggle>
+    <mat-button-toggle value="outros">Outros</mat-button-toggle>
+  </div>
+
+  <button mat-flat-button class="col-12" color="primary">Pesquisar</button>
+</div>
