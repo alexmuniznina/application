@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { MainRoutingModule } from './main-routing/main-routing.module';
+import { MainRoutingModule } from './main-routing.module';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
@@ -18,5 +18,6 @@ import { AlertasComponent } from './alertas/alertas.component';
     AlertasComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
+  exports: [MainComponent],
 })
 export class MainModule {}
