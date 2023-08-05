@@ -1,0 +1,28 @@
+<!-- <a (click)="abrirChamado(empresa)"> -->
+<mat-card (click)="abrirChamado(empresa)">
+  <mat-card-header class="p-2">
+    <mat-card-title-group class="p-2">
+      <div class="d-flex flex-row flex-nowrap justify-content-between col-12">
+        <div class="col-3 imgEmpresa"></div>
+        <div class="col-7">
+          <div class="d-flex flex-column">
+            <mat-card-title>{{ empresa.nomeFantasia }}</mat-card-title>
+            <mat-card-subtitle>{{ empresa.descricaoCurta }}</mat-card-subtitle>
+            <div class="d-flex flex-row">
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+            </div>
+          </div>
+        </div>
+        <div class="col-1 align-self-center">
+          <mat-icon>favorite</mat-icon>
+        </div>
+      </div>
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>
+
+<!-- </a> -->
