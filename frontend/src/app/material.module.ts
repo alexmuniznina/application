@@ -5,6 +5,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -13,6 +15,9 @@ const MaterialComponents = [
   MatInputModule,
   MatButtonToggleModule,
   MatButtonModule,
+  MatCardModule,
+  FormsModule,
+  ReactiveFormsModule,
 ];
 
 @NgModule({

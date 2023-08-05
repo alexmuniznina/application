@@ -6,6 +6,7 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
 import { ChamadosComponent } from './chamados/chamados.component';
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: '_/favoritos',
         component: FavoritosComponent,
+      },
+      {
+        path: '_/empresa_info',
+        component: EmpresaInfoComponent,
       },
       {
         path: '_/chamados',

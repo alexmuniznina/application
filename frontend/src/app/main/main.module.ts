@@ -7,6 +7,10 @@ import { FavoritosComponent } from './favoritos/favoritos.component';
 import { ChamadosComponent } from './chamados/chamados.component';
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { EmpresasService } from '../services/empresas/empresas.service';
+import { ServicosService } from '../services/servicos/servicos.service';
+import { CardEmpresaComponent } from './home/card-empresa/card-empresa.component';
+import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +20,11 @@ import { AlertasComponent } from './alertas/alertas.component';
     ChamadosComponent,
     AjustesComponent,
     AlertasComponent,
+    CardEmpresaComponent,
+    EmpresaInfoComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
-  exports: [MainComponent],
+  exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],
+  providers: [EmpresasService, ServicosService],
 })
 export class MainModule {}

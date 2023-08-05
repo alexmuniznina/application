@@ -1,0 +1,61 @@
+<div class="container">
+  <section class="d-flex align-items-center mb-2">
+    <button mat-icon-button color="primary" (click)="goBack()">
+      <mat-icon class="mat-icon">chevron_left</mat-icon>
+    </button>
+    <span class="texto-volta">Pesquisar</span>
+  </section>
+  <section>
+    <div class="empresa-badge col-12">
+      <div class="col-3 imgEmpresa"></div>
+      <div class="col-7 d-flex flex-column justify-content-center">
+        <div class="empresa-title">{{ empresa.nomeFantasia }}</div>
+        <div class="empresa-sobre">{{ empresa.descricaoCurta }}</div>
+      </div>
+      <div class="col-2 align-self-center">
+        <mat-icon>favorite</mat-icon>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end mt-2">
+      <mat-icon>grade</mat-icon>
+      <mat-icon>grade</mat-icon>
+      <mat-icon>grade</mat-icon>
+      <mat-icon>grade</mat-icon>
+      <mat-icon>grade</mat-icon>
+    </div>
+  </section>
+  <section>
+    <div class="section-title">Descrição</div>
+    <div class="sobre-nos">{{ empresa.sobreNos }}</div>
+  </section>
+  <section>
+    <div class="section-title">Serviços</div>
+    <div class="container-servicos col-12">
+      <div class="label-servico" *ngFor="let servico of servicos">
+        {{ servico }}
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="section-title">Informações</div>
+    <div class="field-title">ENDEREÇO</div>
+    <div class="infos-container">
+      <div class="info-text">{{ endereco }}</div>
+    </div>
+    <div class="field-title">TELEFONE</div>
+    <div class="infos-container">
+      <span class="info-text" *ngFor="let telefone of telefones">
+        {{ telefone }}
+      </span>
+    </div>
+    <div class="field-title">EMAIL</div>
+    <div class="infos-container">
+      <span class="info-text" *ngFor="let email of emails">{{ email }}</span>
+    </div>
+  </section>
+</div>
+<div class="botao-container">
+  <button mat-fab color="primary" class="botao-chamado">
+    <mat-icon>support_agent</mat-icon>
+  </button>
+</div>

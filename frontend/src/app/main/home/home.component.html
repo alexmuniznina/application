@@ -1,18 +1,33 @@
-<div class="container">
-  <mat-form-field class="col-12">
-    <mat-label>Profissional ou empresa</mat-label>
-    <input matInput type="search" />
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
+<form [formGroup]="form">
+  <div class="container">
+    <mat-form-field class="col-12">
+      <mat-label>Profissional ou empresa</mat-label>
+      <input matInput formControlName="name" type="search" />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
 
-  <h1 class="title">Filtrar serviços</h1>
-  <div class="filters">
-    <mat-button-toggle value="limpeza">Limpeza</mat-button-toggle>
-    <mat-button-toggle value="conserto">Conserto</mat-button-toggle>
-    <mat-button-toggle value="eletrica">Elétrica</mat-button-toggle>
-    <mat-button-toggle value="instalacao">Instalação</mat-button-toggle>
-    <mat-button-toggle value="outros">Outros</mat-button-toggle>
+    <h1 class="title">Filtrar serviços</h1>
+    <mat-button-toggle-group class="filters" formControlName="filters" multiple>
+      <mat-button-toggle value="limpeza">Limpeza</mat-button-toggle>
+      <mat-button-toggle value="conserto">Conserto</mat-button-toggle>
+      <mat-button-toggle value="elétrica">Elétrica</mat-button-toggle>
+      <mat-button-toggle value="instalação">Instalação</mat-button-toggle>
+      <mat-button-toggle value="outros">Outros</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <button
+      mat-flat-button
+      class="col-12"
+      color="primary"
+      (click)="pesquisar()"
+    >
+      Pesquisar
+    </button>
+
+    <div class="mt-4">
+      <div *ngFor="let emp of empresas" class="mb-4">
+        <app-card-empresa [empresa]="emp"></app-card-empresa>
+      </div>
+    </div>
   </div>
-
-  <button mat-flat-button class="col-12" color="primary">Pesquisar</button>
-</div>
+</form>
