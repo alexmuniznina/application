@@ -1,0 +1,141 @@
+{
+  "usuarios": [{ "id": 1, "nome": "Alex", "favoritos": [2, 4] }],
+  "empresas": [
+    {
+      "id": 1,
+      "enderecoId": "1",
+      "nomeFantasia": "Refrigerar",
+      "cnpj": "12.345.678/0001-23",
+      "telefone": "(92) 1234-4567",
+      "celular": "(92) 97653-3674",
+      "email": "refrigerar@gmail.com",
+      "avaliacaoContador": "4",
+      "avaliacaoMedia": "4.5",
+      "descricaoCurta": "Descrição da Refrigerar",
+      "sobreNos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+    },
+    {
+      "id": 2,
+      "enderecoId": "2",
+      "nomeFantasia": "Amadeu Refrigeração",
+      "cnpj": "45.765.234/0001-23",
+      "telefone": "(92) 1234-4863",
+      "celular": "(92) 97653-4578",
+      "email": "amadeu@gmail.com",
+      "avaliacaoContador": "3",
+      "avaliacaoMedia": "3.5",
+      "descricaoCurta": "Descrição da Amadeu Refrigeração",
+      "sobreNos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+    },
+    {
+      "id": 3,
+      "enderecoId": "3",
+      "nomeFantasia": "Refrigeração Souza",
+      "cnpj": "12.345.678/0001-23",
+      "telefone": "(92) 1234-4567",
+      "celular": "(92) 97653-3674",
+      "email": "souza@gmail.com",
+      "avaliacaoContador": "4",
+      "avaliacaoMedia": "4.5",
+      "descricaoCurta": "Descrição da Refrigeração Souza",
+      "sobreNos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+    },
+    {
+      "id": 4,
+      "enderecoId": "4",
+      "nomeFantasia": "Refrinorte",
+      "cnpj": "12.345.678/0001-23",
+      "telefone": "(92) 1234-4567",
+      "celular": "(92) 97653-3674",
+      "email": "refrinorte@gmail.com",
+      "avaliacaoContador": "4",
+      "avaliacaoMedia": "4.5",
+      "descricaoCurta": "Descrição da Refrinorte",
+      "sobreNos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+    },
+    {
+      "id": 5,
+      "enderecoId": "5",
+      "nomeFantasia": "RefriHouse",
+      "cnpj": "12.345.678/0001-23",
+      "telefone": "(92) 1234-4567",
+      "celular": "(92) 97653-3674",
+      "email": "refriHouse@gmail.com",
+      "avaliacaoContador": "4",
+      "avaliacaoMedia": "4.5",
+      "descricaoCurta": "Descrição da RefriHouse",
+      "sobreNos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+    },
+    {
+      "id": 6,
+      "enderecoId": "6",
+      "nomeFantasia": "Refrigera Manaus",
+      "cnpj": "12.345.678/0001-23",
+      "telefone": "(92) 1234-4567",
+      "celular": "(92) 97653-3674",
+      "email": "refrigeramanaus@gmail.com",
+      "avaliacaoContador": "4",
+      "avaliacaoMedia": "4.5",
+      "descricaoCurta": "Descrição da Refrigera Manaus",
+      "sobreNos": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+    }
+  ],
+  "servicos": [
+    {
+      "id": "1",
+      "tipo": "limpeza",
+      "empresaId": "2",
+      "descricao": "servico de limpeza",
+      "valor": "50.00",
+      "tempoMedioExecucao": "2h"
+    },
+    {
+      "id": "2",
+      "tipo": "conserto",
+      "empresaId": "2",
+      "descricao": "conserto, troca de peça",
+      "valor": "80.00",
+      "tempoMedioExecucao": "3h"
+    },
+    {
+      "id": "3",
+      "tipo": "instalação",
+      "empresaId": "4",
+      "descricao": "servico de instalação",
+      "valor": "200.00",
+      "tempoMedioExecucao": "3h"
+    },
+    {
+      "id": "4",
+      "tipo": "elétrica",
+      "empresaId": "5",
+      "descricao": "servico de elétrica",
+      "valor": "100.00",
+      "tempoMedioExecucao": "2h"
+    },
+    {
+      "id": "5",
+      "tipo": "instalação",
+      "empresaId": "2",
+      "descricao": "servico de instalação",
+      "valor": "200.00",
+      "tempoMedioExecucao": "3h"
+    },
+    {
+      "id": "6",
+      "tipo": "instalação",
+      "empresaId": "6",
+      "descricao": "servico de instalação",
+      "valor": "200.00",
+      "tempoMedioExecucao": "3h"
+    },
+    {
+      "id": "7",
+      "tipo": "elétrica",
+      "empresaId": "6",
+      "descricao": "servico de elétrica",
+      "valor": "100.00",
+      "tempoMedioExecucao": "2h"
+    }
+  ]
+}
