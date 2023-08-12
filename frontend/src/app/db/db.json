@@ -1,5 +1,12 @@
 {
-  "usuarios": [{ "id": 1, "nome": "Alex", "favoritos": [2, 4] }],
+  "usuarios": [
+    { "id": 1, "nome": "Flávia", "favoritos": [2, 4] },
+    { "id": 2, "nome": "João", "favoritos": [1, 5] },
+    { "id": 3, "nome": "Marcos", "favoritos": [2] },
+    { "id": 4, "nome": "Juliana", "favoritos": [3] },
+    { "id": 5, "nome": "Sandra", "favoritos": [] },
+    { "id": 6, "nome": "Antônio", "favoritos": [6] }
+  ],
   "empresas": [
     {
       "id": 1,
@@ -136,6 +143,89 @@
       "descricao": "servico de elétrica",
       "valor": "100.00",
       "tempoMedioExecucao": "2h"
+    }
+  ],
+  "equipamentos": [
+    {
+      "id": 1,
+      "cliente_id": 6,
+      "descricao": "Midea 21.000 BTU 110V",
+      "num_serie": 683703860358,
+      "btu": "21.000",
+      "volt": 110,
+      "marca": "Midea"
+    },
+    {
+      "id": 2,
+      "cliente_id": 3,
+      "descricao": "Electrolux 9.000 BTU 110V",
+      "num_serie": 415745183872,
+      "btu": "9.000",
+      "volt": 110,
+      "marca": "Electrolux"
+    },
+    {
+      "id": 3,
+      "cliente_id": 3,
+      "descricao": "Midea 18.000 BTU 220V",
+      "num_serie": 700112066466,
+      "btu": "18.000",
+      "volt": 220,
+      "marca": "Midea"
+    },
+    {
+      "id": 4,
+      "cliente_id": 5,
+      "descricao": "Hitachi 30.000 BTU 110V",
+      "num_serie": 737409621752,
+      "btu": "30.000",
+      "volt": 110,
+      "marca": "Hitachi"
+    },
+    {
+      "id": 5,
+      "cliente_id": 3,
+      "descricao": "Midea 9.000 BTU 110V",
+      "num_serie": 406960572786,
+      "btu": "9.000",
+      "volt": 110,
+      "marca": "Midea"
+    },
+    {
+      "id": 6,
+      "cliente_id": 1,
+      "descricao": "Electrolux 30.000 BTU 220V",
+      "num_serie": 617100797108,
+      "btu": "30.000",
+      "volt": 220,
+      "marca": "Electrolux"
+    },
+    {
+      "id": 7,
+      "cliente_id": 6,
+      "descricao": "Electrolux 21.000 BTU 220V",
+      "num_serie": 573651516417,
+      "btu": "21.000",
+      "volt": 220,
+      "marca": "Electrolux"
+    },
+    {
+      "id": 8,
+      "cliente_id": 1,
+      "descricao": "Midea 12.000 BTU 110V",
+      "num_serie": 644752876542,
+      "btu": "12.000",
+      "volt": 110,
+      "marca": "Midea"
+    },
+    {
+      "id": 9,
+      "cliente_id": 6,
+      "descricao": "Hitachi 30.000 BTU 110V",
+      "num_serie": 414315625646,
+      "btu": "30.000",
+      "volt": 110,
+      "marca": "Hitachi"
     }
   ]
 }

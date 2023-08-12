@@ -1,10 +1,10 @@
 <div class="container">
-  <section class="d-flex align-items-center mb-2">
+  <div class="d-flex align-items-center mb-2">
     <button mat-icon-button color="primary" (click)="goBack()">
       <mat-icon class="mat-icon">chevron_left</mat-icon>
     </button>
     <span class="texto-volta">Pesquisar</span>
-  </section>
+  </div>
   <section>
     <div class="empresa-badge col-12">
       <div class="col-3 imgEmpresa"></div>
@@ -26,7 +26,7 @@
   </section>
   <section>
     <div class="section-title">Descrição</div>
-    <div class="sobre-nos">{{ empresa.sobreNos }}</div>
+    <div class="info-text">{{ empresa.sobreNos }}</div>
   </section>
   <section>
     <div class="section-title">Serviços</div>
@@ -55,7 +55,12 @@
   </section>
 </div>
 <div class="botao-container">
-  <button mat-fab color="primary" class="botao-chamado">
+  <button
+    mat-fab
+    color="primary"
+    class="botao-chamado"
+    (click)="abrirChamado(empresa)"
+  >
     <mat-icon>support_agent</mat-icon>
   </button>
 </div>

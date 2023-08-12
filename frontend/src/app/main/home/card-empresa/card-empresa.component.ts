@@ -12,7 +12,7 @@ export class CardEmpresaComponent {
 
   constructor(private _router: Router) {}
 
-  abrirChamado(empresa: Empresa) {
+  abrirEmpresaInfo(empresa: Empresa) {
     const navigationExtras: NavigationExtras = {
       state: {
         empresa: empresa,

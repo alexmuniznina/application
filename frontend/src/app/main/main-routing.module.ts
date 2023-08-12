@@ -7,6 +7,7 @@ import { ChamadosComponent } from './chamados/chamados.component';
 import { AjustesComponent } from './ajustes/ajustes.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
+import { AbrirChamadoComponent } from './abrir-chamado/abrir-chamado.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: '_/chamados',
         component: ChamadosComponent,
+      },
+      {
+        path: '_/abrir_chamado',
+        component: AbrirChamadoComponent,
       },
       {
         path: '_/alertas',

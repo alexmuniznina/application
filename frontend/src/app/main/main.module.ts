@@ -11,6 +11,8 @@ import { EmpresasService } from '../services/empresas/empresas.service';
 import { ServicosService } from '../services/servicos/servicos.service';
 import { CardEmpresaComponent } from './home/card-empresa/card-empresa.component';
 import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
+import { AbrirChamadoComponent } from './abrir-chamado/abrir-chamado.component';
+import { DialogEquipamentoComponent } from './abrir-chamado/dialog-equipamento/dialog-equipamento.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
     AlertasComponent,
     CardEmpresaComponent,
     EmpresaInfoComponent,
+    AbrirChamadoComponent,
+    DialogEquipamentoComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
   exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],

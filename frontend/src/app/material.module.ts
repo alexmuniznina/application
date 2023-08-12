@@ -7,6 +7,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -18,6 +20,8 @@ const MaterialComponents = [
   MatCardModule,
   FormsModule,
   ReactiveFormsModule,
+  MatDialogModule,
+  MatCheckboxModule,
 ];
 
 @NgModule({
