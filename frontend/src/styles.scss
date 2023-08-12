@@ -9,3 +9,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+:root {
+  --navigation-text-size: 1.7em;
+  --section-title-size: 1.5em;
+  --badge-title-size: 2em;
+  --badge-description-size: 1.2em;
+  --info-text-size: 1.2em;
+  --info-text-color: rgb(57, 57, 57);
+}

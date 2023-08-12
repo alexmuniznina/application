@@ -1,0 +1,79 @@
+<form [formGroup]="form">
+  <div class="container">
+    <div class="d-flex align-items-center mb-2">
+      <button mat-icon-button color="primary" (click)="goBack()">
+        <mat-icon class="mat-icon">chevron_left</mat-icon>
+      </button>
+      <span class="texto-volta">{{ empresa.nomeFantasia }}</span>
+    </div>
+    <section>
+      <div class="empresa-title">Abrir Chamado</div>
+    </section>
+    <section>
+      <div class="section-title">Informações</div>
+      <div class="field-title">ENDEREÇO</div>
+      <div class="infos-container">
+        <div class="info-text">{{ endereco }}</div>
+      </div>
+      <div class="field-title">TELEFONE</div>
+      <div class="infos-container">
+        <span class="info-text" *ngFor="let telefone of telefones">
+          {{ telefone }}
+        </span>
+      </div>
+      <div class="field-title">EMAIL</div>
+      <div class="infos-container">
+        <span class="info-text" *ngFor="let email of emails">{{ email }}</span>
+      </div>
+    </section>
+    <section>
+      <div class="section-title mb-3">Equipamentos</div>
+      <div *ngIf="hasEquipAdded" class="equip-group">
+        <div *ngFor="let equip of equipamentosChamado">
+          <div *ngIf="equip[1] === true" class="equip">
+            <span>{{ equip[0] }}</span>
+            <mat-icon align="end" (click)="apagarEquipamento(equip)"
+              >delete</mat-icon
+            >
+          </div>
+        </div>
+      </div>
+      <button mat-stroked-button (click)="openDialog()">
+        EQUIPAMENTO
+        <mat-icon>add</mat-icon>
+      </button>
+    </section>
+    <section>
+      <div class="section-title">Serviços</div>
+      <mat-button-toggle-group
+        class="container-servicos col-12"
+        formControlName="servicosChamado"
+        multiple
+      >
+        <mat-button-toggle *ngFor="let item of servicos" [value]="item">{{
+          item
+        }}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </section>
+    <section>
+      <div class="section-title">Defeito(s)</div>
+      <mat-form-field class="col-12" appearance="fill">
+        <mat-label>Defeito(s)</mat-label>
+        <textarea
+          formControlName="defeitos"
+          matInput
+          placeholder="Descreva o(s) defeito(s)"
+        ></textarea>
+      </mat-form-field>
+    </section>
+
+    <button
+      mat-flat-button
+      class="col-12"
+      color="primary"
+      (click)="abrirChamado()"
+    >
+      Confirmar
+    </button>
+  </div>
+</form>

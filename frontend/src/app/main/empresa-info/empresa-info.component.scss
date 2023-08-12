@@ -5,8 +5,12 @@
   padding-right: 20px;
 }
 
+section {
+  margin-bottom: 25px;
+}
+
 .texto-volta {
-  font-size: 23px;
+  font-size: var(--navigation-text-size);
 }
 
 .imgEmpresa {
@@ -28,31 +32,28 @@
 }
 
 .empresa-title {
-  font-size: 25px;
+  font-size: var(--badge-title-size);
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 .empresa-sobre {
-  font-size: 18px;
+  font-size: var(--badge-description-size);
 }
 
 .section-title {
-  font-size: 20px;
+  font-size: var(--section-title-size);
   font-weight: bold;
-  margin-top: 25px;
   margin-bottom: 10px;
 }
 
-.info-text {
-  font-size: 15px;
-  color: rgb(57, 57, 57);
+.field-title {
+  font-weight: bold;
 }
 
-.sobre-nos {
-  font-size: 15px;
-  color: rgb(57, 57, 57);
-  margin-bottom: 20px;
+.info-text {
+  font-size: var(--info-text-size);
+  color: var(--info-text-color);
 }
 
 .infos-container {
@@ -71,7 +72,7 @@
   justify-content: flex-start;
   gap: 15px 20px;
   padding-top: 10px;
-  margin-bottom: 30px;
+  padding-bottom: 10px;
 }
 
 .label-servico {
@@ -80,10 +81,6 @@
   border-color: #767676;
   background-color: #e3e3e3;
   color: #000000;
-}
-
-.infos .endereco {
-  margin-bottom: 10px;
 }
 
 .botao-container {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-empresa-info',
@@ -20,20 +20,26 @@ export class EmpresaInfoComponent implements OnInit {
   ];
   emails = ['email@gmail.com', 'suporte@hotmail.com'];
 
-  constructor(
-    private _router: Router,
-    private _activatedRoute: ActivatedRoute
-  ) {
+  constructor(private _router: Router) {
     this.navigation = this._router.getCurrentNavigation();
     const { empresa } = this.navigation?.extras.state;
     this.empresa = empresa;
   }
 
   ngOnInit() {
-    console.log(this.empresa);
+    // console.log(this.empresa);
   }
 
   goBack() {
     this._router.navigate(['_/home']);
+  }
+
+  abrirChamado(empresa) {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        empresa: empresa,
+      },
+    };
+    this._router.navigate(['_/abrir_chamado'], navigationExtras);
   }
 }
