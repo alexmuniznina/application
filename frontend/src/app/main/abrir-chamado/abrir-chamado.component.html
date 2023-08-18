@@ -10,20 +10,28 @@
       <div class="empresa-title">Abrir Chamado</div>
     </section>
     <section>
-      <div class="section-title">Informações</div>
+      <div class="section-title">Informações do Cliente</div>
+      <div class="field-title">NOME COMPLETO</div>
+      <div *ngIf="!isLoading" class="infos-container">
+        <div class="info-text">{{ usuario.nome }}</div>
+      </div>
+      <div class="field-title">CPF</div>
+      <div *ngIf="!isLoading" class="infos-container">
+        <div class="info-text">{{ usuario.cpf }}</div>
+      </div>
       <div class="field-title">ENDEREÇO</div>
-      <div class="infos-container">
-        <div class="info-text">{{ endereco }}</div>
+      <div *ngIf="!isLoading" class="infos-container">
+        <div class="info-text">{{ usuario.endereco }}</div>
       </div>
       <div class="field-title">TELEFONE</div>
-      <div class="infos-container">
-        <span class="info-text" *ngFor="let telefone of telefones">
+      <div *ngIf="!isLoading" class="infos-container">
+        <span class="info-text" *ngFor="let telefone of usuario.telefones">
           {{ telefone }}
         </span>
       </div>
       <div class="field-title">EMAIL</div>
-      <div class="infos-container">
-        <span class="info-text" *ngFor="let email of emails">{{ email }}</span>
+      <div *ngIf="!isLoading" class="infos-container">
+        <span class="info-text">{{ usuario.email }}</span>
       </div>
     </section>
     <section>
@@ -38,7 +46,7 @@
           </div>
         </div>
       </div>
-      <button mat-stroked-button (click)="openDialog()">
+      <button mat-stroked-button (click)="openEquipDialog()">
         EQUIPAMENTO
         <mat-icon>add</mat-icon>
       </button>
@@ -60,7 +68,7 @@
       <mat-form-field class="col-12" appearance="fill">
         <mat-label>Defeito(s)</mat-label>
         <textarea
-          formControlName="defeitos"
+          formControlName="sintomas"
           matInput
           placeholder="Descreva o(s) defeito(s)"
         ></textarea>

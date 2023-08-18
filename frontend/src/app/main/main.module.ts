@@ -13,6 +13,9 @@ import { CardEmpresaComponent } from './home/card-empresa/card-empresa.component
 import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
 import { AbrirChamadoComponent } from './abrir-chamado/abrir-chamado.component';
 import { DialogEquipamentoComponent } from './abrir-chamado/dialog-equipamento/dialog-equipamento.component';
+import { DialogConfirmacaoComponent } from './abrir-chamado/dialog-confirmacao/dialog-confirmacao.component';
+import { UsuariosService } from '../services/usuarios/usuarios.service';
+import { ChamadosService } from '../services/chamados/chamados.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,15 @@ import { DialogEquipamentoComponent } from './abrir-chamado/dialog-equipamento/d
     EmpresaInfoComponent,
     AbrirChamadoComponent,
     DialogEquipamentoComponent,
+    DialogConfirmacaoComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
   exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],
-  providers: [EmpresasService, ServicosService],
+  providers: [
+    EmpresasService,
+    ServicosService,
+    UsuariosService,
+    ChamadosService,
+  ],
 })
 export class MainModule {}

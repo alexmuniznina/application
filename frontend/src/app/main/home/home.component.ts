@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subject } from 'rxjs';
 import { Empresa } from 'src/app/dto/empresa.dto';
 import { Servico } from 'src/app/dto/servico.dto';
 import { EmpresasService } from 'src/app/services/empresas/empresas.service';
@@ -12,8 +13,8 @@ import { ServicosService } from 'src/app/services/servicos/servicos.service';
 })
 export class HomeComponent implements OnInit {
   public response;
-  public servicos;
-  public empresas;
+  public servicos: Servico[];
+  public empresas: Empresa[];
   public form: FormGroup;
 
   constructor(
@@ -32,8 +33,8 @@ export class HomeComponent implements OnInit {
   pesquisar() {
     const { name, filters } = this.form.getRawValue();
 
-    let servicos = <any>[];
-    let empresas = <any>[];
+    // let servicos = <any>[];
+    // let empresas = <any>[];
 
     // filtrar empresas usando filtro de nome e serviços (backend)
     // TO-DO
@@ -42,21 +43,21 @@ export class HomeComponent implements OnInit {
       this.servicosService
         .getServicosByDescricao(filters)
         .subscribe((response) => {
-          this.servicos = response;
+          this.servicos = <any>response;
         });
     } else {
       this.servicosService.getServicos().subscribe((response) => {
-        this.servicos = response;
+        this.servicos = <any>response;
       });
     }
 
     if (name !== null) {
       this.empresasService.getEmpresasByName(name).subscribe((response) => {
-        this.empresas = response;
+        this.empresas = <any>response;
       });
     } else {
       this.empresasService.getEmpresas().subscribe((response) => {
-        this.empresas = response;
+        this.empresas = <any>response;
       });
     }
   }

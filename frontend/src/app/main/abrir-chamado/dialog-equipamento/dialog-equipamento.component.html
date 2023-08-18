@@ -1,19 +1,21 @@
 <form [formGroup]="form">
   <h2 mat-dialog-title>Adicionar Equipamentos</h2>
   <mat-dialog-content>
-    <div
-      formArrayName="equipamentos"
-      *ngFor="let option of data; let i = index"
-      class="col-12"
-    >
-      <mat-checkbox
-        color="primary"
-        [formControlName]="i"
-        [name]="option[0].toString()"
-        [(ngModel)]="option[1]"
-        (change)="getValue($event)"
-        >{{ option[0] }}</mat-checkbox
+    <div class="list-equip">
+      <div
+        formArrayName="equipamentos"
+        *ngFor="let option of data; let i = index"
+        class="col-12"
       >
+        <mat-checkbox
+          color="primary"
+          [formControlName]="i"
+          [name]="option[0].toString()"
+          [(ngModel)]="option[1]"
+          (change)="getValue($event)"
+          >{{ option[0] }}</mat-checkbox
+        >
+      </div>
     </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
