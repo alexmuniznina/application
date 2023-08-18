@@ -17,11 +17,7 @@ export class ServicosService {
   getServicosByDescricao(filters: string[]) {
     let query = '';
     for (let desc of filters) {
-      query =
-        query +
-        (filters.indexOf(desc) > 0 ? '&' : '?') +
-        'descricao_like=' +
-        desc;
+      query = query + (filters.indexOf(desc) > 0 ? '&' : '?') + 'tipo=' + desc;
     }
     return this.http.get(`${this.url}/servicos${query}`);
   }
