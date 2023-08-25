@@ -16,6 +16,7 @@ import { DialogEquipamentoComponent } from './abrir-chamado/dialog-equipamento/d
 import { DialogConfirmacaoComponent } from './abrir-chamado/dialog-confirmacao/dialog-confirmacao.component';
 import { UsuariosService } from '../services/usuarios/usuarios.service';
 import { ChamadosService } from '../services/chamados/chamados.service';
+import { CardChamadoComponent } from './chamados/card-chamado/card-chamado.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ChamadosService } from '../services/chamados/chamados.service';
     AbrirChamadoComponent,
     DialogEquipamentoComponent,
     DialogConfirmacaoComponent,
+    CardChamadoComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
   exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],

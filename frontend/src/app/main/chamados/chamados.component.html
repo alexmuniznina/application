@@ -1,1 +1,28 @@
-<p>chamados works!</p>
+<form [formGroup]="form">
+  <div class="container">
+    <mat-form-field class="col-12">
+      <mat-label>Profissional ou empresa</mat-label>
+      <input
+        matInput
+        formControlName="nomeEmpresa"
+        type="text"
+        (keyup)="search(getValue($event))"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <h1 class="title">Filtrar chamados</h1>
+    <mat-button-toggle-group class="filters" formControlName="filtros">
+      <mat-button-toggle value="dia">Dia</mat-button-toggle>
+      <mat-button-toggle value="semana">Semana</mat-button-toggle>
+      <mat-button-toggle value="mes">Mês</mat-button-toggle>
+      <mat-button-toggle value="ano">Ano</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <div class="mt-4">
+      <div *ngFor="let chamado of chamados" class="mb-4">
+        <app-card-chamado [chamado]="chamado"></app-card-chamado>
+      </div>
+    </div>
+  </div>
+</form>

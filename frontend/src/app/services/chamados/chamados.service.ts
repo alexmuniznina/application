@@ -21,4 +21,18 @@ export class ChamadosService {
       headers: this.contentHeader,
     });
   }
+
+  getChamados(): Observable<Chamado[]> {
+    return this.http.get<any>(`${this.url}/chamados`);
+  }
+
+  getChamadosById(id: number): Observable<Chamado[]> {
+    return this.http.get<any>(`${this.url}/chamados/${id}`);
+  }
+
+  getChamadosByUsuario(id: number): Observable<any[]> {
+    return this.http.get<any>(
+      `${this.url}/chamados?usuarioId=${id}&_expand=empresa`
+    );
+  }
 }
