@@ -155,12 +155,12 @@ export class AbrirChamadoComponent implements OnInit {
     return {
       id: faker.number.int(),
       servicos: payload.servicos,
-      id_usuario: this.usuario.id,
-      id_empresa: this.empresa.id,
+      usuarioId: this.usuario.id,
+      empresaId: this.empresa.id,
       endereco: this.usuario.endereco,
       equipamentos: payload.equipamentos,
       criadoEm: new Date().toISOString(),
-      status: statusChamado.CRIADO,
+      status: 'CRIADO',
       sintomas: payload.sintomas,
     };
   }

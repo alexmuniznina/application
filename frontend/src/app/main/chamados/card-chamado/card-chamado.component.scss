@@ -1,0 +1,42 @@
+.imgEmpresa {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+mat-card {
+  border-radius: 10px;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.criado-em {
+  display: flex;
+  width: 90px;
+  height: 23px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #333333;
+  color: azure;
+}
+
+.status {
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+  // background-color: rgb(233, 175, 41);
+  box-shadow: 2px 2px 5px #ede3c7 inset, 1px 1px 4px #333333;
+}
+
+.info-title {
+  font-weight: bolder;
+}
+
+.info {
+  font-weight: lighter;
+}

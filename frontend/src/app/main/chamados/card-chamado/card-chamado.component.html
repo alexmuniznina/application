@@ -1,0 +1,70 @@
+<mat-card (click)="abrirChamadoInfo(chamado)">
+  <mat-card-header class="p-2">
+    <mat-card-title-group class="p-2">
+      <div class="d-flex flex-row flex-nowrap justify-content-between col-12">
+        <div class="d-flex flex-column flex-nowrap align-items-center col-3">
+          <div class="imgEmpresa mb-2"></div>
+          <div class="criado-em">
+            {{ chamado.criadoEm | date : "dd/MM/yyyy" }}
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-nowrap col-9">
+          <div class="d-flex flex-row flex-nowrap col-12">
+            <mat-card-title class="col-11">{{ nomeEmpresa }}</mat-card-title>
+            <div
+              class="status"
+              *ngIf="
+                chamado.status === 'EXECUTANDO' ||
+                chamado.status === 'ORCAMENTO'
+              "
+              style="background-color: rgb(36, 171, 54)"
+            ></div>
+            <div
+              class="status"
+              *ngIf="
+                chamado.status === 'CRIADO' ||
+                chamado.status === 'VISITA' ||
+                chamado.status === 'APROVACAO'
+              "
+              style="background-color: rgb(233, 175, 41)"
+            ></div>
+            <div
+              class="status"
+              *ngIf="chamado.status === 'FINALIZADO'"
+              style="background-color: rgb(126, 126, 126)"
+            ></div>
+          </div>
+          <mat-card-subtitle class="info-title"
+            >Status: <span class="info">{{ status }}</span></mat-card-subtitle
+          >
+          <mat-card-subtitle class="info-title"
+            >Serviços:
+            <span class="info">{{ servicos }}</span></mat-card-subtitle
+          >
+          <mat-card-subtitle class="info-title"
+            >Local:
+            <span class="info">{{ chamado.endereco }}</span></mat-card-subtitle
+          >
+        </div>
+        <!-- <div class="col-7">
+          <div class="d-flex flex-column">
+            <mat-card-title>{{ nomeEmpresa }}</mat-card-title>
+            <mat-card-subtitle class="mb-1">{{
+              empresa.descricaoCurta
+            }}</mat-card-subtitle>
+            <div *ngIf="avaliacao" class="d-flex flex-row">
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+              <mat-icon>grade</mat-icon>
+            </div>
+          </div>
+        </div> -->
+        <!-- <div class="col-1 align-self-center">
+          <mat-icon>favorite</mat-icon>
+        </div> -->
+      </div>
+    </mat-card-title-group>
+  </mat-card-header>
+</mat-card>

@@ -13,6 +13,10 @@ export class UsuariosService {
   constructor(private http: HttpClient) {}
 
   getUsuarioById(id: number): Observable<Usuario> {
-    return <any>this.http.get(`${this.url}/usuarios/${id}`);
+    return this.http.get<any>(`${this.url}/usuarios/${id}`);
+  }
+
+  getUsuarios(): Observable<Usuario[]> {
+    return this.http.get<any>(`${this.url}/usuarios`);
   }
 }
