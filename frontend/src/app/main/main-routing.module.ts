@@ -8,6 +8,11 @@ import { AjustesComponent } from './ajustes/ajustes.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
 import { AbrirChamadoComponent } from './abrir-chamado/abrir-chamado.component';
+import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.component';
+import { EquipamentosComponent } from './equipamentos/equipamentos.component';
+import { SuporteComponent } from './suporte/suporte.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
@@ -41,6 +46,26 @@ const routes: Routes = [
       {
         path: '_/ajustes',
         component: AjustesComponent,
+      },
+      {
+        path: '_/dados_pessoais',
+        component: DadosPessoaisComponent,
+      },
+      {
+        path: '_/equipamentos',
+        component: EquipamentosComponent,
+      },
+      {
+        path: '_/suporte',
+        component: SuporteComponent,
+      },
+      {
+        path: '_/quem_somos',
+        component: QuemSomosComponent,
+      },
+      {
+        path: '_/about',
+        component: AboutComponent,
       },
     ],
   },

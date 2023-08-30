@@ -17,6 +17,12 @@ import { DialogConfirmacaoComponent } from './abrir-chamado/dialog-confirmacao/d
 import { UsuariosService } from '../services/usuarios/usuarios.service';
 import { ChamadosService } from '../services/chamados/chamados.service';
 import { CardChamadoComponent } from './chamados/card-chamado/card-chamado.component';
+import { EquipamentosService } from '../services/equipamentos/equipamentos.service';
+import { DadosPessoaisComponent } from './dados-pessoais/dados-pessoais.component';
+import { EquipamentosComponent } from './equipamentos/equipamentos.component';
+import { SuporteComponent } from './suporte/suporte.component';
+import { QuemSomosComponent } from './quem-somos/quem-somos.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +38,11 @@ import { CardChamadoComponent } from './chamados/card-chamado/card-chamado.compo
     DialogEquipamentoComponent,
     DialogConfirmacaoComponent,
     CardChamadoComponent,
+    DadosPessoaisComponent,
+    EquipamentosComponent,
+    SuporteComponent,
+    QuemSomosComponent,
+    AboutComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
   exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],
@@ -40,6 +51,7 @@ import { CardChamadoComponent } from './chamados/card-chamado/card-chamado.compo
     ServicosService,
     UsuariosService,
     ChamadosService,
+    EquipamentosService,
   ],
 })
 export class MainModule {}
