@@ -9,6 +9,25 @@ header {
   z-index: 3;
 }
 
+.title {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.nav-list {
+  width: 50vw;
+  padding-top: 80px;
+  padding-left: 30px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .main-container {
   min-height: 100vh;
   overflow-y: hidden;

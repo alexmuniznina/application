@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 const MaterialComponents = [
   MatToolbarModule,
@@ -22,6 +24,8 @@ const MaterialComponents = [
   ReactiveFormsModule,
   MatDialogModule,
   MatCheckboxModule,
+  MatSidenavModule,
+  MatListModule,
 ];
 
 @NgModule({

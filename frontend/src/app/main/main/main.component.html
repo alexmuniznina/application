@@ -1,7 +1,21 @@
 <header></header>
-<div class="main-container">
-  <router-outlet></router-outlet>
-</div>
+<mat-sidenav-container hasBackdrop (backdropClick)="sidenav.close()" autosize>
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list class="nav-list">
+      <h1 class="title">Ajustes</h1>
+      <div class="menu-item" *ngFor="let menu of menuList">
+        <a (click)="sidenav.close()" mat-list-item routerLink="{{ menu.route }}"
+          >{{ menu.title }}
+        </a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <footer>
-  <app-toolbar></app-toolbar>
+  <app-toolbar [inputSidenav]="sidenav"></app-toolbar>
 </footer>

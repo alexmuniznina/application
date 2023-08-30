@@ -1,3 +1,4 @@
+<!-- <app-sidenav></app-sidenav> -->
 <div class="toolbar">
   <a class="button" routerLink="/_/home">
     <mat-icon>home</mat-icon>
@@ -15,7 +16,7 @@
     <mat-icon>notifications</mat-icon>
     <span>Alertas</span>
   </a>
-  <a class="button" routerLink="/_/ajustes">
+  <a class="button" (click)="inputSidenav.toggle()">
     <mat-icon>settings</mat-icon>
     <span>Ajustes</span>
   </a>

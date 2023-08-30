@@ -54,7 +54,7 @@ export class ChamadosComponent {
       .subscribe((chamados) => {
         this.chamados = chamados;
         chamados.map((chamado) => this.empresas.push(chamado.empresa));
-        console.log(this.empresas);
+        // console.log(this.empresas);
       });
 
     // this.empresa$ = this.searchText$.pipe(
