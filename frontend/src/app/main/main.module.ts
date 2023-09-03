@@ -23,6 +23,7 @@ import { EquipamentosComponent } from './equipamentos/equipamentos.component';
 import { SuporteComponent } from './suporte/suporte.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { AboutComponent } from './about/about.component';
+import { DialogDadosSalvosComponent } from './dados-pessoais/dialog-dados-salvos/dialog-dados-salvos.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +44,15 @@ import { AboutComponent } from './about/about.component';
     SuporteComponent,
     QuemSomosComponent,
     AboutComponent,
+    DialogDadosSalvosComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
-  exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],
+  exports: [
+    MainComponent,
+    CardEmpresaComponent,
+    EmpresaInfoComponent,
+    DialogDadosSalvosComponent,
+  ],
   providers: [
     EmpresasService,
     ServicosService,

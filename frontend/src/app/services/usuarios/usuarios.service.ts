@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from 'src/app/dto/usuario.dto';
@@ -9,6 +9,9 @@ import { constants } from 'src/app/shared/constants';
 })
 export class UsuariosService {
   url = constants.apiUrl;
+  private contentHeader = new HttpHeaders({
+    'Content-Type': 'application/json',
+  });
 
   constructor(private http: HttpClient) {}
 
@@ -18,5 +21,25 @@ export class UsuariosService {
 
   getUsuarios(): Observable<Usuario[]> {
     return this.http.get<any>(`${this.url}/usuarios`);
+  }
+
+  createUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.post<any>(
+      `${this.url}/usuarios`,
+      JSON.stringify(usuario),
+      {
+        headers: this.contentHeader,
+      }
+    );
+  }
+
+  updateUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<any>(
+      `${this.url}/usuarios/${usuario.id}`,
+      JSON.stringify(usuario),
+      {
+        headers: this.contentHeader,
+      }
+    );
   }
 }
