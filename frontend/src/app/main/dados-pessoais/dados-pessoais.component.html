@@ -1,1 +1,29 @@
-<p>dados-pessoais works!</p>
+<form [formGroup]="form">
+  <div class="container">
+    <h1 class="title">Dados Pessoais</h1>
+
+    <div *ngFor="let field of formFields">
+      <mat-form-field class="col-12">
+        <mat-label>{{ field.label }}</mat-label>
+        <input
+          matInput
+          formControlName="{{ field.controlName }}"
+          type="text"
+          [required]="field.required"
+          [maxLength]="field.maxLength"
+        />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <button
+        mat-flat-button
+        class="col-12 mt-3"
+        color="primary"
+        (click)="salvar()"
+      >
+        Salvar
+      </button>
+    </div>
+  </div>
+</form>

@@ -39,19 +39,19 @@ export class AbrirChamadoComponent implements OnInit {
   isLoading;
   confirmacao = false;
 
-  form: FormGroup = this._formBuilder.group({
+  form: FormGroup = this.formBuilder.group({
     servicosChamado: [],
     sintomas: '',
   });
 
   constructor(
-    private _router: Router,
-    private _formBuilder: FormBuilder,
+    private router: Router,
+    private formBuilder: FormBuilder,
     public dialog: MatDialog,
     private chamadoService: ChamadosService,
     private usuarioService: UsuariosService
   ) {
-    this.navigation = this._router.getCurrentNavigation();
+    this.navigation = this.router.getCurrentNavigation();
     const { empresa } = this.navigation?.extras?.state;
     this.empresa = empresa;
   }
@@ -74,7 +74,7 @@ export class AbrirChamadoComponent implements OnInit {
         empresa: this.empresa,
       },
     };
-    this._router.navigate(['_/empresa_info'], navigationExtras);
+    this.router.navigate(['_/empresa_info'], navigationExtras);
   }
 
   get servicos() {
@@ -108,7 +108,7 @@ export class AbrirChamadoComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this._router.navigate(['_/chamados']);
+      this.router.navigate(['_/chamados']);
     });
   }
 

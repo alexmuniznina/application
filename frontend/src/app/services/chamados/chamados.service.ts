@@ -11,7 +11,6 @@ export class ChamadosService {
   url = constants.apiUrl;
   private contentHeader = new HttpHeaders({
     'Content-Type': 'application/json',
-    // Accept: 'application/json',
   });
 
   constructor(private http: HttpClient) {}
