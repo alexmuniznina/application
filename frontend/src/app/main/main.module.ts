@@ -24,6 +24,7 @@ import { SuporteComponent } from './suporte/suporte.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { AboutComponent } from './about/about.component';
 import { DialogDadosSalvosComponent } from './dados-pessoais/dialog-dados-salvos/dialog-dados-salvos.component';
+import { AdicionarEquipamentoComponent } from './adicionar-equipamento/adicionar-equipamento.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { DialogDadosSalvosComponent } from './dados-pessoais/dialog-dados-salvos
     QuemSomosComponent,
     AboutComponent,
     DialogDadosSalvosComponent,
+    AdicionarEquipamentoComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
   exports: [

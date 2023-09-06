@@ -13,6 +13,7 @@ import { EquipamentosComponent } from './equipamentos/equipamentos.component';
 import { SuporteComponent } from './suporte/suporte.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { AboutComponent } from './about/about.component';
+import { AdicionarEquipamentoComponent } from './adicionar-equipamento/adicionar-equipamento.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
       {
         path: '_/about',
         component: AboutComponent,
+      },
+      {
+        path: '_/adicionar_equipamento',
+        component: AdicionarEquipamentoComponent,
       },
     ],
   },

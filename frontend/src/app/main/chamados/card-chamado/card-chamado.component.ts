@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Chamado } from 'src/app/dto/chamado.dto';
 import { EmpresasService } from 'src/app/services/empresas/empresas.service';
-import { statusChamado } from 'src/app/shared/constants';
+import { STATUS_CHAMADO } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-card-chamado',
@@ -15,7 +15,7 @@ export class CardChamadoComponent {
   nomeEmpresa;
 
   constructor(
-    private _router: Router,
+    private router: Router,
     private empresaService: EmpresasService
   ) {}
 
@@ -28,7 +28,7 @@ export class CardChamadoComponent {
   }
 
   get status() {
-    return statusChamado[this.chamado.status];
+    return STATUS_CHAMADO[this.chamado.status];
   }
 
   get servicos() {
@@ -44,6 +44,6 @@ export class CardChamadoComponent {
         chamado: chamado,
       },
     };
-    this._router.navigate(['_/chamado_info'], navigationExtras);
+    this.router.navigate(['_/chamado_info'], navigationExtras);
   }
 }

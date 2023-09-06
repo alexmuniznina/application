@@ -6,7 +6,7 @@ import { DialogEquipamentoComponent } from './dialog-equipamento/dialog-equipame
 import { EquipamentoChamado } from '../../dto/equipamento-chamado.dto';
 import { Chamado } from 'src/app/dto/chamado.dto';
 import { faker } from '@faker-js/faker';
-import { statusChamado } from 'src/app/shared/constants';
+import { STATUS_CHAMADO } from 'src/app/shared/constants';
 import { ChamadosService } from 'src/app/services/chamados/chamados.service';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
