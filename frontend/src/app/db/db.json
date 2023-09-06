@@ -4,57 +4,36 @@
       "id": 1,
       "cpf": "651.329.860-13",
       "nome": "Flávia Santos",
-      "favoritos": [
-        2,
-        4
-      ],
+      "favoritos": [2, 4],
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "telefones": [
-        "(92) 98459-2659",
-        "(92) 97845-9632"
-      ],
+      "telefones": ["(92) 98459-2659", "(92) 97845-9632"],
       "email": "flavia@live.com"
     },
     {
       "id": 2,
       "cpf": "113.857.660-34",
       "nome": "João Machado",
-      "favoritos": [
-        1,
-        5
-      ],
+      "favoritos": [1, 5],
       "endereco": "R. Martim Afonso de Souza, 718 - Dom Pedro, Manaus - AM, 69040-690",
-      "telefones": [
-        "(92) 91254-3214"
-      ],
+      "telefones": ["(92) 91254-3214"],
       "email": "joao@gmail.com"
     },
     {
       "id": 3,
       "cpf": "682.127.920-99",
       "nome": "Marcos Silva",
-      "favoritos": [
-        2
-      ],
+      "favoritos": [2],
       "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
-      "telefones": [
-        "(92) 93265-4578",
-        "(92) 99632-0025"
-      ],
+      "telefones": ["(92) 93265-4578", "(92) 99632-0025"],
       "email": "marcos@uol.com"
     },
     {
       "id": 4,
       "cpf": "447.797.620-81",
       "nome": "Juliana Cabral",
-      "favoritos": [
-        3
-      ],
+      "favoritos": [3],
       "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
-      "telefones": [
-        "(92) 92233-6599",
-        "(92) 93201-0250"
-      ],
+      "telefones": ["(92) 92233-6599", "(92) 93201-0250"],
       "email": "juliana@mail.com"
     },
     {
@@ -63,22 +42,16 @@
       "nome": "Sandra Matos",
       "favoritos": [],
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
-      "telefones": [
-        "(92) 94568-2366"
-      ],
+      "telefones": ["(92) 94568-2366"],
       "email": "sandra@gmail.com"
     },
     {
       "id": 6,
       "cpf": "784.165.160-06",
       "nome": "Antônio Pereira",
-      "favoritos": [
-        6
-      ],
+      "favoritos": [6],
       "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
-      "telefones": [
-        "(92) 91245-0200"
-      ],
+      "telefones": ["(92) 91245-0200"],
       "email": "antonio@hotmail.com"
     },
     {
@@ -87,10 +60,7 @@
       "nome": "Raimundo pereira",
       "endereco": "Avenida Coronel Teixeira 6225, Reserva Inglesa London, T4-104, parque 10, Manaus/AM, 69037-000",
       "favoritos": [],
-      "telefones": [
-        "(32) 1654-9876",
-        "(32) 14568-7898"
-      ],
+      "telefones": ["(32) 1654-9876", "(32) 14568-7898"],
       "email": "asdiajsd@alijals.com"
     },
     {
@@ -99,10 +69,7 @@
       "nome": "osidvunaps9",
       "endereco": "aiopsjdvnadsu9v0 jm, asiopdjn 0as´djuv-, aiosdjo, aislodhvo/js, 92874-365",
       "favoritos": [],
-      "telefones": [
-        "(32) 9467-8523",
-        "(28) 76345-8723"
-      ],
+      "telefones": ["(32) 9467-8523", "(28) 76345-8723"],
       "email": "aksjbasasd.asdv@asuidv.cji"
     },
     {
@@ -111,10 +78,7 @@
       "nome": "aisuohdviaudh asdhiasuhd kjh",
       "endereco": "asidhuvas89vasoid, 9-s8dvya9s h, poiuashdv poiu, aisudhb 890/pa, 34987-539",
       "favoritos": [],
-      "telefones": [
-        "(98) 7465-9238",
-        "(37) 89456-9386"
-      ],
+      "telefones": ["(98) 7465-9238", "(37) 89456-9386"],
       "email": "sdkjfv@skdjv.rfw"
     },
     {
@@ -123,10 +87,7 @@
       "nome": "sdfbhdsfghsf",
       "endereco": "sgfdhfrgh sdfghb sf, sdgfhsgh45, sghsdfgh sdgf, sdfgh/sd, 45624-562",
       "favoritos": [],
-      "telefones": [
-        "(35) 6734-5675",
-        "(34) 56345-6345"
-      ],
+      "telefones": ["(35) 6734-5675", "(34) 56345-6345"],
       "email": "asdfdfgh@dofijd.fer"
     }
   ],
@@ -136,16 +97,9 @@
       "endereco": "R. José Florêncio, 280 - Petrópolis, Manaus - AM, 69063-555",
       "nomeFantasia": "Refrigerar",
       "cnpj": "12.345.678/0001-23",
-      "telefone": [
-        "(92) 1234-4567",
-        "(92) 3456-3254"
-      ],
-      "celular": [
-        "(92) 97653-3674"
-      ],
-      "email": [
-        "refrigerar@gmail.com"
-      ],
+      "telefone": ["(92) 1234-4567", "(92) 3456-3254"],
+      "celular": ["(92) 97653-3674"],
+      "email": ["refrigerar@gmail.com"],
       "avaliacaoContador": 4,
       "avaliacaoMedia": 4.5,
       "imgUrl": "img1.jpeg",
@@ -157,17 +111,9 @@
       "endereco": "R. Francisco Melo, 125 - Japiim, Manaus - AM, 69078-500",
       "nomeFantasia": "Amadeu Refrigeração",
       "cnpj": "45.765.234/0001-23",
-      "telefone": [
-        "(92) 1234-4863",
-        "(92) 456-3254"
-      ],
-      "celular": [
-        "(92) 97653-4578",
-        "(92) 98456-3254"
-      ],
-      "email": [
-        "amadeu@gmail.com"
-      ],
+      "telefone": ["(92) 1234-4863", "(92) 456-3254"],
+      "celular": ["(92) 97653-4578", "(92) 98456-3254"],
+      "email": ["amadeu@gmail.com"],
       "avaliacaoContador": 3,
       "avaliacaoMedia": 3.5,
       "imgUrl": "img2.jpeg",
@@ -179,16 +125,9 @@
       "endereco": "Av. Maceió, 26 - Adrianópolis, Manaus - AM, 69057-010",
       "nomeFantasia": "Refrigeração Souza",
       "cnpj": "52.409.610/0001-47",
-      "telefone": [
-        "(92) 1234-4567"
-      ],
-      "celular": [
-        "(92) 97653-3674",
-        "(92) 98456-3254"
-      ],
-      "email": [
-        "souza@gmail.com"
-      ],
+      "telefone": ["(92) 1234-4567"],
+      "celular": ["(92) 97653-3674", "(92) 98456-3254"],
+      "email": ["souza@gmail.com"],
       "avaliacaoContador": 4,
       "avaliacaoMedia": 4.5,
       "imgUrl": "img3.jpeg",
@@ -200,15 +139,9 @@
       "endereco": "Av. Cosme Ferreira, 1620 - Coroado I, Manaus - AM, 69082-230",
       "nomeFantasia": "Refrinorte",
       "cnpj": "99.201.237/0001-06",
-      "telefone": [
-        "(92) 1234-4567"
-      ],
-      "celular": [
-        "(92) 97653-3674"
-      ],
-      "email": [
-        "refrinorte@gmail.com"
-      ],
+      "telefone": ["(92) 1234-4567"],
+      "celular": ["(92) 97653-3674"],
+      "email": ["refrinorte@gmail.com"],
       "avaliacaoContador": 4,
       "avaliacaoMedia": 4.5,
       "imgUrl": "img4.jpeg",
@@ -220,16 +153,9 @@
       "endereco": "R. Constelação de Ursa Maior, 12 - Aleixo, Manaus - AM, 69060-092",
       "nomeFantasia": "RefriHouse",
       "cnpj": "06.260.706/0001-79",
-      "telefone": [
-        "(92) 1234-4567"
-      ],
-      "celular": [
-        "(92) 97653-3674",
-        "(92) 98456-3254"
-      ],
-      "email": [
-        "refriHouse@gmail.com"
-      ],
+      "telefone": ["(92) 1234-4567"],
+      "celular": ["(92) 97653-3674", "(92) 98456-3254"],
+      "email": ["refriHouse@gmail.com"],
       "avaliacaoContador": 4,
       "avaliacaoMedia": 4.5,
       "imgUrl": "img5.jpeg",
@@ -242,12 +168,8 @@
       "nomeFantasia": "Refrigera Manaus",
       "cnpj": "37.418.521/0001-73",
       "telefone": [],
-      "celular": [
-        "(92) 97653-3674"
-      ],
-      "email": [
-        "refrigeramanaus@gmail.com"
-      ],
+      "celular": ["(92) 97653-3674"],
+      "email": ["refrigeramanaus@gmail.com"],
       "avaliacaoContador": 4,
       "avaliacaoMedia": 4.5,
       "imgUrl": "img6.jpeg",
@@ -318,106 +240,117 @@
       "id": 1,
       "usuarioId": 6,
       "descricao": "Midea 21.000 BTU 110V",
-      "num_serie": 683703860358,
+      "num_serie": "683703860358",
       "btu": "21.000",
-      "volt": 110,
+      "volt": "110",
       "marca": "Midea"
     },
     {
       "id": 2,
       "usuarioId": 3,
       "descricao": "Electrolux 9.000 BTU 110V",
-      "num_serie": 415745183872,
+      "num_serie": "415745183872",
       "btu": "9.000",
-      "volt": 110,
+      "volt": "110",
       "marca": "Electrolux"
     },
     {
       "id": 3,
       "usuarioId": 3,
       "descricao": "Midea 18.000 BTU 220V",
-      "num_serie": 700112066466,
+      "num_serie": "700112066466",
       "btu": "18.000",
-      "volt": 220,
+      "volt": "220",
       "marca": "Midea"
     },
     {
       "id": 4,
       "usuarioId": 5,
       "descricao": "Hitachi 30.000 BTU 110V",
-      "num_serie": 737409621752,
+      "num_serie": "737409621752",
       "btu": "30.000",
-      "volt": 110,
+      "volt": "110",
       "marca": "Hitachi"
     },
     {
       "id": 5,
       "usuarioId": 2,
       "descricao": "Midea 9.000 BTU 110V",
-      "num_serie": 406960572786,
+      "num_serie": "406960572786",
       "btu": "9.000",
-      "volt": 110,
+      "volt": "110",
       "marca": "Midea"
     },
     {
       "id": 6,
       "usuarioId": 1,
       "descricao": "Electrolux 30.000 BTU 220V",
-      "num_serie": 617100797108,
+      "num_serie": "617100797108",
       "btu": "30.000",
-      "volt": 220,
+      "volt": "220",
       "marca": "Electrolux"
     },
     {
       "id": 7,
       "usuarioId": 6,
       "descricao": "Electrolux 21.000 BTU 220V",
-      "num_serie": 573651516417,
+      "num_serie": "573651516417",
       "btu": "21.000",
-      "volt": 220,
+      "volt": "220",
       "marca": "Electrolux"
     },
     {
       "id": 8,
       "usuarioId": 1,
       "descricao": "Midea 12.000 BTU 110V",
-      "num_serie": 644752876542,
+      "num_serie": "644752876542",
       "btu": "12.000",
-      "volt": 110,
+      "volt": "110",
       "marca": "Midea"
     },
     {
       "id": 9,
       "usuarioId": 6,
       "descricao": "Hitachi 30.000 BTU 110V",
-      "num_serie": 414315625646,
+      "num_serie": "414315625646",
       "btu": "30.000",
-      "volt": 110,
+      "volt": "110",
       "marca": "Hitachi"
+    },
+    {
+      "id": 8219015,
+      "usuarioId": 1,
+      "descricao": "Hitachi 21.000 BTU 110 V",
+      "num_serie": "3456y56yhbv356",
+      "btu": "21.000",
+      "volt": "110",
+      "marca": "Hitachi"
+    },
+    {
+      "id": 5883183,
+      "usuarioId": 1,
+      "descricao": "Electrolux 14.000 BTU",
+      "num_serie": "",
+      "btu": "14.000",
+      "volt": "",
+      "marca": "Electrolux"
     }
   ],
   "chamados": [
     {
       "id": 1,
-      "servicos": [
-        "limpeza"
-      ],
+      "servicos": ["limpeza"],
       "usuarioId": 4,
       "empresaId": 1,
       "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
-      "equipamentos": [
-        "Consul 9.000 BTU 110V",
-        "Consul 12.000 BTU 220V"
-      ],
+      "equipamentos": ["Consul 9.000 BTU 110V", "Consul 12.000 BTU 220V"],
       "criadoEm": "2023-08-18T00:09:52.187Z",
       "status": "APROVACAO",
       "sintomas": "asdh"
     },
     {
       "id": 2,
-      "servicos": [
-        "elétrica"
-      ],
+      "servicos": ["elétrica"],
       "usuarioId": 6,
       "empresaId": 2,
       "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
@@ -428,39 +361,29 @@
     },
     {
       "id": 3,
-      "servicos": [
-        "conserto"
-      ],
+      "servicos": ["conserto"],
       "usuarioId": 6,
       "empresaId": 2,
       "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
-      "equipamentos": [
-        "Consul 18.000 BTU 220V"
-      ],
+      "equipamentos": ["Consul 18.000 BTU 220V"],
       "criadoEm": "2023-08-18T03:20:56.500Z",
       "status": "CRIADO",
       "sintomas": "asovduhasn 89vah ds"
     },
     {
       "id": 4,
-      "servicos": [
-        "instalação"
-      ],
+      "servicos": ["instalação"],
       "usuarioId": 1,
       "empresaId": 3,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "equipamentos": [
-        "Consul 9.000 BTU 110V"
-      ],
+      "equipamentos": ["Consul 9.000 BTU 110V"],
       "criadoEm": "2023-08-07T03:23:52.229Z",
       "status": "CRIADO",
       "sintomas": "jkjkjkjkjkjkjkjkjk"
     },
     {
       "id": 5,
-      "servicos": [
-        "instalação"
-      ],
+      "servicos": ["instalação"],
       "usuarioId": 1,
       "empresaId": 6,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
@@ -471,25 +394,18 @@
     },
     {
       "id": 6,
-      "servicos": [
-        "elétrica",
-        "instalação"
-      ],
+      "servicos": ["elétrica", "instalação"],
       "usuarioId": 1,
       "empresaId": 4,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "equipamentos": [
-        "Consul 21.000 BTU 110V"
-      ],
+      "equipamentos": ["Consul 21.000 BTU 110V"],
       "criadoEm": "2023-06-10T03:30:06.381Z",
       "status": "CRIADO",
       "sintomas": "asdasd"
     },
     {
       "id": 7,
-      "servicos": [
-        "limpeza"
-      ],
+      "servicos": ["limpeza"],
       "usuarioId": 3,
       "empresaId": 5,
       "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
@@ -500,9 +416,7 @@
     },
     {
       "id": 8,
-      "servicos": [
-        "elétrica"
-      ],
+      "servicos": ["elétrica"],
       "usuarioId": 3,
       "empresaId": 3,
       "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
@@ -513,9 +427,7 @@
     },
     {
       "id": 9,
-      "servicos": [
-        "instalação"
-      ],
+      "servicos": ["instalação"],
       "usuarioId": 5,
       "empresaId": 1,
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
@@ -526,15 +438,11 @@
     },
     {
       "id": 10,
-      "servicos": [
-        "conserto"
-      ],
+      "servicos": ["conserto"],
       "usuarioId": 5,
       "empresaId": 5,
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
-      "equipamentos": [
-        "Consul 9.000 BTU 110V"
-      ],
+      "equipamentos": ["Consul 9.000 BTU 110V"],
       "criadoEm": "2023-08-12T03:36:02.596Z",
       "status": "VISITA",
       "sintomas": ""

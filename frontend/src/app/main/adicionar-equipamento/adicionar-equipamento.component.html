@@ -1,0 +1,91 @@
+<form [formGroup]="form">
+  <div class="container">
+    <div class="d-flex align-items-center mb-2">
+      <button mat-icon-button color="primary" (click)="goBack()">
+        <mat-icon class="mat-icon">chevron_left</mat-icon>
+      </button>
+      <span class="texto-volta">Equipamentos</span>
+    </div>
+    <section>
+      <div class="add-equipamento-title">Adicionar Equipamentos</div>
+    </section>
+    <section>
+      <div class="d-flex flex-row justify-content-between">
+        <mat-form-field>
+          <mat-label>Fabricante</mat-label>
+          <mat-select formControlName="marca">
+            <mat-option *ngFor="let fab of fabricantes" [value]="fab">
+              {{ fab }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Capacidade (Btus)</mat-label>
+          <mat-select formControlName="btu">
+            <mat-option *ngFor="let btu of btus" [value]="btu">
+              {{ btu }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="d-flex flex-row justify-content-between mt-4">
+        <mat-form-field>
+          <mat-label>Cômodo</mat-label>
+          <mat-select formControlName="comodo">
+            <mat-option *ngFor="let com of comodos" [value]="com">
+              {{ com }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Voltagem (Volts)</mat-label>
+          <mat-select formControlName="volt">
+            <mat-option *ngFor="let volt of volts" [value]="volt">
+              {{ volt }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="d-flex flex-row mt-4">
+        <mat-form-field>
+          <mat-label>Número de Série</mat-label>
+          <input matInput formControlName="numeroSerie" />
+        </mat-form-field>
+      </div>
+    </section>
+    <section>
+      <div class="d-flex flex-column">
+        <mat-checkbox
+          id="checkMesmoEnd"
+          #mesmoEndereco
+          checked
+          color="primary"
+          (change)="toggleCheckbox(mesmoEndereco.checked)"
+          >Mesmo endereço do cadastro?</mat-checkbox
+        >
+        <mat-form-field>
+          <mat-label>Endereço</mat-label>
+          <input matInput formControlName="endereco" />
+        </mat-form-field>
+      </div>
+    </section>
+    <div class="d-flex flex-row justify-content-between">
+      <button
+        mat-flat-button
+        class="col-5 mt-3"
+        color="primary"
+        (click)="limpar()"
+      >
+        Limpar
+      </button>
+      <button
+        mat-flat-button
+        class="col-5 mt-3"
+        color="primary"
+        (click)="salvar()"
+      >
+        Salvar
+      </button>
+    </div>
+  </div>
+</form>

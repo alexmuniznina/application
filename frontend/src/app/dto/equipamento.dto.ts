@@ -2,8 +2,8 @@ export type Equipamento = {
   id: number;
   usuarioId: number;
   descricao: string;
-  num_serie: number;
+  num_serie: string;
   btu: string;
-  volt: number;
+  volt: string;
   marca: string;
 };

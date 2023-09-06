@@ -1,1 +1,24 @@
-<p>equipamentos works!</p>
+<div class="container">
+  <h1 class="title">Equipamentos</h1>
+
+  <div *ngIf="!hasEquipamento" class="mb-4">
+    Você ainda não tem nenhum equipamento cadastrado.
+  </div>
+
+  <section>
+    <div *ngIf="hasEquipamento" class="equip-group">
+      <div *ngFor="let equip of equipamentos">
+        <div class="equip">
+          <span>{{ equip.descricao }}</span>
+          <mat-icon align="end" (click)="apagarEquipamento(equip)"
+            >delete</mat-icon
+          >
+        </div>
+      </div>
+    </div>
+    <button mat-stroked-button (click)="addEquip()">
+      EQUIPAMENTO
+      <mat-icon>add</mat-icon>
+    </button>
+  </section>
+</div>
