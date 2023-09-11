@@ -6,4 +6,5 @@ export type Usuario = {
   favoritos: number[];
   telefones: string[];
   email: string;
+  senha?: string;
 };

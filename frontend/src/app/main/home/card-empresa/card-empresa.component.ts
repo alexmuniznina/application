@@ -10,7 +10,7 @@ import { Empresa } from 'src/app/dto/empresa.dto';
 export class CardEmpresaComponent {
   @Input() empresa: Empresa;
 
-  constructor(private _router: Router) {}
+  constructor(private router: Router) {}
 
   abrirEmpresaInfo(empresa: Empresa) {
     const navigationExtras: NavigationExtras = {
@@ -18,6 +18,6 @@ export class CardEmpresaComponent {
         empresa: empresa,
       },
     };
-    this._router.navigate(['_/empresa_info'], navigationExtras);
+    this.router.navigate(['_/empresa_info'], navigationExtras);
   }
 }

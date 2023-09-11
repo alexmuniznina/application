@@ -1,0 +1,83 @@
+<form [formGroup]="form">
+  <div class="container">
+    <section>
+      <div class="header">
+        <img
+          src="../../../assets/logotipo.svg"
+          width="90"
+          height="90"
+          alt="logotipo"
+        />
+        <div class="title">
+          Sistema de Manutenção em Condicionadores de Ar Split Residenciais
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="login-fields">
+        <h1>Login</h1>
+        <mat-form-field>
+          <mat-label>Id do Usuário</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            type="email"
+            placeholder="Digite seu e-mail"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Senha</mat-label>
+          <input
+            color="primary"
+            matInput
+            formControlName="senha"
+            [type]="visible ? 'text' : 'password'"
+            placeholder="Digite sua senha"
+          />
+          <mat-icon
+            *ngIf="!visible"
+            matSuffix
+            (click)="visible = !visible"
+            color="primary"
+            >visibility</mat-icon
+          >
+          <mat-icon
+            *ngIf="visible"
+            matSuffix
+            (click)="visible = !visible"
+            color="primary"
+            >visibility_off</mat-icon
+          >
+        </mat-form-field>
+      </div>
+    </section>
+    <section>
+      <div class="col-12 failed-container">
+        <h3
+          *ngIf="loginFailed"
+          style="color: crimson; text-align: center; padding: 0px; margin: 0px"
+        >
+          Usuário ou Senha Incorretos
+        </h3>
+      </div>
+      <div class="buttons">
+        <button mat-flat-button class="col-5" color="primary">Registrar</button>
+        <button
+          [disabled]="!isFormValid"
+          mat-flat-button
+          class="col-5"
+          color="primary"
+          (click)="login()"
+        >
+          Login
+        </button>
+      </div>
+      <h2
+        class="col-12"
+        style="text-align: center; padding-left: 10px; margin-top: 20px"
+      >
+        Esqueci a senha
+      </h2>
+    </section>
+  </div>
+</form>

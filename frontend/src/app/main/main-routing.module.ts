@@ -14,6 +14,7 @@ import { SuporteComponent } from './suporte/suporte.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { AboutComponent } from './about/about.component';
 import { AdicionarEquipamentoComponent } from './adicionar-equipamento/adicionar-equipamento.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path: '_/adicionar_equipamento',
         component: AdicionarEquipamentoComponent,
+      },
+      {
+        path: '_/login',
+        component: LoginComponent,
       },
     ],
   },

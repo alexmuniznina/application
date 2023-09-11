@@ -60,7 +60,7 @@ export class AbrirChamadoComponent implements OnInit {
     this.isLoading = true;
     this.equipamentosChamado = [...this.equipamentosCliente];
     this.usuarioService
-      .getUsuarioById(faker.number.int({ min: 1, max: 6 }))
+      .getUsuarioById(Number(localStorage.getItem('usuarioId')))
       .subscribe((resp) => {
         this.usuario = resp;
         this.telefones = this.usuario.telefones;

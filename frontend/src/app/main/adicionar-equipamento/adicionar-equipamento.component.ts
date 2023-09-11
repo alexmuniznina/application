@@ -36,7 +36,7 @@ export class AdicionarEquipamentoComponent {
   ) {
     this.navigation = this.router.getCurrentNavigation();
     const { usuarioId } = this.navigation?.extras?.state;
-    this.usuarioId = usuarioId;
+    this.usuarioId = Number(localStorage.getItem('usuarioId'));
   }
 
   ngOnInit() {

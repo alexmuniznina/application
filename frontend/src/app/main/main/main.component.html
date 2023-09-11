@@ -4,7 +4,10 @@
     <mat-nav-list class="nav-list">
       <h1 class="title">Ajustes</h1>
       <div class="menu-item" *ngFor="let menu of menuList">
-        <a (click)="sidenav.close()" mat-list-item routerLink="{{ menu.route }}"
+        <a
+          (click)="menu.title === 'Sair' ? sair() : sidenav.close()"
+          mat-list-item
+          routerLink="{{ menu.route }}"
           >{{ menu.title }}
         </a>
       </div>

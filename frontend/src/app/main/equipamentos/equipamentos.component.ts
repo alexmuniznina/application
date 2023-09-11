@@ -12,7 +12,7 @@ import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.
 export class EquipamentosComponent {
   public equipamentos: Equipamento[];
   public hasEquipamento = false;
-  private usuarioId: number = 1;
+  private usuarioId: number = Number(localStorage.getItem('usuarioId'));
 
   constructor(
     private router: Router,
