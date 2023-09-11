@@ -21,7 +21,7 @@ import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 })
 export class ChamadosComponent {
   form: FormGroup;
-  usuarioId = 4;
+  usuarioId: number = Number(localStorage.getItem('usuarioId'));
   empresas = <any>[];
   chamados;
   chamados$!: Observable<Chamado>; // talvez não precise disso

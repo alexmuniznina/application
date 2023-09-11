@@ -7,7 +7,8 @@
       "favoritos": [2, 4],
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
       "telefones": ["(92) 98459-2659", "(92) 97845-9632"],
-      "email": "flavia@live.com"
+      "email": "flavia@live.com",
+      "senha": "123456"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "favoritos": [1, 5],
       "endereco": "R. Martim Afonso de Souza, 718 - Dom Pedro, Manaus - AM, 69040-690",
       "telefones": ["(92) 91254-3214"],
-      "email": "joao@gmail.com"
+      "email": "joao@gmail.com",
+      "senha": "123456"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "favoritos": [2],
       "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
       "telefones": ["(92) 93265-4578", "(92) 99632-0025"],
-      "email": "marcos@uol.com"
+      "email": "marcos@uol.com",
+      "senha": "123456"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "favoritos": [3],
       "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
       "telefones": ["(92) 92233-6599", "(92) 93201-0250"],
-      "email": "juliana@mail.com"
+      "email": "juliana@mail.com",
+      "senha": "123456"
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "favoritos": [],
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
       "telefones": ["(92) 94568-2366"],
-      "email": "sandra@gmail.com"
+      "email": "sandra@gmail.com",
+      "senha": "123456"
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "favoritos": [6],
       "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
       "telefones": ["(92) 91245-0200"],
-      "email": "antonio@hotmail.com"
+      "email": "antonio@hotmail.com",
+      "senha": "123456"
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "endereco": "Avenida Coronel Teixeira 6225, Reserva Inglesa London, T4-104, parque 10, Manaus/AM, 69037-000",
       "favoritos": [],
       "telefones": ["(32) 1654-9876", "(32) 14568-7898"],
-      "email": "asdiajsd@alijals.com"
+      "email": "asdiajsd@alijals.com",
+      "senha": "123456"
     },
     {
       "id": 272,
@@ -70,7 +77,8 @@
       "endereco": "aiopsjdvnadsu9v0 jm, asiopdjn 0as´djuv-, aiosdjo, aislodhvo/js, 92874-365",
       "favoritos": [],
       "telefones": ["(32) 9467-8523", "(28) 76345-8723"],
-      "email": "aksjbasasd.asdv@asuidv.cji"
+      "email": "aksjbasasd.asdv@asuidv.cji",
+      "senha": "123456"
     },
     {
       "id": 40,
@@ -79,7 +87,8 @@
       "endereco": "asidhuvas89vasoid, 9-s8dvya9s h, poiuashdv poiu, aisudhb 890/pa, 34987-539",
       "favoritos": [],
       "telefones": ["(98) 7465-9238", "(37) 89456-9386"],
-      "email": "sdkjfv@skdjv.rfw"
+      "email": "sdkjfv@skdjv.rfw",
+      "senha": "123456"
     },
     {
       "id": 221,
@@ -88,7 +97,8 @@
       "endereco": "sgfdhfrgh sdfghb sf, sdgfhsgh45, sghsdfgh sdgf, sdfgh/sd, 45624-562",
       "favoritos": [],
       "telefones": ["(35) 6734-5675", "(34) 56345-6345"],
-      "email": "asdfdfgh@dofijd.fer"
+      "email": "asdfdfgh@dofijd.fer",
+      "senha": "123456"
     }
   ],
   "empresas": [
@@ -446,6 +456,17 @@
       "criadoEm": "2023-08-12T03:36:02.596Z",
       "status": "VISITA",
       "sintomas": ""
+    },
+    {
+      "id": 5476928651788288,
+      "servicos": ["limpeza"],
+      "usuarioId": 1,
+      "empresaId": 3,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "equipamentos": ["Consul 12.000 BTU 220V"],
+      "criadoEm": "2023-09-09T16:07:13.535Z",
+      "status": "EXECUTANDO",
+      "sintomas": "o aparelho não gela"
     }
   ]
 }

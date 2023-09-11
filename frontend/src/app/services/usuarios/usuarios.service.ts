@@ -15,6 +15,10 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) {}
 
+  getUsuarioByEmail(email: string | null): Observable<Usuario> {
+    return this.http.get<any>(`${this.url}/usuarios?email=${email}`);
+  }
+
   getUsuarioById(id: number): Observable<Usuario> {
     return this.http.get<any>(`${this.url}/usuarios/${id}`);
   }

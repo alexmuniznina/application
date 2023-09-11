@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { SidenavService } from 'src/app/services/sidenav/sidenav.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { SidenavService } from 'src/app/services/sidenav/sidenav.service';
 export class MainComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
 
-  menuList = [
+  public menuList = [
     {
       title: 'Dados Pessoais',
       route: '_/dados_pessoais',
@@ -38,13 +39,18 @@ export class MainComponent {
     },
     {
       title: 'Sair',
-      route: null,
     },
   ];
 
-  constructor(private sidenavService: SidenavService) {}
+  constructor(private sidenavService: SidenavService, private router: Router) {}
 
-  ngAfterViewInit() {
+  private ngAfterViewInit() {
     this.sidenavService.setSidenav(this.sidenav);
+  }
+
+  public sair() {
+    localStorage.clear();
+    this.sidenav.close();
+    this.router.navigate(['_/login']);
   }
 }

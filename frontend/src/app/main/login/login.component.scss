@@ -1,0 +1,41 @@
+.container {
+  padding: 40px 30px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title {
+  padding: 10px;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+button {
+  font-size: large;
+  height: 45px;
+}
+
+.failed-container {
+  display: block;
+  align-items: center;
+  height: 20px;
+}
