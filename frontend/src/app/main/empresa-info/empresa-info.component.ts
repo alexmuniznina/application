@@ -44,6 +44,7 @@ export class EmpresaInfoComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       state: {
         empresa: empresa,
+        servicos: this.servicos,
       },
     };
     this.router.navigate(['_/abrir_chamado'], navigationExtras);

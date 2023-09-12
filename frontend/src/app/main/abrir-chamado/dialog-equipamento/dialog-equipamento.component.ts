@@ -16,35 +16,28 @@ export class DialogEquipamentoComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogEquipamentoComponent>,
     @Inject(MAT_DIALOG_DATA) public data: EquipamentoChamado,
-    private _fb: FormBuilder
+    private fb: FormBuilder
   ) {
-    this.form = this._fb.group({
+    this.form = this.fb.group({
       equipamentos: new FormArray([]),
     });
 
     this.equipChamado = [...data];
 
-    this._addOptionsToForm();
+    this.addOptionsToForm();
   }
-
-  // private _setData(data: EquipamentoChamado) {
-  //   data.map((equip, index) => {
-  //     this.equipChamado[index][0] = equip[0].valueOf();
-  //     this.equipChamado[index][1] = equip[1].valueOf();
-  //   });
-  // }
 
   get equipamentosFormArray() {
     return this.form.controls['equipamentos'] as FormArray;
   }
 
-  private _addOptionsToForm() {
+  private addOptionsToForm() {
     this.data.forEach(() =>
       this.equipamentosFormArray.push(new FormControl(false))
     );
   }
 
-  getValue(event) {
+  public getValue(event) {
     const { checked } = event;
     const { name } = event.source;
 
@@ -56,7 +49,7 @@ export class DialogEquipamentoComponent {
     }
   }
 
-  onCancelClick() {
+  public onCancelClick() {
     this.dialogRef.close();
   }
 }
