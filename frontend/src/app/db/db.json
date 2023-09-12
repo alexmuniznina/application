@@ -492,6 +492,17 @@
       "criadoEm": "2023-09-09T16:07:13.535Z",
       "status": "EXECUTANDO",
       "sintomas": "o aparelho não gela"
+    },
+    {
+      "id": 865980444049408,
+      "servicos": [],
+      "usuarioId": 5,
+      "empresaId": 1,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "equipamentos": ["Hitachi 30.000 BTU 110V", "Electrolux 14.000 BTU"],
+      "criadoEm": "2023-09-12T03:43:31.226Z",
+      "status": "CRIADO",
+      "sintomas": ""
     }
   ]
 }

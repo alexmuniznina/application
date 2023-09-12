@@ -6,12 +6,12 @@ import { DialogEquipamentoComponent } from './dialog-equipamento/dialog-equipame
 import { EquipamentoChamado } from '../../dto/equipamento-chamado.dto';
 import { Chamado } from 'src/app/dto/chamado.dto';
 import { faker } from '@faker-js/faker';
-import { STATUS_CHAMADO } from 'src/app/shared/constants';
 import { ChamadosService } from 'src/app/services/chamados/chamados.service';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 import { catchError, throwError } from 'rxjs';
 import { DialogConfirmacaoComponent } from './dialog-confirmacao/dialog-confirmacao.component';
+import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
 
 @Component({
   selector: 'app-abrir-chamado',
@@ -19,17 +19,11 @@ import { DialogConfirmacaoComponent } from './dialog-confirmacao/dialog-confirma
   styleUrls: ['./abrir-chamado.component.scss'],
 })
 export class AbrirChamadoComponent implements OnInit {
-  empresa;
-  navigation;
-  usuario: Usuario;
-  equipamentosCliente: EquipamentoChamado = [
-    ['Consul 9.000 BTU 110V', false],
-    ['Consul 12.000 BTU 220V', false],
-    ['Consul 18.000 BTU 110V', false],
-    ['Consul 18.000 BTU 220V', false],
-    ['Consul 21.000 BTU 110V', false],
-    ['Consul 21.000 BTU 220V', false],
-  ];
+  private navigation;
+  public empresa;
+  public servicos;
+  public usuario: Usuario;
+  public equipamentosCliente: EquipamentoChamado = [];
 
   payloadChamado;
   telefones: string[] = [];
@@ -45,20 +39,30 @@ export class AbrirChamadoComponent implements OnInit {
   });
 
   constructor(
+    public dialog: MatDialog,
     private router: Router,
     private formBuilder: FormBuilder,
-    public dialog: MatDialog,
     private chamadoService: ChamadosService,
-    private usuarioService: UsuariosService
+    private usuarioService: UsuariosService,
+    private equipamentoService: EquipamentosService
   ) {
     this.navigation = this.router.getCurrentNavigation();
-    const { empresa } = this.navigation?.extras?.state;
+    const { empresa, servicos } = this.navigation?.extras?.state;
     this.empresa = empresa;
+    this.servicos = servicos;
   }
 
   ngOnInit() {
     this.isLoading = true;
-    this.equipamentosChamado = [...this.equipamentosCliente];
+    this.equipamentoService
+      .getEquipamentosByUserId(Number(localStorage.getItem('usuarioId')))
+      .subscribe((equips) => {
+        equips.map((item) => {
+          this.equipamentosCliente.push([item.descricao, false]);
+        });
+        this.equipamentosChamado = [...this.equipamentosCliente];
+      });
+
     this.usuarioService
       .getUsuarioById(Number(localStorage.getItem('usuarioId')))
       .subscribe((resp) => {
@@ -75,10 +79,6 @@ export class AbrirChamadoComponent implements OnInit {
       },
     };
     this.router.navigate(['_/empresa_info'], navigationExtras);
-  }
-
-  get servicos() {
-    return ['Limpeza', 'Conserto', 'Instalação', 'Elétrica'];
   }
 
   openEquipDialog() {
