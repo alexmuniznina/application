@@ -24,6 +24,11 @@ export class LoginComponent {
   });
 
   private ngOnInit() {
+    const node = document.getElementsByName('passwordInput')[0];
+    node.addEventListener('keyup', ({ key }) => {
+      if (key === 'Enter') this.login();
+    });
+
     this.form.valueChanges.subscribe(() => {
       this.isFormValid = this.form.valid;
     });
