@@ -42,3 +42,10 @@ export enum COMODO {
   VARANDA = 'Varanda',
   SALA = 'Sala',
 }
+
+export enum TIPO_SERVICO {
+  INSTALACAO = 'Instalação',
+  ELETRICA = 'Elétrica',
+  LIMPEZA = 'Limpeza',
+  CONSERTO = 'Conserto',
+}

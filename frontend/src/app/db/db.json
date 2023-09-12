@@ -190,7 +190,7 @@
   "servicos": [
     {
       "id": 1,
-      "tipo": "limpeza",
+      "tipo": "LIMPEZA",
       "empresaId": 2,
       "descricao": "servico de limpeza",
       "valor": "50.00",
@@ -198,7 +198,7 @@
     },
     {
       "id": 3,
-      "tipo": "conserto",
+      "tipo": "CONSERTO",
       "empresaId": 2,
       "descricao": "conserto, troca de peça",
       "valor": "80.00",
@@ -206,7 +206,7 @@
     },
     {
       "id": 3,
-      "tipo": "instalacao",
+      "tipo": "INSTALACAO",
       "empresaId": 4,
       "descricao": "serviço de instalação",
       "valor": "200.00",
@@ -214,7 +214,7 @@
     },
     {
       "id": 4,
-      "tipo": "eletrica",
+      "tipo": "ELETRICA",
       "empresaId": 5,
       "descricao": "serviço de elétrica",
       "valor": "100.00",
@@ -222,15 +222,15 @@
     },
     {
       "id": 5,
-      "tipo": "instalacao",
-      "empresaId": 2,
+      "tipo": "INSTALACAO",
+      "empresaId": 3,
       "descricao": "serviço de instalação",
       "valor": "200.00",
       "tempoMedioExecucao": "3h"
     },
     {
       "id": 6,
-      "tipo": "instalacao",
+      "tipo": "INSTALACAO",
       "empresaId": 6,
       "descricao": "serviço de instalação",
       "valor": "200.00",
@@ -238,10 +238,26 @@
     },
     {
       "id": 7,
-      "tipo": "eletrica",
+      "tipo": "ELETRICA",
       "empresaId": 6,
       "descricao": "serviço de elétrica",
       "valor": "100.00",
+      "tempoMedioExecucao": "2h"
+    },
+    {
+      "id": 8,
+      "tipo": "ELETRICA",
+      "empresaId": 1,
+      "descricao": "serviço de elétrica",
+      "valor": "100.00",
+      "tempoMedioExecucao": "2h"
+    },
+    {
+      "id": 9,
+      "tipo": "LIMPEZA",
+      "empresaId": 1,
+      "descricao": "servico de limpeza",
+      "valor": "50.00",
       "tempoMedioExecucao": "2h"
     }
   ],
@@ -320,7 +336,7 @@
     },
     {
       "id": 9,
-      "usuarioId": 6,
+      "usuarioId": 2,
       "descricao": "Hitachi 30.000 BTU 110V",
       "num_serie": "414315625646",
       "btu": "30.000",
@@ -328,8 +344,8 @@
       "marca": "Hitachi"
     },
     {
-      "id": 8219015,
-      "usuarioId": 1,
+      "id": 10,
+      "usuarioId": 4,
       "descricao": "Hitachi 21.000 BTU 110 V",
       "num_serie": "3456y56yhbv356",
       "btu": "21.000",
@@ -337,13 +353,22 @@
       "marca": "Hitachi"
     },
     {
-      "id": 5883183,
-      "usuarioId": 1,
+      "id": 11,
+      "usuarioId": 5,
       "descricao": "Electrolux 14.000 BTU",
       "num_serie": "",
       "btu": "14.000",
       "volt": "",
       "marca": "Electrolux"
+    },
+    {
+      "id": 12,
+      "usuarioId": 4,
+      "descricao": "Midea 14.000 BTU 220V",
+      "num_serie": "643354876114",
+      "btu": "14.000",
+      "volt": "220",
+      "marca": "Midea"
     }
   ],
   "chamados": [

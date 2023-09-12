@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  pesquisar() {
+  public pesquisar() {
     const { name, filters } = this.form.getRawValue();
 
     // let servicos = <any>[];
