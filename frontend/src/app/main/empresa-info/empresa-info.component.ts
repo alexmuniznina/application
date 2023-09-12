@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { EmpresasService } from 'src/app/services/empresas/empresas.service';
+import { TIPO_SERVICO } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-empresa-info',
@@ -7,31 +9,35 @@ import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./empresa-info.component.scss'],
 })
 export class EmpresaInfoComponent implements OnInit {
-  empresa;
-  navigation;
-  servicos = ['Limpeza', 'Conserto', 'Instalação', 'Elétrica'];
-  endereco =
-    'Av. Coronel Teixeira 6225, London T8-1234, Ponta Negra, Manaus - Amazonas, 69032-654';
-  telefones = [
-    '(11) 3214-5689',
-    '(92) 98456-3216',
-    '(11) 3214-5698',
-    '(11) 94561-1236',
-  ];
-  emails = ['email@gmail.com', 'suporte@hotmail.com'];
+  private navigation;
+  public empresa;
+  public servicos: any[] = [];
+  public telefones: any[];
 
-  constructor(private _router: Router) {
-    this.navigation = this._router.getCurrentNavigation();
+  constructor(
+    private router: Router,
+    private empresasServico: EmpresasService
+  ) {
+    this.navigation = this.router.getCurrentNavigation();
     const { empresa } = this.navigation?.extras.state;
     this.empresa = empresa;
   }
 
   ngOnInit() {
-    // console.log(this.empresa);
+    this.empresasServico
+      .getEmpresasWithServicos(this.empresa.id)
+      .subscribe((emp) => {
+        emp.servicos.map((item) => {
+          const tipo = item.tipo.toUpperCase();
+          this.servicos.push(TIPO_SERVICO[tipo as keyof typeof TIPO_SERVICO]);
+
+          this.telefones = [...emp.telefone, ...emp.celular];
+        });
+      });
   }
 
   goBack() {
-    this._router.navigate(['_/home']);
+    this.router.navigate(['_/home']);
   }
 
   abrirChamado(empresa) {
@@ -40,6 +46,6 @@ export class EmpresaInfoComponent implements OnInit {
         empresa: empresa,
       },
     };
-    this._router.navigate(['_/abrir_chamado'], navigationExtras);
+    this.router.navigate(['_/abrir_chamado'], navigationExtras);
   }
 }
