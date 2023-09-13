@@ -1,2 +1,3 @@
-frontend/.vscode
-frontend/.angular
+**/.vscode
+**/.angular
+**/node_modules
