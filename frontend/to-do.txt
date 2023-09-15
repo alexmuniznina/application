@@ -1,0 +1,8 @@
+- [OK] verificar os tipos de serviços oferecidos pelas empresas e utilizar os valores do banco de dados
+- [OK] ao clicar no card da empresa, abrir componente da empresa com dados do banco de dados
+- [OK] verificar os equipamentos carregados durante o chamado pois estão mockados
+- [OK] verificar os chamados listados na tela de chamados pois estão mockados
+- ao passar o mouse no botáo de abrir chamado, mostrar um label "Abrir Chamado"
+- trabalhar do componente de dados pessoais pra carregar os dados do banco e só depois editar, com um botão editar
+- menu de adicionar equipamentos, editar equipamentos
+
