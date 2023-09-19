@@ -3,8 +3,7 @@ export type Usuario = {
   cpf: string;
   nome: string;
   endereco: string;
-  favoritos: number[];
   telefones: string[];
   email: string;
-  senha?: string;
+  senha: string;
 };

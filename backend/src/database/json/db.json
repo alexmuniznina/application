@@ -1,0 +1,656 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "cpf": "651.329.860-13",
+      "nome": "Flávia Santos",
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "celular_1": "(92) 91542-2659",
+      "celular_2": "(92) 98459-2009",
+      "telefone_1": null,
+      "telefone_2": null,
+      "email": "flavia@live.com",
+      "senha": "123456"
+    },
+    {
+      "id": 2,
+      "cpf": "113.857.660-34",
+      "nome": "João Machado",
+      "endereco": "R. Martim Afonso de Souza, 718 - Dom Pedro, Manaus - AM, 69040-690",
+      "celular_1": "(92) 85632-2659",
+      "celular_2": null,
+      "telefone_1": null,
+      "telefone_2": null,
+      "email": "joao@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": 3,
+      "cpf": "682.127.920-99",
+      "nome": "Marcos Silva",
+      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
+      "celular_1": "(92) 98459-4567",
+      "celular_2": null,
+      "telefone_1": "(92) 93339-2659",
+      "telefone_2": null,
+      "email": "marcos@uol.com",
+      "senha": "123456"
+    },
+    {
+      "id": 4,
+      "cpf": "447.797.620-81",
+      "nome": "Juliana Cabral",
+      "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
+      "celular_1": "(92) 92236-9632",
+      "celular_2": null,
+      "telefone_1": "(92) 93339-2659",
+      "telefone_2": "(92) 94444-5556",
+      "email": "juliana@mail.com",
+      "senha": "123456"
+    },
+    {
+      "id": 5,
+      "cpf": "334.673.450-18",
+      "nome": "Sandra Matos",
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "celular_1": "(92) 92236-9632",
+      "celular_2": null,
+      "telefone_1": "(92) 94578-2659",
+      "telefone_2": null,
+      "email": "sandra@gmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": 6,
+      "cpf": "784.165.160-06",
+      "nome": "Antônio Pereira",
+      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
+      "celular_1": "(92) 97894-9632",
+      "celular_2": "(92) 94578-2659",
+      "telefone_1": null,
+      "telefone_2": null,
+      "email": "antonio@hotmail.com",
+      "senha": "123456"
+    },
+    {
+      "id": 7,
+      "cpf": "238.475.629-83",
+      "nome": "Raimundo pereira",
+      "endereco": "Avenida Coronel Teixeira 6225, Reserva Inglesa London, T4-104, parque 10, Manaus/AM, 69037-000",
+      "celular_1": "(92) 94455-6633",
+      "celular_2": "(92) 94578-2255",
+      "telefone_1": null,
+      "telefone_2": null,
+      "email": "asdiajsd@alijals.com",
+      "senha": "123456"
+    }
+  ],
+  "empresas": [
+    {
+      "id": 1,
+      "cnpj": "12.345.678/0001-23",
+      "celular_1": "(92) 94995-6633",
+      "celular_2": "(92) 94568-2155",
+      "telefone_1": null,
+      "telefone_2": null,
+      "nome_fantasia": "Refrigerar",
+      "email": "refrigerar@gmail.com",
+      "endereco": "R. José Florêncio, 280 - Petrópolis, Manaus - AM, 69063-555",
+      "descricao_curta": "Descrição da Refrigerar",
+      "sobre_nos": "Non aenean curae pellentesque class erat quam vehicula, fusce nisi in auctor fusce purus curae ultricies, vehicula dolor est tincidunt quisque mollis. ante habitant etiam fermentum dapibus, magna sed nec."
+    },
+    {
+      "id": 2,
+      "cnpj": "45.765.234/0001-23",
+      "celular_1": "(92) 94985-6243",
+      "celular_2": null,
+      "telefone_1": null,
+      "telefone_2": null,
+      "nome_fantasia": "Amadeu Refrigeração",
+      "email": "amadeu@gmail.com",
+      "endereco": "R. Francisco Melo, 125 - Japiim, Manaus - AM, 69078-500",
+      "descricao_curta": "Descrição da Amadeu Refrigeração",
+      "sobre_nos": "Tempor vitae justo potenti massa porttitor aenean curabitur habitant semper, aptent senectus dictumst netus elit habitasse per habitant. id commodo molestie pellentesque morbi habitasse curabitur, risus eget turpis dolor fringilla."
+    },
+    {
+      "id": 3,
+      "cnpj": "52.409.610/0001-47",
+      "celular_1": "(92) 91254-6498",
+      "celular_2": null,
+      "telefone_1": "(92) 94578-2255",
+      "telefone_2": null,
+      "nome_fantasia": "Refrigeração Souza",
+      "email": "souza@gmail.com",
+      "endereco": "Av. Maceió, 26 - Adrianópolis, Manaus - AM, 69057-010",
+      "descricao_curta": "Descrição da Refrigeração Souza",
+      "sobre_nos": "Eros posuere in aliquam placerat et molestie pulvinar phasellus, platea magna nibh ut taciti fames cras aliquam metus, massa condimentum vivamus eros dolor porttitor enim. facilisis bibendum massa rutrum, diam."
+    },
+    {
+      "id": 4,
+      "cnpj": "99.201.237/0001-06",
+      "celular_1": "(92) 91478-2563",
+      "celular_2": "(92) 93322-5566",
+      "telefone_1": null,
+      "telefone_2": null,
+      "nome_fantasia": "Refrinorte",
+      "email": "refrinorte@gmail.com",
+      "endereco": "Av. Cosme Ferreira, 1620 - Coroado I, Manaus - AM, 69082-230",
+      "descricao_curta": "Descrição da Refrinorte",
+      "sobre_nos": "Primis adipiscing morbi pharetra ultricies morbi non turpis etiam ipsum, habitasse convallis quisque porttitor suspendisse amet dapibus nullam. velit porta pharetra feugiat interdum cursus semper, hac posuere consectetur fusce euismod."
+    },
+    {
+      "id": 5,
+      "cnpj": "06.260.706/0001-79",
+      "celular_1": "(92) 91133-4489",
+      "celular_2": null,
+      "telefone_1": null,
+      "telefone_2": null,
+      "nome_fantasia": "RefriHouse",
+      "email": "refriHouse@gmail.com",
+      "endereco": "R. Constelação de Ursa Maior, 12 - Aleixo, Manaus - AM, 69060-092",
+      "descricao_curta": "Descrição da RefriHouse",
+      "sobre_nos": "Nibh eu velit dui maecenas duis volutpat viverra mattis netus metus congue, litora ultricies tristique pretium cras per cursus sociosqu mollis. porttitor placerat facilisis varius class id, convallis class tincidunt."
+    },
+    {
+      "id": 6,
+      "cnpj": "37.418.521/0001-73",
+      "celular_1": "(92) 94365-4489",
+      "celular_2": null,
+      "telefone_1": null,
+      "telefone_2": null,
+      "nome_fantasia": "Refrigera Manaus",
+      "email": "refrigeramanaus@gmail.com",
+      "endereco": "Av. Des. João Machado, 4.584 - Alvorada, Manaus - AM, 69043-000",
+      "descricao_curta": "Descrição da Refrigera Manaus",
+      "sobre_nos": "Vel aliquam morbi convallis inceptos luctus hac, blandit commodo ut habitasse nullam pulvinar placerat, urna odio erat gravida praesent. fames egestas accumsan vulputate nec consequat posuere, ullamcorper malesuada quis curabitur."
+    }
+  ],
+  "servicos": [
+    {
+      "id": 1,
+      "tipo": "LIMPEZA",
+      "empresa_id": 2,
+      "descricao": "servico de limpeza",
+      "valor": 50.0,
+      "tempo_execucao": "2h"
+    },
+    {
+      "id": 3,
+      "tipo": "CONSERTO",
+      "empresa_id": 2,
+      "descricao": "conserto, troca de peça",
+      "valor": 80.0,
+      "tempo_execucao": "3h"
+    },
+    {
+      "id": 3,
+      "tipo": "INSTALACAO",
+      "empresa_id": 4,
+      "descricao": "serviço de instalação",
+      "valor": 200.0,
+      "tempo_execucao": "3h"
+    },
+    {
+      "id": 4,
+      "tipo": "ELETRICA",
+      "empresa_id": 5,
+      "descricao": "serviço de elétrica",
+      "valor": 100.0,
+      "tempo_execucao": "2h"
+    },
+    {
+      "id": 5,
+      "tipo": "INSTALACAO",
+      "empresa_id": 3,
+      "descricao": "serviço de instalação",
+      "valor": 200.0,
+      "tempo_execucao": "3h"
+    },
+    {
+      "id": 6,
+      "tipo": "INSTALACAO",
+      "empresa_id": 6,
+      "descricao": "serviço de instalação",
+      "valor": 200.0,
+      "tempo_execucao": "3h"
+    },
+    {
+      "id": 7,
+      "tipo": "ELETRICA",
+      "empresa_id": 6,
+      "descricao": "serviço de elétrica",
+      "valor": 100.0,
+      "tempo_execucao": "2h"
+    },
+    {
+      "id": 8,
+      "tipo": "ELETRICA",
+      "empresa_id": 1,
+      "descricao": "serviço de elétrica",
+      "valor": 100.0,
+      "tempo_execucao": "2h"
+    },
+    {
+      "id": 9,
+      "tipo": "LIMPEZA",
+      "empresa_id": 1,
+      "descricao": "servico de limpeza",
+      "valor": 50.0,
+      "tempo_execucao": "2h"
+    }
+  ],
+  "equipamentos": [
+    {
+      "id": 1,
+      "usuario_id": 6,
+      "descricao": "Midea 21.000 BTU 110V",
+      "num_serie": "683703860358",
+      "btu": "21.000",
+      "volt": "110",
+      "marca": "Midea"
+    },
+    {
+      "id": 2,
+      "usuario_id": 3,
+      "descricao": "Electrolux 9.000 BTU 110V",
+      "num_serie": "415745183872",
+      "btu": "9.000",
+      "volt": "110",
+      "marca": "Electrolux"
+    },
+    {
+      "id": 3,
+      "usuario_id": 3,
+      "descricao": "Midea 18.000 BTU 220V",
+      "num_serie": "700112066466",
+      "btu": "18.000",
+      "volt": "220",
+      "marca": "Midea"
+    },
+    {
+      "id": 4,
+      "usuario_id": 5,
+      "descricao": "Hitachi 30.000 BTU 110V",
+      "num_serie": "737409621752",
+      "btu": "30.000",
+      "volt": "110",
+      "marca": "Hitachi"
+    },
+    {
+      "id": 5,
+      "usuario_id": 2,
+      "descricao": "Midea 9.000 BTU 110V",
+      "num_serie": "406960572786",
+      "btu": "9.000",
+      "volt": "110",
+      "marca": "Midea"
+    },
+    {
+      "id": 6,
+      "usuario_id": 1,
+      "descricao": "Electrolux 30.000 BTU 220V",
+      "num_serie": "617100797108",
+      "btu": "30.000",
+      "volt": "220",
+      "marca": "Electrolux"
+    },
+    {
+      "id": 7,
+      "usuario_id": 6,
+      "descricao": "Electrolux 21.000 BTU 220V",
+      "num_serie": "573651516417",
+      "btu": "21.000",
+      "volt": "220",
+      "marca": "Electrolux"
+    },
+    {
+      "id": 8,
+      "usuario_id": 1,
+      "descricao": "Midea 12.000 BTU 110V",
+      "num_serie": "644752876542",
+      "btu": "12.000",
+      "volt": "110",
+      "marca": "Midea"
+    },
+    {
+      "id": 9,
+      "usuario_id": 2,
+      "descricao": "Hitachi 30.000 BTU 110V",
+      "num_serie": "414315625646",
+      "btu": "30.000",
+      "volt": "110",
+      "marca": "Hitachi"
+    },
+    {
+      "id": 10,
+      "usuario_id": 4,
+      "descricao": "Hitachi 21.000 BTU 110 V",
+      "num_serie": "3456y56yhbv356",
+      "btu": "21.000",
+      "volt": "110",
+      "marca": "Hitachi"
+    },
+    {
+      "id": 11,
+      "usuario_id": 5,
+      "descricao": "Electrolux 14.000 BTU",
+      "num_serie": "",
+      "btu": "14.000",
+      "volt": "110",
+      "marca": "Electrolux"
+    },
+    {
+      "id": 12,
+      "usuario_id": 4,
+      "descricao": "Midea 14.000 BTU 220V",
+      "num_serie": "643354876114",
+      "btu": "14.000",
+      "volt": "220",
+      "marca": "Midea"
+    }
+  ],
+  "chamados": [
+    {
+      "id": 1,
+      "usuario_id": 4,
+      "empresa_id": 1,
+      "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
+      "servicos": "limpeza",
+      "equipamentos_chamado_id": 1,
+      "sintomas": "asdh",
+      "status": "APROVACAO",
+      "criado_em": "2023-08-18T00:09:52.187Z"
+    },
+    {
+      "id": 2,
+      "usuario_id": 6,
+      "empresa_id": 2,
+      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
+      "servicos": "elétrica",
+      "equipamentos": 2,
+      "sintomas": "56y3456",
+      "status": "FINALIZADO",
+      "criado_em": "2023-08-18T02:58:05.247Z"
+    },
+    {
+      "id": 3,
+      "usuario_id": 6,
+      "empresa_id": 2,
+      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
+      "servicos": "conserto",
+      "equipamentos": 3,
+      "sintomas": "asovduhasn 89vah ds",
+      "status": "CRIADO",
+      "criado_em": "2023-08-18T03:20:56.500Z"
+    },
+    {
+      "id": 4,
+      "usuario_id": 1,
+      "empresa_id": 3,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "instalação",
+      "equipamentos": 4,
+      "sintomas": "jkjkjkjkjkjkjkjkjk",
+      "status": "CRIADO",
+      "criado_em": "2023-08-07T03:23:52.229Z"
+    },
+    {
+      "id": 5,
+      "usuario_id": 1,
+      "empresa_id": 6,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "instalação",
+      "equipamentos": 5,
+      "sintomas": "",
+      "status": "CRIADO",
+      "criado_em": "2023-06-30T03:28:06.680Z"
+    },
+    {
+      "id": 6,
+      "usuario_id": 5,
+      "empresa_id": 4,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "elétrica, instalação",
+      "equipamentos": 6,
+      "sintomas": "asdasd",
+      "status": "CRIADO",
+      "criado_em": "2023-06-10T03:30:06.381Z"
+    },
+    {
+      "id": 7,
+      "usuario_id": 3,
+      "empresa_id": 5,
+      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
+      "servicos": "limpeza",
+      "equipamentos": 7,
+      "sintomas": "asdasd",
+      "status": "VISITA",
+      "criado_em": "2023-05-03T03:32:10.707Z"
+    },
+    {
+      "id": 8,
+      "usuario_id": 3,
+      "empresa_id": 3,
+      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
+      "servicos": "elétrica",
+      "equipamentos": 8,
+      "sintomas": "",
+      "status": "EXECUTANDO",
+      "criado_em": "2023-05-20T03:33:44.276Z"
+    },
+    {
+      "id": 9,
+      "usuario_id": 5,
+      "empresa_id": 1,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "servicos": "instalação",
+      "equipamentos": 9,
+      "sintomas": "",
+      "status": "CRIADO",
+      "criado_em": "2023-07-18T03:34:48.822Z"
+    },
+    {
+      "id": 10,
+      "usuario_id": 2,
+      "empresa_id": 5,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "servicos": "conserto",
+      "equipamentos": 10,
+      "sintomas": "",
+      "status": "VISITA",
+      "criado_em": "2023-08-12T03:36:02.596Z"
+    },
+    {
+      "id": 11,
+      "usuario_id": 2,
+      "empresa_id": 3,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "limpeza",
+      "equipamentos": 11,
+      "sintomas": "o aparelho não gela",
+      "status": "EXECUTANDO",
+      "criado_em": "2023-09-09T16:07:13.535Z"
+    },
+    {
+      "id": 12,
+      "usuario_id": 4,
+      "empresa_id": 1,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "servicos": null,
+      "equipamentos": 12,
+      "sintomas": "",
+      "status": "CRIADO",
+      "criado_em": "2023-09-12T03:43:31.226Z"
+    }
+  ],
+  "equipamentos_chamado": [
+    {
+      "id": 1,
+      "chamado_id": 1,
+      "equipamento_id_1": 12,
+      "equipamento_id_2": 10,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 2,
+      "chamado_id": 2,
+      "equipamento_id_1": null,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 3,
+      "chamado_id": 3,
+      "equipamento_id_1": 1,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 4,
+      "chamado_id": 4,
+      "equipamento_id_1": 6,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 5,
+      "chamado_id": 5,
+      "equipamento_id_1": null,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 6,
+      "chamado_id": 6,
+      "equipamento_id_1": 11,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 7,
+      "chamado_id": 7,
+      "equipamento_id_1": 2,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 8,
+      "chamado_id": 8,
+      "equipamento_id_1": null,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 9,
+      "chamado_id": 9,
+      "equipamento_id_1": 11,
+      "equipamento_id_2": 4,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 10,
+      "chamado_id": 10,
+      "equipamento_id_1": 9,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 11,
+      "chamado_id": 11,
+      "equipamento_id_1": 5,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    },
+    {
+      "id": 12,
+      "chamado_id": 12,
+      "equipamento_id_1": 12,
+      "equipamento_id_2": null,
+      "equipamento_id_3": null,
+      "equipamento_id_4": null,
+      "equipamento_id_5": null,
+      "equipamento_id_6": null,
+      "equipamento_id_7": null,
+      "equipamento_id_8": null,
+      "equipamento_id_9": null,
+      "equipamento_id_10": null
+    }
+  ]
+}

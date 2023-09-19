@@ -1,9 +1,9 @@
 - [OK] alterar dados de login e senha do database
 - [OK] criar tabelas
-- popular tabelas
+- [OK] popular tabelas
 
 - criar endpoints dos componentes:
-    - login
+    - [OK] login
     - home
     - empresa-info
     - abrir-chamado

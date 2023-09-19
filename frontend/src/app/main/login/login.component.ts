@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
-    private usuarioService: UsuariosService,
+    private loginService: LoginService,
     private router: Router
   ) {}
 
@@ -37,18 +37,17 @@ export class LoginComponent {
   public login() {
     if (this.form.valid) {
       const fields = this.form.getRawValue();
-      this.usuarioService
-        .getUsuarioByEmail(fields.email)
-        .subscribe((usuario) => {
-          const user = usuario[0]; // to-do: precisa trocar a forma como o get retorna
-          if (user.senha === fields.senha) {
-            console.log('Usuario logado');
-            localStorage.setItem('usuarioId', user.id);
-            this.router.navigate(['_/home']);
-          } else {
-            this.loginFailed = true;
-          }
-        });
+      this.loginService.getUserInfo(fields.email).subscribe((usuario) => {
+        const user = usuario;
+        if (user?.senha === fields.senha) {
+          console.log('Usuario logado');
+          localStorage.setItem('usuarioId', user.id.toString());
+          this.router.navigate(['_/home']);
+        } else {
+          // to-do: se não encontrado, solta exceção
+          this.loginFailed = true;
+        }
+      });
     }
   }
 }

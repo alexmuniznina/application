@@ -169,9 +169,9 @@ export class DadosPessoaisComponent {
           ', ',
           this.formatCep(formFields.cep)
         ),
-        favoritos: [],
         telefones,
         email: formFields.email,
+        senha: '123456',
       };
 
       try {
