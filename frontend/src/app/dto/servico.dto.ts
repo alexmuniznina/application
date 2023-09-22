@@ -1,7 +1,8 @@
 export type Servico = {
   id: number;
-  idEmpresa: number;
+  tipo: string;
+  empresa_id: number;
   descricao: string;
   valor: number;
-  tempoMedioExecucao: string;
+  tempo_execucao: string;
 };

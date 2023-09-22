@@ -20,10 +20,11 @@ export class CardChamadoComponent {
   ) {}
 
   ngOnInit() {
+    // criar esse endpoint
     this.empresaService
-      .getEmpresaById(this.chamado.empresaId)
+      .getEmpresaById(this.chamado.empresa_id)
       .subscribe((emp) => {
-        this.nomeEmpresa = emp.nomeFantasia;
+        this.nomeEmpresa = emp.nome_fantasia;
       });
   }
 
@@ -32,10 +33,12 @@ export class CardChamadoComponent {
   }
 
   get servicos() {
-    let serv = this.chamado.servicos?.map(
-      (s) => s.charAt(0).toUpperCase() + s.slice(1)
-    );
-    return serv ? serv?.join(', ') : '';
+    // criar esse endpoint
+    // let serv = this.chamado.servicos?.map(
+    //   (s) => s.charAt(0).toUpperCase() + s.slice(1)
+    // );
+    // return serv ? serv?.join(', ') : '';
+    return '';
   }
 
   abrirChamadoInfo(chamado: Chamado) {

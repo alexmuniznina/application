@@ -153,8 +153,7 @@ export class DadosPessoaisComponent {
     if (this.form.valid) {
       const formFields = this.form.getRawValue();
       const telefones = this.getTelefones(formFields);
-      const usuario: Usuario = {
-        id: faker.number.int({ min: 10, max: 300 }),
+      const usuario = {
         cpf: this.formatCpf(formFields.cpf),
         nome: formFields.nome,
         endereco: formFields.endereco.concat(
@@ -174,13 +173,13 @@ export class DadosPessoaisComponent {
         senha: '123456',
       };
 
-      try {
-        this.usuariosService.createUsuario(usuario).subscribe(() => {
-          this.openConfirmationDialog();
-        });
-      } catch (err) {
-        console.error(err);
-      }
+      // try {
+      //   this.usuariosService.createUsuario(usuario).subscribe(() => {
+      //     this.openConfirmationDialog();
+      //   });
+      // } catch (err) {
+      //   console.error(err);
+      // }
     }
   }
 }

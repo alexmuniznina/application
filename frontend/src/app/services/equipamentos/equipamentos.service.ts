@@ -1,6 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { query } from '@angular/animations';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { EquipamentoPayload } from 'src/app/dto/equipamento-payload.dto';
 import { Equipamento } from 'src/app/dto/equipamento.dto';
 import { constants } from 'src/app/shared/constants';
 
@@ -15,7 +17,7 @@ export class EquipamentosService {
 
   constructor(private http: HttpClient) {}
 
-  criarEquipamento(equipamento: Equipamento) {
+  criarEquipamento(equipamento: EquipamentoPayload) {
     return this.http.post(
       `${this.url}/equipamentos`,
       JSON.stringify(equipamento),
@@ -26,9 +28,11 @@ export class EquipamentosService {
   }
 
   getEquipamentosByUserId(usuarioId: number): Observable<Equipamento[]> {
-    return this.http.get<any>(
-      `${this.url}/equipamentos?usuarioId=${usuarioId}`
-    );
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append('usuario_id', usuarioId);
+    return this.http.get<any>(`${this.url}/equipamentos`, {
+      params: queryParams,
+    });
   }
 
   apagarEquipamento(id: number) {

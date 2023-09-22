@@ -1,12 +1,11 @@
 export type Chamado = {
   id: number;
-  usuarioId: number;
-  empresaId: number;
-  endereco: string;
-  servicos?: string[];
-  equipamentos?: string[];
-  criadoEm: string;
-  status: string;
+  usuario_id: number;
+  empresa_id: number;
+  endereco?: string;
+  servicos?: string;
+  equipamentos_chamado_id?: number;
   sintomas?: string;
-  avaliacao?: number;
+  status: string;
+  criado_em: string;
 };

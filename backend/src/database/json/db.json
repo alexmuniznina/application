@@ -367,7 +367,7 @@
       "empresa_id": 2,
       "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
       "servicos": "elétrica",
-      "equipamentos": 2,
+      "equipamentos_chamado_id": 2,
       "sintomas": "56y3456",
       "status": "FINALIZADO",
       "criado_em": "2023-08-18T02:58:05.247Z"
@@ -378,7 +378,7 @@
       "empresa_id": 2,
       "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
       "servicos": "conserto",
-      "equipamentos": 3,
+      "equipamentos_chamado_id": 3,
       "sintomas": "asovduhasn 89vah ds",
       "status": "CRIADO",
       "criado_em": "2023-08-18T03:20:56.500Z"
@@ -389,7 +389,7 @@
       "empresa_id": 3,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
       "servicos": "instalação",
-      "equipamentos": 4,
+      "equipamentos_chamado_id": 4,
       "sintomas": "jkjkjkjkjkjkjkjkjk",
       "status": "CRIADO",
       "criado_em": "2023-08-07T03:23:52.229Z"
@@ -400,7 +400,7 @@
       "empresa_id": 6,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
       "servicos": "instalação",
-      "equipamentos": 5,
+      "equipamentos_chamado_id": 5,
       "sintomas": "",
       "status": "CRIADO",
       "criado_em": "2023-06-30T03:28:06.680Z"
@@ -411,7 +411,7 @@
       "empresa_id": 4,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
       "servicos": "elétrica, instalação",
-      "equipamentos": 6,
+      "equipamentos_chamado_id": 6,
       "sintomas": "asdasd",
       "status": "CRIADO",
       "criado_em": "2023-06-10T03:30:06.381Z"
@@ -422,7 +422,7 @@
       "empresa_id": 5,
       "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
       "servicos": "limpeza",
-      "equipamentos": 7,
+      "equipamentos_chamado_id": 7,
       "sintomas": "asdasd",
       "status": "VISITA",
       "criado_em": "2023-05-03T03:32:10.707Z"
@@ -433,7 +433,7 @@
       "empresa_id": 3,
       "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
       "servicos": "elétrica",
-      "equipamentos": 8,
+      "equipamentos_chamado_id": 8,
       "sintomas": "",
       "status": "EXECUTANDO",
       "criado_em": "2023-05-20T03:33:44.276Z"
@@ -444,7 +444,7 @@
       "empresa_id": 1,
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
       "servicos": "instalação",
-      "equipamentos": 9,
+      "equipamentos_chamado_id": 9,
       "sintomas": "",
       "status": "CRIADO",
       "criado_em": "2023-07-18T03:34:48.822Z"
@@ -455,7 +455,7 @@
       "empresa_id": 5,
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
       "servicos": "conserto",
-      "equipamentos": 10,
+      "equipamentos_chamado_id": 10,
       "sintomas": "",
       "status": "VISITA",
       "criado_em": "2023-08-12T03:36:02.596Z"
@@ -466,7 +466,7 @@
       "empresa_id": 3,
       "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
       "servicos": "limpeza",
-      "equipamentos": 11,
+      "equipamentos_chamado_id": 11,
       "sintomas": "o aparelho não gela",
       "status": "EXECUTANDO",
       "criado_em": "2023-09-09T16:07:13.535Z"
@@ -477,7 +477,7 @@
       "empresa_id": 1,
       "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
       "servicos": null,
-      "equipamentos": 12,
+      "equipamentos_chamado_id": 12,
       "sintomas": "",
       "status": "CRIADO",
       "criado_em": "2023-09-12T03:43:31.226Z"
@@ -486,7 +486,6 @@
   "equipamentos_chamado": [
     {
       "id": 1,
-      "chamado_id": 1,
       "equipamento_id_1": 12,
       "equipamento_id_2": 10,
       "equipamento_id_3": null,
@@ -500,7 +499,6 @@
     },
     {
       "id": 2,
-      "chamado_id": 2,
       "equipamento_id_1": null,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -514,7 +512,6 @@
     },
     {
       "id": 3,
-      "chamado_id": 3,
       "equipamento_id_1": 1,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -528,7 +525,6 @@
     },
     {
       "id": 4,
-      "chamado_id": 4,
       "equipamento_id_1": 6,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -542,7 +538,6 @@
     },
     {
       "id": 5,
-      "chamado_id": 5,
       "equipamento_id_1": null,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -556,7 +551,6 @@
     },
     {
       "id": 6,
-      "chamado_id": 6,
       "equipamento_id_1": 11,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -570,7 +564,6 @@
     },
     {
       "id": 7,
-      "chamado_id": 7,
       "equipamento_id_1": 2,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -584,7 +577,6 @@
     },
     {
       "id": 8,
-      "chamado_id": 8,
       "equipamento_id_1": null,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -598,7 +590,6 @@
     },
     {
       "id": 9,
-      "chamado_id": 9,
       "equipamento_id_1": 11,
       "equipamento_id_2": 4,
       "equipamento_id_3": null,
@@ -612,7 +603,6 @@
     },
     {
       "id": 10,
-      "chamado_id": 10,
       "equipamento_id_1": 9,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -626,7 +616,6 @@
     },
     {
       "id": 11,
-      "chamado_id": 11,
       "equipamento_id_1": 5,
       "equipamento_id_2": null,
       "equipamento_id_3": null,
@@ -640,7 +629,6 @@
     },
     {
       "id": 12,
-      "chamado_id": 12,
       "equipamento_id_1": 12,
       "equipamento_id_2": null,
       "equipamento_id_3": null,

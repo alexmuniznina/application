@@ -25,7 +25,7 @@
       </div>
       <div class="field-title">TELEFONE</div>
       <div *ngIf="!isLoading" class="infos-container">
-        <span class="info-text" *ngFor="let telefone of usuario.telefones">
+        <span class="info-text" *ngFor="let telefone of telefones">
           {{ telefone }}
         </span>
       </div>
@@ -38,8 +38,8 @@
       <div class="section-title mb-3">Equipamentos</div>
       <div *ngIf="hasEquipAdded" class="equip-group">
         <div *ngFor="let equip of equipamentosChamado">
-          <div *ngIf="equip[1] === true" class="equip">
-            <span>{{ equip[0] }}</span>
+          <div *ngIf="equip.added === true" class="equip">
+            <span>{{ equip.name }}</span>
             <mat-icon align="end" (click)="apagarEquipamento(equip)"
               >delete</mat-icon
             >
