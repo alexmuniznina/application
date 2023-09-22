@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Chamado } from 'src/app/dto/chamado.dto';
+import { ChamadoPayload } from 'src/app/dto/chamado-payload.dto';
 import { constants } from 'src/app/shared/constants';
 
 @Injectable({
@@ -15,10 +16,9 @@ export class ChamadosService {
 
   constructor(private http: HttpClient) {}
 
-  criarChamado(chamado: Chamado) {
-    return this.http.post(`${this.url}/chamados`, JSON.stringify(chamado), {
-      headers: this.contentHeader,
-    });
+  criarChamado(chamado: ChamadoPayload) {
+    const params = chamado;
+    return this.http.post(`${this.url}/chamados`, params);
   }
 
   getChamados(): Observable<Chamado[]> {

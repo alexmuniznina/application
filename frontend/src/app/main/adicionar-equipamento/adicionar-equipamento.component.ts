@@ -93,8 +93,7 @@ export class AdicionarEquipamentoComponent {
     const fields = this.form.getRawValue();
 
     const payload = {
-      id: faker.number.int({ min: 5276354, max: 9276354 }),
-      usuarioId: this.usuarioId,
+      usuario_id: this.usuarioId,
       descricao: this.getDescricao(fields),
       num_serie: fields.numeroSerie,
       btu: fields.btu,

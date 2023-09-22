@@ -1,13 +1,14 @@
 export type Empresa = {
   id: number;
-  endereco: string;
-  nomeFantasia: string;
   cnpj: string;
-  telefone: string[];
-  celular: string[];
-  email: string[];
-  avaliacaoContador: number;
-  avaliacaoMedia: number;
-  sobreNos: string;
-  descricaoCurta: string;
+  celular_1: string;
+  celular_2?: string;
+  telefone_1?: string;
+  telefone_2?: string;
+  nome_fantasia: string;
+  email: string;
+  endereco?: string;
+  descricao_curta?: string;
+  sobre_nos?: string;
+  criado_em: string;
 };

@@ -33,4 +33,12 @@ export class EmpresasService {
   getEmpresasWithServicos(id: number) {
     return this.http.get<any>(`${this.url}/empresas/${id}?_embed=servicos`);
   }
+
+  getEmpresasByServicos(params?) {
+    if (params) {
+      return this.http.get(`${this.url}/home`, { params });
+    } else {
+      return this.http.get(`${this.url}/home`);
+    }
+  }
 }

@@ -1,5 +1,4 @@
-export type Equipamento = {
-  id: number;
+export type EquipamentoPayload = {
   usuario_id: number;
   descricao: string;
   num_serie: string;

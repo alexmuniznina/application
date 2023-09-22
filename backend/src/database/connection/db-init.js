@@ -168,7 +168,7 @@ async function init() {
                                 servicos VARCHAR(255),
                                 equipamentos_chamado_id INT,
                                 sintomas TEXT,
-                                status ENUM("CRIADO", "VISITA", "ORCAMENTO", "EXECUTANDO", "APROVACAO", "FINALIZADO") NOT NULL,
+                                status ENUM("CRIADO", "VISITA", "ORCAMENTO", "EXECUTANDO", "APROVACAO", "FINALIZADO") NOT NULL DEFAULT ("CRIADO"),
                                 criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
                             )`
                 )
@@ -198,7 +198,6 @@ async function init() {
                 .query(
                   `CREATE TABLE IF NOT EXISTS equipamentos_chamado (
                                 id INT AUTO_INCREMENT PRIMARY KEY,
-                                chamado_id INT NOT NULL,
                                 equipamento_id_1 INT,
                                 equipamento_id_2 INT,
                                 equipamento_id_3 INT,
@@ -214,10 +213,9 @@ async function init() {
                 .then(() => {
                   json[key].forEach((item) => {
                     conn.query(
-                      `INSERT INTO equipamentos_chamado (chamado_id, equipamento_id_1, equipamento_id_2, equipamento_id_3, equipamento_id_4, equipamento_id_5, equipamento_id_6, equipamento_id_7, equipamento_id_8, equipamento_id_9, equipamento_id_10)
-                        VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                      `INSERT INTO equipamentos_chamado (equipamento_id_1, equipamento_id_2, equipamento_id_3, equipamento_id_4, equipamento_id_5, equipamento_id_6, equipamento_id_7, equipamento_id_8, equipamento_id_9, equipamento_id_10)
+                        VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
                       [
-                        item.chamado_id,
                         item.equipamento_id_1,
                         item.equipamento_id_2,
                         item.equipamento_id_3,
