@@ -1,12 +1,14 @@
 const db = require("../database/connection/connect");
 
 module.exports = {
-  async handle(req, res) {
+  async getEmpresaById(req, res) {
     const connection = await db.connect();
-    const { email } = req.params;
+    const { id } = req.params;
+
+    let sql = `SELECT * FROM empresas WHERE id = ${id}`;
 
     const [row] = await connection
-      .query("SELECT * FROM usuarios WHERE email = ?", [email])
+      .query(sql)
       .then()
       .catch((err) => {
         if (err) throw new Error(err.message);

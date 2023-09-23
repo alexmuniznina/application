@@ -4,8 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
 import { DialogEquipamentoComponent } from './dialog-equipamento/dialog-equipamento.component';
 import { EquipamentoChamado } from '../../dto/equipamento-chamado.dto';
-import { Chamado } from 'src/app/dto/chamado.dto';
-import { faker } from '@faker-js/faker';
 import { ChamadosService } from 'src/app/services/chamados/chamados.service';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
