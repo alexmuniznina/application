@@ -1,3 +1,4 @@
+# FRONTEND
 - [OK] verificar os tipos de serviços oferecidos pelas empresas e utilizar os valores do banco de dados
 - [OK] ao clicar no card da empresa, abrir componente da empresa com dados do banco de dados
 - [OK] verificar os equipamentos carregados durante o chamado pois estão mockados
@@ -6,10 +7,24 @@
     - [OK] endpoint da tela Home
     - [OK] endpoint da tela de empresa-info
     - [OK] endpoint da tela de abrir-chamado
-    - endpoint da tela de chamados
+    - [OK] endpoint da tela de chamados
     - endpoint de adicionar usuario
     - endpoint de adicionar equipamento
-- ao passar o mouse no botáo de abrir chamado, mostrar um label "Abrir Chamado"
+- ao passar o mouse no botáo de abrir chamado, mostrar um label "Abrir Chamado" (se der tempo)
 - trabalhar do componente de dados pessoais pra carregar os dados do banco e só depois editar, com um botão editar
 - menu de adicionar equipamentos, editar equipamentos
+- criar tela pra visualizar chamado (se der tempo)
 
+
+# BACKEND
+- [OK] alterar dados de login e senha do database
+- [OK] criar tabelas
+- [OK] popular tabelas
+- criar endpoints dos componentes:
+    - [OK] login
+    - [OK] home
+    - [OK] empresa-info
+    - [OK] abrir-chamado
+    - [OK] chamados
+    - dados-pessoais
+    - adicionar-equipamento
