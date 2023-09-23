@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {
   Observable,
   Subject,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
   // debounceTime,
   // distinctUntilChanged,
   // switchMap,
@@ -22,10 +25,8 @@ import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 export class ChamadosComponent {
   form: FormGroup;
   usuarioId: number = Number(localStorage.getItem('usuarioId'));
-  empresas = <any>[];
-  chamados;
-  chamados$!: Observable<Chamado>; // talvez não precise disso
-  private searchText$ = new Subject<string>(); // talvez não precise disso
+  empresas: Empresa[];
+  chamados: Chamado[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,39 +35,29 @@ export class ChamadosComponent {
     private chamadosService: ChamadosService
   ) {}
 
-  search(empresaNome: string) {
-    // talvez não precise disso
-    this.searchText$.next(empresaNome);
-  }
-
   ngOnInit() {
     this.form = this.formBuilder.group({
       nomeEmpresa: null,
-      filtros: [null],
     });
-
-    // this.empresasService.getEmpresas().subscribe((empresas) => {
-    //   this.empresas = empresas;
-    // });
 
     this.chamadosService
       .getChamadosByUsuario(this.usuarioId)
       .subscribe((chamados) => {
         this.chamados = chamados;
-        chamados.map((chamado) => this.empresas.push(chamado.empresa));
-        // console.log(this.empresas);
       });
-
-    // this.empresa$ = this.searchText$.pipe(
-    //   debounceTime(1000),
-    //   distinctUntilChanged(),
-    //   switchMap((empresaNome) =>
-    //     this.empresas.filter(emp => emp.nomeFantasia.includes(empresaNome))
-    //   )
-    // );
   }
 
   getValue(event: Event): string {
     return (event.target as HTMLInputElement).value;
+  }
+
+  pesquisar() {
+    const text = this.form.get('nomeEmpresa')?.value;
+
+    this.chamadosService
+      .getChamadosByEmpresaNome(this.usuarioId, text)
+      .subscribe((chamados) => {
+        this.chamados = chamados;
+      });
   }
 }

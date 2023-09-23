@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Chamado } from 'src/app/dto/chamado.dto';
 import { EmpresasService } from 'src/app/services/empresas/empresas.service';
+import { ServicosService } from 'src/app/services/servicos/servicos.service';
 import { STATUS_CHAMADO } from 'src/app/shared/constants';
 
 @Component({
@@ -13,32 +14,35 @@ export class CardChamadoComponent {
   @Input() chamado: Chamado;
   avaliacao;
   nomeEmpresa;
+  servicos;
 
   constructor(
     private router: Router,
-    private empresaService: EmpresasService
+    private empresasService: EmpresasService,
+    private servicosService: ServicosService
   ) {}
 
   ngOnInit() {
-    // criar esse endpoint
-    this.empresaService
+    this.empresasService
       .getEmpresaById(this.chamado.empresa_id)
       .subscribe((emp) => {
         this.nomeEmpresa = emp.nome_fantasia;
+      });
+
+    this.servicosService
+      .getServicosByEmpresaId(this.chamado.empresa_id)
+      .subscribe((servs) => {
+        this.servicos = servs
+          ?.map(
+            (s) =>
+              s.tipo.charAt(0).toUpperCase() + s.tipo.slice(1).toLowerCase()
+          )
+          .join(', ');
       });
   }
 
   get status() {
     return STATUS_CHAMADO[this.chamado.status];
-  }
-
-  get servicos() {
-    // criar esse endpoint
-    // let serv = this.chamado.servicos?.map(
-    //   (s) => s.charAt(0).toUpperCase() + s.slice(1)
-    // );
-    // return serv ? serv?.join(', ') : '';
-    return '';
   }
 
   abrirChamadoInfo(chamado: Chamado) {

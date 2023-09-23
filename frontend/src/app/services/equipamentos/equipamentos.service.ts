@@ -27,9 +27,9 @@ export class EquipamentosService {
     );
   }
 
-  getEquipamentosByUserId(usuarioId: number): Observable<Equipamento[]> {
+  getEquipamentosByUserId(usuario_id: number): Observable<Equipamento[]> {
     let queryParams = new HttpParams();
-    queryParams = queryParams.append('usuario_id', usuarioId);
+    queryParams = queryParams.append('usuario_id', usuario_id);
     return this.http.get<any>(`${this.url}/equipamentos`, {
       params: queryParams,
     });

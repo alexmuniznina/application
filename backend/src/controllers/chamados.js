@@ -25,6 +25,42 @@ module.exports = {
       .catch((err) => {
         if (err) throw err;
       });
+
     res.status(201).send(result);
+  },
+
+  async getChamadosByUsuarioId(req, res) {
+    const connection = await db.connect();
+    const { usuario_id } = req.query;
+
+    const [rows] = await connection
+      .query("SELECT * FROM chamados WHERE usuario_id = ?", [usuario_id])
+      .then()
+      .catch((err) => {
+        if (err) throw new Error(err.message);
+      });
+
+    res.status(200).send(rows);
+  },
+
+  async getChamadosByEmpresaNome(req, res) {
+    const connection = await db.connect();
+    const { usuario_id } = req.query;
+    const { nome_fantasia } = req.params;
+
+    const sql = `SELECT DISTINCT c.id, c.usuario_id, c.empresa_id, c.endereco, c.servicos, c.equipamentos_chamado_id, c.sintomas, c.status, c.criado_em \
+        FROM chamados AS c \
+        INNER JOIN empresas AS e ON c.empresa_id = e.id \
+        WHERE c.usuario_id = ${usuario_id} \
+        AND e.nome_fantasia LIKE '%${nome_fantasia}%'`;
+
+    const [rows] = await connection
+      .query(sql)
+      .then()
+      .catch((err) => {
+        if (err) throw new Error(err.message);
+      });
+
+    res.status(200).send(rows);
   },
 };

@@ -42,6 +42,7 @@ module.exports = {
       .catch((err) => {
         if (err) throw new Error(err.message);
       });
+
     res.status(200).send(rows);
   },
 };
