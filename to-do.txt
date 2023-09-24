@@ -4,14 +4,15 @@
 - [OK] verificar os equipamentos carregados durante o chamado pois estão mockados
 - [OK] verificar os chamados listados na tela de chamados pois estão mockados
 - corrigir os endpoints dos serviços para funcionar com o banco de dados [URGENTE]
-    - [OK] endpoint da tela Home
-    - [OK] endpoint da tela de empresa-info
-    - [OK] endpoint da tela de abrir-chamado
-    - [OK] endpoint da tela de chamados
-    - endpoint de adicionar usuario
-    - endpoint de adicionar equipamento
-- ao passar o mouse no botáo de abrir chamado, mostrar um label "Abrir Chamado" (se der tempo)
+    - [OK] tela Home
+    - [OK] tela de empresa-info
+    - [OK] tela de abrir-chamado
+    - [OK] tela de chamados
+    - [OK] tela de editar dados pessoais
+    - registrar usuario
+    - adicionar equipamento
 - trabalhar do componente de dados pessoais pra carregar os dados do banco e só depois editar, com um botão editar
+- ao passar o mouse no botão de abrir chamado, mostrar um label "Abrir Chamado" (se der tempo)
 - menu de adicionar equipamentos, editar equipamentos
 - criar tela pra visualizar chamado (se der tempo)
 
@@ -26,5 +27,6 @@
     - [OK] empresa-info
     - [OK] abrir-chamado
     - [OK] chamados
-    - dados-pessoais
+    - [OK] dados-pessoais
+    - registrar usuário
     - adicionar-equipamento
