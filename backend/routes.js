@@ -10,6 +10,9 @@ module.exports = (app) => {
   // endpoints de login
   app.get("/login/:email", login.handle);
 
+  // endpoints da tela de dados pessoais
+  app.put("/usuarios/:usuario_id", usuarios.updateUsuario);
+
   // endpoints da tela home
   app.get("/home", home.getEmpresas);
 
