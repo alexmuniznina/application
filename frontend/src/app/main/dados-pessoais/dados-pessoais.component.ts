@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { faker } from '@faker-js/faker';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 import { DialogDadosSalvosComponent } from './dialog-dados-salvos/dialog-dados-salvos.component';
 import { Router } from '@angular/router';
+import { ESTADOS } from '../../shared/constants';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -13,74 +13,103 @@ import { Router } from '@angular/router';
   styleUrls: ['./dados-pessoais.component.scss'],
 })
 export class DadosPessoaisComponent {
-  form: FormGroup;
+  public form: FormGroup;
+  public isEditing: boolean = true;
+  public usuario: Usuario;
+  public isFormValid: boolean = false;
+  public estados = Object.values(ESTADOS);
 
   formFields = [
     {
       controlName: 'cpf',
       label: 'CPF',
       required: true,
-      maxLength: 11,
+      maxLength: 14,
+      type: 'input',
     },
     {
       controlName: 'nome',
-      label: 'Nome e Sobrenome',
+      label: 'Nome Completo',
       required: true,
-      maxLength: 70,
+      maxLength: 255,
+      type: 'input',
+    },
+    {
+      controlName: 'email',
+      label: 'E-mail',
+      required: true,
+      maxLength: 50,
+      type: 'input',
     },
     {
       controlName: 'endereco',
       label: 'Endereço',
       required: true,
-      maxLength: 70,
+      maxLength: 255,
+      type: 'input',
     },
     {
       controlName: 'complemento',
       label: 'Complemento (Opcional)',
       required: false,
-      maxLength: 50,
+      maxLength: 100,
+      type: 'input',
     },
     {
       controlName: 'bairro',
       label: 'Bairro',
       required: true,
-      maxLength: 30,
+      maxLength: 100,
+      type: 'input',
     },
     {
       controlName: 'cidade',
       label: 'Cidade',
       required: true,
-      maxLength: 30,
+      maxLength: 100,
+      type: 'input',
     },
     {
       controlName: 'estado',
       label: 'Estado',
       required: true,
       maxLength: 2,
+      type: 'dropdown',
     },
     {
       controlName: 'cep',
       label: 'CEP',
       required: true,
-      maxLength: 8,
+      maxLength: 9,
+      type: 'input',
     },
     {
-      controlName: 'telefone',
-      label: 'DDD + Telefone (Opcional)',
+      controlName: 'celular_1',
+      label: 'DDD + Celular 1',
+      required: true,
+      maxLength: 15,
+      type: 'input',
+    },
+    {
+      controlName: 'celular_2',
+      label: 'DDD + Celular 2 (Opcional)',
       required: false,
-      maxLength: 10, // 9236467777
+      maxLength: 15,
+      type: 'input',
     },
     {
-      controlName: 'celular',
-      label: 'DDD + Celular',
-      required: true,
-      maxLength: 11, // 92991668263
+      controlName: 'telefone_1',
+      label: 'DDD + Telefone 1 (Opcional)',
+      required: false,
+      maxLength: 15,
+      type: 'input',
     },
     {
-      controlName: 'email',
-      label: 'E-mail',
-      required: true,
-      maxLength: 30,
+      controlName: 'telefone_2',
+      label: 'DDD + Telefone 2 (Opcional)',
+      required: false,
+      maxLength: 15,
+      type: 'input',
     },
   ];
 
@@ -93,51 +122,111 @@ export class DadosPessoaisComponent {
 
   ngOnInit() {
     this.form = this.formBuilder.group({
-      cpf: [''],
-      nome: [''],
-      endereco: [''],
+      cpf: ['', [Validators.required]],
+      nome: ['', [Validators.required]],
+      endereco: ['', [Validators.required]],
       complemento: [''],
-      bairro: [''],
-      cidade: [''],
-      estado: [''],
-      cep: [''],
-      telefone: [''],
-      celular: [''],
-      email: [''],
+      bairro: ['', [Validators.required]],
+      cidade: ['', [Validators.required]],
+      estado: ['', [Validators.required]],
+      cep: ['', [Validators.required, Validators.minLength(9)]],
+      telefone_1: ['', [Validators.minLength(14)]],
+      telefone_2: ['', [Validators.minLength(14)]],
+      celular_1: ['', [Validators.required, Validators.minLength(15)]],
+      celular_2: ['', [Validators.minLength(15)]],
+      email: ['', [Validators.required]],
+    });
+
+    if (this.isEditing) {
+      this.usuariosService
+        .getUsuarioById(Number(localStorage.getItem('usuarioId')))
+        .subscribe((usuario) => {
+          this.usuario = usuario;
+          this.form.patchValue(usuario);
+          this.formatFields();
+          this.disableFields();
+        });
+    }
+
+    this.form.valueChanges.subscribe(() => {
+      this.isFormValid = this.form.valid;
     });
   }
 
-  formatCpf(value: string) {
-    const cnpjCpf = value.replace(/\D/g, '');
-    return cnpjCpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
+  private disableFields() {
+    this.form.controls['cpf'].disable();
+    this.form.controls['nome'].disable();
+    this.form.controls['email'].disable();
   }
 
-  formatTelefone(fone: string) {
-    const telefone = fone.replace(/\D/g, '');
-    return telefone.replace(/(\d{2})(\d{4})(\d{4})/g, '($1) $2-$3');
+  private formatCpf(value: string) {
+    const cpf = value?.replace(/\D/g, '');
+    return cpf?.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4');
   }
 
-  formatCelular(fone: string) {
-    const telefone = fone.replace(/\D/g, '');
-    return telefone.replace(/(\d{2})(\d{5})(\d{4})/g, '($1) $2-$3');
+  private formatTelefone(fone: string) {
+    const telefone = fone?.replace(/\D/g, '');
+    return telefone?.replace(/(\d{2})(\d{5}|\d{4})(\d{4})/g, '($1) $2-$3');
   }
 
-  formatCep(cep: string) {
-    const cepNew = cep.replace(/\D/g, '');
-    return cepNew.replace(/(\d{5})(\d{3})/g, '$1-$2');
+  private formatCelular(fone: string) {
+    const telefone = fone?.replace(/\D/g, '');
+    return telefone?.replace(/(\d{2})(\d{5})(\d{4})/g, '($1) $2-$3');
   }
 
-  getTelefones(formFields) {
-    const telefones: string[] = [
-      this.formatTelefone(formFields.telefone),
-      this.formatCelular(formFields.celular),
-    ];
-    const tel = telefones.filter((num) => num !== '' && num !== undefined);
-    return tel;
+  private formatCep(cep: string) {
+    const cepNew = cep?.replace(/\D/g, '');
+    return cepNew?.replace(/(\d{5})(\d{3})/g, '$1-$2');
   }
 
-  openConfirmationDialog() {
+  private formatFields() {
+    this.formFields.map((field) => {
+      const fieldControl = field.controlName;
+      const value = this.form.get(fieldControl)?.value;
+      if (value === undefined || value === null)
+        this.form.controls[fieldControl].setValue('');
+      this.formatField(value, fieldControl);
+    });
+  }
+
+  private formatField(value, controlName) {
+    switch (controlName) {
+      case 'celular_1':
+      case 'celular_2':
+        this.form.controls[controlName].setValue(this.formatCelular(value));
+        break;
+      case 'telefone_1':
+      case 'telefone_2':
+        this.form.controls[controlName].setValue(this.formatTelefone(value));
+        break;
+      case 'cep':
+        this.form.controls[controlName].setValue(this.formatCep(value));
+        break;
+      case 'cpf':
+        this.form.controls[controlName].setValue(this.formatCpf(value));
+        break;
+      default:
+        break;
+    }
+  }
+
+  public onKeyUp(controlName) {
+    const value = this.form.get(controlName)?.value;
+    this.formatField(value, controlName);
+  }
+
+  // private getTelefones(formFields) {
+  //   const telefones: string[] = [
+  //     this.formatTelefone(formFields.telefone),
+  //     this.formatCelular(formFields.celular),
+  //   ];
+  //   const tel = telefones.filter((num) => num !== '' && num !== undefined);
+  //   return tel;
+  // }
+
+  private openConfirmationDialog(result) {
     const dialogRef = this.dialog.open(DialogDadosSalvosComponent, {
+      data: { id: result },
       minHeight: '25vh',
       maxHeight: '40vh',
       minWidth: '55vw',
@@ -149,37 +238,27 @@ export class DadosPessoaisComponent {
     });
   }
 
-  salvar() {
+  public salvar() {
     if (this.form.valid) {
-      const formFields = this.form.getRawValue();
-      const telefones = this.getTelefones(formFields);
-      const usuario = {
-        cpf: this.formatCpf(formFields.cpf),
-        nome: formFields.nome,
-        endereco: formFields.endereco.concat(
-          ', ',
-          formFields.complemento,
-          ', ',
-          formFields.bairro,
-          ', ',
-          formFields.cidade,
-          '/',
-          formFields.estado,
-          ', ',
-          this.formatCep(formFields.cep)
-        ),
-        telefones,
-        email: formFields.email,
-        senha: '123456',
-      };
+      const usuarioPayload = this.form.getRawValue();
 
-      // try {
-      //   this.usuariosService.createUsuario(usuario).subscribe(() => {
-      //     this.openConfirmationDialog();
-      //   });
-      // } catch (err) {
-      //   console.error(err);
-      // }
+      try {
+        if (this.isEditing) {
+          this.usuariosService
+            .updateUsuario(this.usuario.id, usuarioPayload)
+            .subscribe((result) => {
+              this.openConfirmationDialog(result);
+            });
+        } else {
+          this.usuariosService
+            .createUsuario(usuarioPayload)
+            .subscribe((result) => {
+              this.openConfirmationDialog(result);
+            });
+        }
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 }
