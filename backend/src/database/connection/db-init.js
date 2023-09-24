@@ -19,6 +19,11 @@ async function init() {
                                 cpf VARCHAR(14) NOT NULL, 
                                 nome VARCHAR(255) NOT NULL, 
                                 endereco VARCHAR(255),
+                                complemento VARCHAR(100),
+                                bairro VARCHAR(100),
+                                cidade VARCHAR(100),
+                                estado ENUM("AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MG", "MS", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"),
+                                cep CHAR(9),
                                 celular_1 VARCHAR(15) NOT NULL,
                                 celular_2 VARCHAR(15),
                                 telefone_1 VARCHAR(15),
@@ -31,12 +36,17 @@ async function init() {
                 .then(() => {
                   json[key].forEach((item) => {
                     conn.query(
-                      `INSERT INTO usuarios (cpf, nome, endereco, celular_1, celular_2, telefone_1, telefone_2, email, senha)
-                        VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                      `INSERT INTO usuarios (cpf, nome, endereco, complemento, bairro, cidade, estado, cep, celular_1, celular_2, telefone_1, telefone_2, email, senha)
+                        VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
                       [
                         item.cpf,
                         item.nome,
                         item.endereco,
+                        item.complemento,
+                        item.bairro,
+                        item.cidade,
+                        item.estado,
+                        item.cep,
                         item.celular_1,
                         item.celular_2,
                         item.telefone_1,

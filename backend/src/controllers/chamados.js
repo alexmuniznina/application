@@ -58,7 +58,7 @@ module.exports = {
       .query(sql)
       .then()
       .catch((err) => {
-        if (err) throw new Error(err.message);
+        if (err) throw new Error(err);
       });
 
     res.status(200).send(rows);
