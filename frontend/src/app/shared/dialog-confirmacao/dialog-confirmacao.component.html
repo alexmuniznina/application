@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-dialog-content>
+  <div class="content">
+    <div class="col-12">
+      <span *ngIf="type === dialogType.CHAMADO"
+        >O chamado de <strong>Num. {{ id }}</strong> para a empresa
+        <strong>{{ empresa }}</strong> foi criado.</span
+      >
+      <span *ngIf="type === dialogType.EQUIPAMENTO"
+        >O equipamento <strong>{{ equipamento }}</strong> foi adicionado com
+        sucesso.</span
+      >
+      <span *ngIf="type === dialogType.USUARIO"
+        >O dados do usuário foram salvos com sucesso.</span
+      >
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="actions">
+    <button mat-button mat-dialog-close cdkFocusInitial>OK</button>
+  </div>
+</mat-dialog-actions>

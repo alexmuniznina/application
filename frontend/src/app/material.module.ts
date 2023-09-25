@@ -13,7 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 
-const MaterialComponents = [
+const MaterialModules = [
   MatToolbarModule,
   MatIconModule,
   MatFormFieldModule,
@@ -32,7 +32,7 @@ const MaterialComponents = [
 
 @NgModule({
   declarations: [],
-  imports: [MaterialComponents],
-  exports: [MaterialComponents],
+  imports: [MaterialModules],
+  exports: [MaterialModules],
 })
 export class MaterialModule {}

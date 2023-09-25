@@ -5,4 +5,6 @@ export type EquipamentoPayload = {
   btu: string;
   volt: string;
   marca: string;
+  comodo: string;
+  endereco: string;
 };

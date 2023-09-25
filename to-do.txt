@@ -9,11 +9,11 @@
     - [OK] tela de abrir-chamado
     - [OK] tela de chamados
     - [OK] tela de editar dados pessoais
-    - registrar usuario
-    - adicionar equipamento
-- trabalhar do componente de dados pessoais pra carregar os dados do banco e só depois editar, com um botão editar
+    - [OK] mostrar dialog de confirmação no update do usuário
+    - [OK] adicionar equipamento
+    - registrar usuario, e mostrar dialog de confirmação ao final
+- trabalhar do componente de dados pessoais pra carregar os dados do banco e só depois editar, com um botão editar (se der tempo)
 - ao passar o mouse no botão de abrir chamado, mostrar um label "Abrir Chamado" (se der tempo)
-- menu de adicionar equipamentos, editar equipamentos
 - criar tela pra visualizar chamado (se der tempo)
 
 
@@ -27,6 +27,7 @@
     - [OK] empresa-info
     - [OK] abrir-chamado
     - [OK] chamados
-    - [OK] dados-pessoais
+    - [OK] update de dados-pessoais
+    - [OK] adicionar-equipamento
     - registrar usuário
-    - adicionar-equipamento
+    - chaves secundárias no banco de dados
