@@ -5,11 +5,20 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
 import { faker } from '@faker-js/faker';
+import { catchError, throwError } from 'rxjs';
 import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
-import { FABRICANTE, BTU, COMODO, VOLT } from 'src/app/shared/constants';
+import {
+  FABRICANTE,
+  BTU,
+  COMODO,
+  VOLT,
+  DIALOG_TYPE,
+} from 'src/app/shared/constants';
+import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/dialog-confirmacao.component';
 
 @Component({
   selector: 'app-adicionar-equipamento',
@@ -21,7 +30,6 @@ export class AdicionarEquipamentoComponent {
   public form: FormGroup;
   private navigation;
   private usuarioId: number;
-  private checked = false;
   private endereco = '';
   public fabricantes = Object.values(FABRICANTE);
   public btus = Object.keys(BTU);
@@ -30,12 +38,10 @@ export class AdicionarEquipamentoComponent {
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
+    public dialog: MatDialog,
     private equipamentoService: EquipamentosService,
     private usuarioService: UsuariosService
   ) {
-    this.navigation = this.router.getCurrentNavigation();
-    const { usuarioId } = this.navigation?.extras?.state;
     this.usuarioId = Number(localStorage.getItem('usuarioId'));
   }
 
@@ -75,7 +81,7 @@ export class AdicionarEquipamentoComponent {
       .concat(' ')
       .concat(fields.btu)
       .concat(' BTU')
-      .concat(fields.volt ? ` ${fields.volt} V` : '');
+      .concat(fields.volt ? ` ${fields.volt}V` : '');
   }
 
   public toggleCheckbox(checked) {
@@ -89,6 +95,24 @@ export class AdicionarEquipamentoComponent {
     }
   }
 
+  private openConfirmaAdicionarEquipamento(result) {
+    const dialogRef = this.dialog.open(DialogConfirmacaoComponent, {
+      data: {
+        title: 'Equipamento Adicionado!',
+        type: DIALOG_TYPE.EQUIPAMENTO,
+        equipamento: result.descricao,
+      },
+      minHeight: '30vh',
+      maxHeight: '30vh',
+      minWidth: '55vw',
+      maxWidth: '55vw',
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.goBack();
+    });
+  }
+
   public salvar() {
     const fields = this.form.getRawValue();
 
@@ -99,10 +123,27 @@ export class AdicionarEquipamentoComponent {
       btu: fields.btu,
       volt: fields.volt,
       marca: fields.marca,
+      comodo: fields.comodo,
+      endereco: fields.endereco,
     };
 
-    this.equipamentoService.criarEquipamento(payload).subscribe((equip) => {
-      this.goBack();
-    });
+    this.equipamentoService
+      .adicionarEquipamento(payload)
+      .pipe(
+        catchError(() => {
+          return throwError(
+            () => new Error('Algo deu errado ao adicionar o equipamento. :(')
+          );
+        })
+      )
+      .subscribe({
+        next: (result) => {
+          this.openConfirmaAdicionarEquipamento(payload);
+          console.log('Equipamento adicionado com sucesso');
+        },
+        error: (err) => {
+          console.error(err);
+        },
+      });
   }
 }

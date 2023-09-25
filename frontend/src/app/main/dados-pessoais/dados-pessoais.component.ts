@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
-import { DialogDadosSalvosComponent } from './dialog-dados-salvos/dialog-dados-salvos.component';
 import { Router } from '@angular/router';
-import { ESTADOS } from '../../shared/constants';
+import { DIALOG_TYPE, ESTADOS } from '../../shared/constants';
+import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/dialog-confirmacao.component';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -215,20 +215,11 @@ export class DadosPessoaisComponent {
     this.formatField(value, controlName);
   }
 
-  // private getTelefones(formFields) {
-  //   const telefones: string[] = [
-  //     this.formatTelefone(formFields.telefone),
-  //     this.formatCelular(formFields.celular),
-  //   ];
-  //   const tel = telefones.filter((num) => num !== '' && num !== undefined);
-  //   return tel;
-  // }
-
   private openConfirmationDialog(result) {
-    const dialogRef = this.dialog.open(DialogDadosSalvosComponent, {
-      data: { id: result },
-      minHeight: '25vh',
-      maxHeight: '40vh',
+    const dialogRef = this.dialog.open(DialogConfirmacaoComponent, {
+      data: { id: result, title: 'Salvar Dados', type: DIALOG_TYPE.USUARIO },
+      minHeight: '30vh',
+      maxHeight: '30vh',
       minWidth: '55vw',
       maxWidth: '55vw',
     });

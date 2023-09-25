@@ -8,9 +8,10 @@ import { ChamadosService } from 'src/app/services/chamados/chamados.service';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 import { catchError, throwError } from 'rxjs';
-import { DialogConfirmacaoComponent } from './dialog-confirmacao/dialog-confirmacao.component';
+import { DialogConfirmacaoComponent } from '../../shared/dialog-confirmacao/dialog-confirmacao.component';
 import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
 import { ChamadoPayload } from 'src/app/dto/chamado-payload.dto';
+import { DIALOG_TYPE } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-abrir-chamado',
@@ -96,8 +97,8 @@ export class AbrirChamadoComponent implements OnInit {
   openEquipDialog() {
     const dialogRef = this.dialog.open(DialogEquipamentoComponent, {
       data: this.equipamentosChamado.map((item) => item),
-      minHeight: '35vh',
-      maxHeight: '40vh',
+      minHeight: '30vh',
+      maxHeight: '30vh',
       minWidth: '55vw',
       maxWidth: '55vw',
     });
@@ -111,7 +112,12 @@ export class AbrirChamadoComponent implements OnInit {
 
   openConfirmaChamado(result) {
     const dialogRef = this.dialog.open(DialogConfirmacaoComponent, {
-      data: { id: result.insertId, empresa: this.empresa.nome_fantasia },
+      data: {
+        id: result.insertId,
+        title: 'Chamado Criado!',
+        type: DIALOG_TYPE.CHAMADO,
+        empresa: this.empresa.nome_fantasia,
+      },
       minHeight: '25vh',
       maxHeight: '40vh',
       minWidth: '55vw',

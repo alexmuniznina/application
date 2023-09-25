@@ -50,6 +50,12 @@ export enum TIPO_SERVICO {
   CONSERTO = 'Conserto',
 }
 
+export enum DIALOG_TYPE {
+  CHAMADO = 'chamado',
+  EQUIPAMENTO = 'equipamento',
+  USUARIO = 'usuario',
+}
+
 export enum ESTADOS {
   AC = 'AC',
   AL = 'AL',

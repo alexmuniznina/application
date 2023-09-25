@@ -9,7 +9,7 @@
     <div *ngIf="hasEquipamento" class="equip-group">
       <div *ngFor="let equip of equipamentos">
         <div class="equip">
-          <span>{{ equip.descricao }}</span>
+          <span>{{ equip.descricao }} {{ equip.comodo }}</span>
           <mat-icon align="end" (click)="apagarEquipamento(equip)"
             >delete</mat-icon
           >

@@ -282,7 +282,9 @@
       "num_serie": "683703860358",
       "btu": "21.000",
       "volt": "110",
-      "marca": "Midea"
+      "marca": "Midea",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 2,
@@ -291,7 +293,9 @@
       "num_serie": "415745183872",
       "btu": "9.000",
       "volt": "110",
-      "marca": "Electrolux"
+      "marca": "Electrolux",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 3,
@@ -300,7 +304,9 @@
       "num_serie": "700112066466",
       "btu": "18.000",
       "volt": "220",
-      "marca": "Midea"
+      "marca": "Midea",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 4,
@@ -309,7 +315,9 @@
       "num_serie": "737409621752",
       "btu": "30.000",
       "volt": "110",
-      "marca": "Hitachi"
+      "marca": "Hitachi",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 5,
@@ -318,7 +326,9 @@
       "num_serie": "406960572786",
       "btu": "9.000",
       "volt": "110",
-      "marca": "Midea"
+      "marca": "Midea",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 6,
@@ -327,7 +337,9 @@
       "num_serie": "617100797108",
       "btu": "30.000",
       "volt": "220",
-      "marca": "Electrolux"
+      "marca": "Electrolux",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 7,
@@ -336,7 +348,9 @@
       "num_serie": "573651516417",
       "btu": "21.000",
       "volt": "220",
-      "marca": "Electrolux"
+      "marca": "Electrolux",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 8,
@@ -345,7 +359,9 @@
       "num_serie": "644752876542",
       "btu": "12.000",
       "volt": "110",
-      "marca": "Midea"
+      "marca": "Midea",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 9,
@@ -354,7 +370,9 @@
       "num_serie": "414315625646",
       "btu": "30.000",
       "volt": "110",
-      "marca": "Hitachi"
+      "marca": "Hitachi",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 10,
@@ -363,7 +381,9 @@
       "num_serie": "3456y56yhbv356",
       "btu": "21.000",
       "volt": "110",
-      "marca": "Hitachi"
+      "marca": "Hitachi",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 11,
@@ -372,7 +392,9 @@
       "num_serie": "",
       "btu": "14.000",
       "volt": "110",
-      "marca": "Electrolux"
+      "marca": "Electrolux",
+      "comodo": "",
+      "endereco": ""
     },
     {
       "id": 12,
@@ -381,7 +403,9 @@
       "num_serie": "643354876114",
       "btu": "14.000",
       "volt": "220",
-      "marca": "Midea"
+      "marca": "Midea",
+      "comodo": "",
+      "endereco": ""
     }
   ],
   "chamados": [

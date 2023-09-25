@@ -17,14 +17,9 @@ export class EquipamentosService {
 
   constructor(private http: HttpClient) {}
 
-  criarEquipamento(equipamento: EquipamentoPayload) {
-    return this.http.post(
-      `${this.url}/equipamentos`,
-      JSON.stringify(equipamento),
-      {
-        headers: this.contentHeader,
-      }
-    );
+  adicionarEquipamento(equipamento: EquipamentoPayload) {
+    const params = equipamento;
+    return this.http.post(`${this.url}/equipamentos`, params);
   }
 
   getEquipamentosByUserId(usuario_id: number): Observable<Equipamento[]> {

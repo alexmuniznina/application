@@ -141,17 +141,19 @@ async function init() {
                                 id INT AUTO_INCREMENT PRIMARY KEY,
                                 usuario_id INT NOT NULL,
                                 descricao VARCHAR(255) NOT NULL,
-                                num_serie VARCHAR(50),
-                                btu VARCHAR(6),
+                                marca VARCHAR(50) NOT NULL,
+                                btu VARCHAR(6) NOT NULL,
+                                comodo VARCHAR(100),
                                 volt ENUM("110", "220"),
-                                marca VARCHAR(50)
+                                num_serie VARCHAR(50),
+                                endereco VARCHAR(255)
                             )`
                 )
                 .then(() => {
                   json[key].forEach((item) => {
                     conn.query(
-                      `INSERT INTO equipamentos (usuario_id, descricao, num_serie, btu, volt, marca)
-                        VALUE (?, ?, ?, ?, ?, ?)`,
+                      `INSERT INTO equipamentos (usuario_id, descricao, num_serie, btu, volt, marca, comodo, endereco)
+                        VALUE (?, ?, ?, ?, ?, ?, ?, ?)`,
                       [
                         item.usuario_id,
                         item.descricao,
@@ -159,6 +161,8 @@ async function init() {
                         item.btu,
                         item.volt,
                         item.marca,
+                        item.comodo,
+                        item.endereco,
                       ]
                     );
                   });

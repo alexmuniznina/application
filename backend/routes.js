@@ -26,4 +26,8 @@ module.exports = (app) => {
   // endpoints da tela de abrir chamados
   app.get("/usuarios/:usuario_id", usuarios.getUsuario);
   app.get("/equipamentos", equipamentos.getEquipamentosByUsuarioId);
+
+  // endpoints da tela de equipamentos
+  app.post("/equipamentos", equipamentos.adicionarEquipamento);
+  app.delete("/equipamentos/:id", equipamentos.removeEquipamento);
 };

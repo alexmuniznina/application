@@ -13,7 +13,6 @@ import { CardEmpresaComponent } from './home/card-empresa/card-empresa.component
 import { EmpresaInfoComponent } from './empresa-info/empresa-info.component';
 import { AbrirChamadoComponent } from './abrir-chamado/abrir-chamado.component';
 import { DialogEquipamentoComponent } from './abrir-chamado/dialog-equipamento/dialog-equipamento.component';
-import { DialogConfirmacaoComponent } from './abrir-chamado/dialog-confirmacao/dialog-confirmacao.component';
 import { UsuariosService } from '../services/usuarios/usuarios.service';
 import { ChamadosService } from '../services/chamados/chamados.service';
 import { CardChamadoComponent } from './chamados/card-chamado/card-chamado.component';
@@ -23,9 +22,9 @@ import { EquipamentosComponent } from './equipamentos/equipamentos.component';
 import { SuporteComponent } from './suporte/suporte.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
 import { AboutComponent } from './about/about.component';
-import { DialogDadosSalvosComponent } from './dados-pessoais/dialog-dados-salvos/dialog-dados-salvos.component';
 import { AdicionarEquipamentoComponent } from './adicionar-equipamento/adicionar-equipamento.component';
 import { LoginComponent } from './login/login.component';
+import { DialogRemoveEquipamentoComponent } from './equipamentos/dialog-remove-equipamento/dialog-remove-equipamento/dialog-remove-equipamento.component';
 
 @NgModule({
   declarations: [
@@ -39,24 +38,18 @@ import { LoginComponent } from './login/login.component';
     EmpresaInfoComponent,
     AbrirChamadoComponent,
     DialogEquipamentoComponent,
-    DialogConfirmacaoComponent,
     CardChamadoComponent,
     DadosPessoaisComponent,
     EquipamentosComponent,
     SuporteComponent,
     QuemSomosComponent,
     AboutComponent,
-    DialogDadosSalvosComponent,
     AdicionarEquipamentoComponent,
     LoginComponent,
+    DialogRemoveEquipamentoComponent,
   ],
   imports: [SharedModule, MainRoutingModule],
-  exports: [
-    MainComponent,
-    CardEmpresaComponent,
-    EmpresaInfoComponent,
-    DialogDadosSalvosComponent,
-  ],
+  exports: [MainComponent, CardEmpresaComponent, EmpresaInfoComponent],
   providers: [
     EmpresasService,
     ServicosService,
