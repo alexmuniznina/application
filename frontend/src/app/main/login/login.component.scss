@@ -29,9 +29,11 @@
   padding-left: 10px;
 }
 
-button {
-  font-size: large;
-  height: 45px;
+:host {
+  button {
+    font-size: large;
+    height: 45px;
+  }
 }
 
 .failed-container {

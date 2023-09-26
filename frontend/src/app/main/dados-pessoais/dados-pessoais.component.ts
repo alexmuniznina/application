@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 import { Router } from '@angular/router';
 import { DIALOG_TYPE, ESTADOS } from '../../shared/constants';
 import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/dialog-confirmacao.component';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -14,10 +20,12 @@ import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/di
 })
 export class DadosPessoaisComponent {
   public form: FormGroup;
-  public isEditing: boolean = true;
+  public isCreating: boolean = false;
   public usuario: Usuario;
   public isFormValid: boolean = false;
   public estados = Object.values(ESTADOS);
+  public visible: boolean = false;
+  // private navigation;
 
   formFields = [
     {
@@ -118,7 +126,11 @@ export class DadosPessoaisComponent {
     private usuariosService: UsuariosService,
     private dialog: MatDialog,
     private router: Router
-  ) {}
+  ) {
+    if (localStorage.getItem('isCreating') === 'true') {
+      this.isCreating = true;
+    }
+  }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -137,7 +149,14 @@ export class DadosPessoaisComponent {
       email: ['', [Validators.required]],
     });
 
-    if (this.isEditing) {
+    if (this.isCreating) {
+      this.form.addControl(
+        'senha',
+        new FormControl('', Validators.minLength(6))
+      );
+    }
+
+    if (!this.isCreating) {
       this.usuariosService
         .getUsuarioById(Number(localStorage.getItem('usuarioId')))
         .subscribe((usuario) => {
@@ -215,9 +234,9 @@ export class DadosPessoaisComponent {
     this.formatField(value, controlName);
   }
 
-  private openConfirmationDialog(result) {
+  private openConfirmationDialog(payload) {
     const dialogRef = this.dialog.open(DialogConfirmacaoComponent, {
-      data: { id: result, title: 'Salvar Dados', type: DIALOG_TYPE.USUARIO },
+      data: { id: payload.insertId, title: payload.title, type: payload.type },
       minHeight: '30vh',
       maxHeight: '30vh',
       minWidth: '55vw',
@@ -225,7 +244,10 @@ export class DadosPessoaisComponent {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      this.router.navigate(['_/home']);
+      if (payload.type === DIALOG_TYPE.ATUALIZA_USUARIO)
+        this.router.navigate(['_/home']);
+      else if (payload.type === DIALOG_TYPE.NOVO_USUARIO)
+        this.router.navigate(['_/login']);
     });
   }
 
@@ -234,17 +256,56 @@ export class DadosPessoaisComponent {
       const usuarioPayload = this.form.getRawValue();
 
       try {
-        if (this.isEditing) {
+        if (!this.isCreating) {
           this.usuariosService
             .updateUsuario(this.usuario.id, usuarioPayload)
-            .subscribe((result) => {
-              this.openConfirmationDialog(result);
+            .pipe(
+              catchError(() => {
+                return throwError(
+                  () =>
+                    new Error(
+                      'Algo deu errado ao atualizar os dados do usuário. :('
+                    )
+                );
+              })
+            )
+            .subscribe({
+              next: (result) => {
+                const payload = {
+                  type: DIALOG_TYPE.ATUALIZA_USUARIO,
+                  title: 'Atualiza Dados de Usuário',
+                  ...result,
+                };
+                this.openConfirmationDialog(payload);
+              },
+              error: (err) => {
+                console.error(err);
+              },
             });
         } else {
           this.usuariosService
-            .createUsuario(usuarioPayload)
-            .subscribe((result) => {
-              this.openConfirmationDialog(result);
+            .criarUsuario(usuarioPayload)
+            .pipe(
+              catchError(() => {
+                return throwError(
+                  () => new Error('Algo deu errado ao criar o usuário. :(')
+                );
+              })
+            )
+            .subscribe({
+              next: (result) => {
+                const payload = {
+                  ...result,
+                  type: DIALOG_TYPE.NOVO_USUARIO,
+                  title: 'Criar Usuário',
+                };
+                localStorage.removeItem('isCreating');
+                this.isCreating = false;
+                this.openConfirmationDialog(payload);
+              },
+              error: (err) => {
+                console.error(err);
+              },
             });
         }
       } catch (err) {

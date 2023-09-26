@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChange } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SidenavService } from 'src/app/services/sidenav/sidenav.service';
+import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -9,6 +10,13 @@ import { SidenavService } from 'src/app/services/sidenav/sidenav.service';
 })
 export class ToolbarComponent {
   @Input() inputSidenav: MatSidenav;
+  public isEnabled: boolean;
 
-  constructor() {}
+  constructor(private toolbarService: ToolbarService) {}
+
+  ngOnInit() {
+    this.toolbarService.getEnabled().subscribe((enabled) => {
+      this.isEnabled = enabled;
+    });
+  }
 }

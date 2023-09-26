@@ -37,6 +37,38 @@ module.exports = {
         if (err) throw new Error(err);
       });
 
-    res.status(200).send(row[0]);
+    res.status(200).send(row);
+  },
+
+  async criarUsuario(req, res) {
+    const connection = await db.connect();
+    const usuario = req.body;
+
+    const sql = `INSERT INTO usuarios (cpf, nome, endereco, complemento, bairro, cidade, estado, cep, celular_1, celular_2, telefone_1, telefone_2, email, senha)
+                        VALUE (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    const [row] = await connection
+      .query(sql, [
+        usuario.cpf,
+        usuario.nome,
+        usuario.endereco,
+        usuario.complemento,
+        usuario.bairro,
+        usuario.cidade,
+        usuario.estado,
+        usuario.cep,
+        usuario.celular_1,
+        usuario.celular_2,
+        usuario.telefone_1,
+        usuario.telefone_2,
+        usuario.email,
+        usuario.senha,
+      ])
+      .then()
+      .catch((err) => {
+        if (err) throw new Error(err);
+      });
+
+    res.status(200).send(row);
   },
 };

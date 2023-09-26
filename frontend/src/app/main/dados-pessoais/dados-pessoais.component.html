@@ -26,7 +26,31 @@
         </mat-select>
       </mat-form-field>
     </div>
-
+    <mat-form-field *ngIf="isCreating">
+      <mat-label>Crie uma senha de 6 a 20 dígitos</mat-label>
+      <input
+        matInput
+        [type]="visible ? 'text' : 'password'"
+        color="primary"
+        [required]="'true' && isCreating"
+        formControlName="senha"
+        placeholder="Digite uma senha"
+      />
+      <mat-icon
+        *ngIf="!visible"
+        matSuffix
+        (click)="visible = !visible"
+        color="primary"
+        >visibility</mat-icon
+      >
+      <mat-icon
+        *ngIf="visible"
+        matSuffix
+        (click)="visible = !visible"
+        color="primary"
+        >visibility_off</mat-icon
+      >
+    </mat-form-field>
     <div>
       <button
         mat-flat-button
