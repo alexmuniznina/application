@@ -28,7 +28,6 @@ import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/di
 export class AdicionarEquipamentoComponent {
   // public equipamentos;
   public form: FormGroup;
-  private navigation;
   private usuarioId: number;
   private endereco = '';
   public fabricantes = Object.values(FABRICANTE);
@@ -139,7 +138,6 @@ export class AdicionarEquipamentoComponent {
       .subscribe({
         next: (result) => {
           this.openConfirmaAdicionarEquipamento(payload);
-          console.log('Equipamento adicionado com sucesso');
         },
         error: (err) => {
           console.error(err);

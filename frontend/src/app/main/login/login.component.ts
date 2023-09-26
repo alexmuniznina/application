@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login/login.service';
+import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,12 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private toolbarService: ToolbarService
+  ) {
+    localStorage.clear();
+    this.toolbarService.setEnabled(false);
+  }
 
   public visible: boolean = false;
   public isFormValid: boolean = false;
@@ -23,15 +28,24 @@ export class LoginComponent {
     senha: ['', Validators.required],
   });
 
-  private ngOnInit() {
-    const node = document.getElementsByName('passwordInput')[0];
-    node.addEventListener('keyup', ({ key }) => {
-      if (key === 'Enter') this.login();
-    });
-
+  ngOnInit() {
     this.form.valueChanges.subscribe(() => {
       this.isFormValid = this.form.valid;
     });
+
+    const node = document.getElementsByName('passwordInput')[0];
+    node.addEventListener('keyup', ({ key }) => {
+      if (key === 'Enter') {
+        this.login();
+      }
+    });
+  }
+
+  public registrar(event) {
+    if (event.pointerType === 'mouse') {
+      localStorage.setItem('isCreating', 'true');
+      this.router.navigate(['_/registrar']);
+    }
   }
 
   public login() {
@@ -40,7 +54,6 @@ export class LoginComponent {
       this.loginService.getUserInfo(fields.email).subscribe((usuario) => {
         const user = usuario;
         if (user?.senha === fields.senha) {
-          console.log('Usuario logado');
           localStorage.setItem('usuarioId', user.id.toString());
           this.router.navigate(['_/home']);
         } else {

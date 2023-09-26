@@ -10,8 +10,11 @@
         >O equipamento <strong>{{ equipamento }}</strong> foi adicionado com
         sucesso.</span
       >
-      <span *ngIf="type === dialogType.USUARIO"
-        >O dados do usuário foram salvos com sucesso.</span
+      <span *ngIf="type === dialogType.ATUALIZA_USUARIO"
+        >O dados do usuário foram atualizados com sucesso.</span
+      >
+      <span *ngIf="type === dialogType.NOVO_USUARIO"
+        >O usuário foi criado com sucesso.</span
       >
     </div>
   </div>

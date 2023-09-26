@@ -11,7 +11,7 @@
     - [OK] tela de editar dados pessoais
     - [OK] mostrar dialog de confirmação no update do usuário
     - [OK] adicionar equipamento
-    - registrar usuario, e mostrar dialog de confirmação ao final
+    - [OK] registrar usuario, e mostrar dialog de confirmação ao final
 - trabalhar do componente de dados pessoais pra carregar os dados do banco e só depois editar, com um botão editar (se der tempo)
 - ao passar o mouse no botão de abrir chamado, mostrar um label "Abrir Chamado" (se der tempo)
 - criar tela pra visualizar chamado (se der tempo)
@@ -29,5 +29,5 @@
     - [OK] chamados
     - [OK] update de dados-pessoais
     - [OK] adicionar-equipamento
-    - registrar usuário
+    - [OK] registrar usuário
     - chaves secundárias no banco de dados

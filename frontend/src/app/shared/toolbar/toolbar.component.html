@@ -1,18 +1,18 @@
 <!-- <app-sidenav></app-sidenav> -->
-<div class="toolbar">
-  <a class="button" routerLink="/_/home">
+<div class="toolbar" *ngIf="isEnabled">
+  <a class="button" (click)="inputSidenav.close()" routerLink="/_/home">
     <mat-icon>home</mat-icon>
     <span>Início</span>
   </a>
-  <a class="button" routerLink="/_/favoritos">
+  <a class="button" (click)="inputSidenav.close()" routerLink="/_/favoritos">
     <mat-icon>favorite</mat-icon>
     <span>Favoritos</span>
   </a>
-  <a class="button" routerLink="/_/chamados">
+  <a class="button" (click)="inputSidenav.close()" routerLink="/_/chamados">
     <mat-icon>support_agent</mat-icon>
     <span>Chamados</span>
   </a>
-  <a class="button" routerLink="/_/alertas">
+  <a class="button" (click)="inputSidenav.close()" routerLink="/_/alertas">
     <mat-icon>notifications</mat-icon>
     <span>Alertas</span>
   </a>

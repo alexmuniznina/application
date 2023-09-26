@@ -53,7 +53,8 @@ export enum TIPO_SERVICO {
 export enum DIALOG_TYPE {
   CHAMADO = 'chamado',
   EQUIPAMENTO = 'equipamento',
-  USUARIO = 'usuario',
+  ATUALIZA_USUARIO = 'atualizaUsuario',
+  NOVO_USUARIO = 'novoUsuario',
 }
 
 export enum ESTADOS {

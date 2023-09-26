@@ -28,7 +28,7 @@ export class UsuariosService {
     return this.http.get<any>(`${this.url}/usuarios`);
   }
 
-  createUsuario(usuario: Usuario): Observable<Usuario> {
+  criarUsuario(usuario: Usuario): Observable<Usuario> {
     const params = usuario;
     return this.http.post<any>(`${this.url}/usuarios`, params);
   }

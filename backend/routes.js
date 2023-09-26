@@ -30,4 +30,7 @@ module.exports = (app) => {
   // endpoints da tela de equipamentos
   app.post("/equipamentos", equipamentos.adicionarEquipamento);
   app.delete("/equipamentos/:id", equipamentos.removeEquipamento);
+
+  // endpoints da tela de registrar usuário
+  app.post("/usuarios", usuarios.criarUsuario);
 };
