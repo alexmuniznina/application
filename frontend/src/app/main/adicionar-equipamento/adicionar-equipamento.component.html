@@ -11,7 +11,7 @@
     </section>
     <section>
       <div class="d-flex flex-row justify-content-between">
-        <mat-form-field>
+        <mat-form-field class="col-5">
           <mat-label>Fabricante</mat-label>
           <mat-select formControlName="marca">
             <mat-option *ngFor="let fab of fabricantes" [value]="fab">
@@ -19,7 +19,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="col-5">
           <mat-label>Capacidade (Btus)</mat-label>
           <mat-select formControlName="btu">
             <mat-option *ngFor="let btu of btus" [value]="btu">
@@ -29,7 +29,7 @@
         </mat-form-field>
       </div>
       <div class="d-flex flex-row justify-content-between mt-4">
-        <mat-form-field>
+        <mat-form-field class="col-5">
           <mat-label>Cômodo</mat-label>
           <mat-select formControlName="comodo">
             <mat-option *ngFor="let com of comodos" [value]="com">
@@ -37,7 +37,7 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="col-5">
           <mat-label>Voltagem (Volts)</mat-label>
           <mat-select formControlName="volt">
             <mat-option *ngFor="let volt of volts" [value]="volt">
@@ -47,7 +47,7 @@
         </mat-form-field>
       </div>
       <div class="d-flex flex-row mt-4">
-        <mat-form-field>
+        <mat-form-field class="col-7">
           <mat-label>Número de Série</mat-label>
           <input matInput formControlName="numeroSerie" />
         </mat-form-field>

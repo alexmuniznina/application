@@ -1,7 +1,8 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Chamado } from 'src/app/dto/chamado.dto';
+import { ChamadoPayload } from 'src/app/dto/chamado-payload.dto';
 import { constants } from 'src/app/shared/constants';
 
 @Injectable({
@@ -15,9 +16,16 @@ export class ChamadosService {
 
   constructor(private http: HttpClient) {}
 
-  criarChamado(chamado: Chamado) {
-    return this.http.post(`${this.url}/chamados`, JSON.stringify(chamado), {
-      headers: this.contentHeader,
+  criarChamado(chamado: ChamadoPayload) {
+    const params = chamado;
+    return this.http.post(`${this.url}/chamados`, params);
+  }
+
+  getChamadosByUsuario(usuario_id: number): Observable<Chamado[]> {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append('usuario_id', usuario_id);
+    return this.http.get<any>(`${this.url}/chamados`, {
+      params: queryParams,
     });
   }
 
@@ -29,9 +37,14 @@ export class ChamadosService {
     return this.http.get<any>(`${this.url}/chamados/${id}`);
   }
 
-  getChamadosByUsuario(id: number): Observable<any[]> {
-    return this.http.get<any>(
-      `${this.url}/chamados?usuarioId=${id}&_expand=empresa`
-    );
+  getChamadosByEmpresaNome(
+    usuario_id: number,
+    nome_fantasia: string
+  ): Observable<Chamado[]> {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append('usuario_id', usuario_id);
+    return this.http.get<any>(`${this.url}/chamados/${nome_fantasia}`, {
+      params: queryParams,
+    });
   }
 }

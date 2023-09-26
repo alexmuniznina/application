@@ -44,7 +44,7 @@ export class MainComponent {
 
   constructor(private sidenavService: SidenavService, private router: Router) {}
 
-  private ngAfterViewInit() {
+  ngAfterViewInit() {
     this.sidenavService.setSidenav(this.sidenav);
   }
 

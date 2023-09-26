@@ -9,8 +9,8 @@
     <div class="empresa-badge col-12">
       <div class="col-3 imgEmpresa"></div>
       <div class="col-7 d-flex flex-column justify-content-center">
-        <div class="empresa-title">{{ empresa.nomeFantasia }}</div>
-        <div class="empresa-sobre">{{ empresa.descricaoCurta }}</div>
+        <div class="empresa-title">{{ empresa.nome_fantasia }}</div>
+        <div class="empresa-sobre">{{ empresa.descricao_curta }}</div>
       </div>
       <div class="col-2 align-self-center">
         <mat-icon>favorite</mat-icon>
@@ -26,12 +26,12 @@
   </section>
   <section>
     <div class="section-title">Descrição</div>
-    <div class="info-text">{{ empresa.sobreNos }}</div>
+    <div class="info-text">{{ empresa.sobre_nos }}</div>
   </section>
   <section>
     <div class="section-title">Serviços</div>
     <div class="container-servicos col-12">
-      <div class="label-servico" *ngFor="let servico of servicos">
+      <div class="label-servico" *ngFor="let servico of servicosString">
         {{ servico }}
       </div>
     </div>
@@ -50,9 +50,7 @@
     </div>
     <div class="field-title">EMAIL</div>
     <div class="infos-container">
-      <span class="info-text" *ngFor="let email of empresa.email">{{
-        email
-      }}</span>
+      <span class="info-text">{{ empresa.email }}</span>
     </div>
   </section>
 </div>

@@ -77,6 +77,10 @@ const routes: Routes = [
         path: '_/login',
         component: LoginComponent,
       },
+      {
+        path: '_/registrar',
+        component: DadosPessoaisComponent,
+      },
     ],
   },
 ];

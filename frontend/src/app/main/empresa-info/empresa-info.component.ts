@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { Empresa } from 'src/app/dto/empresa.dto';
+import { Servico } from 'src/app/dto/servico.dto';
 import { EmpresasService } from 'src/app/services/empresas/empresas.service';
+import { ServicosService } from 'src/app/services/servicos/servicos.service';
 import { TIPO_SERVICO } from 'src/app/shared/constants';
 
 @Component({
@@ -10,13 +13,15 @@ import { TIPO_SERVICO } from 'src/app/shared/constants';
 })
 export class EmpresaInfoComponent implements OnInit {
   private navigation;
-  public empresa;
-  public servicos: any[] = [];
+  public empresa: Empresa;
+  private servicos: Servico[];
+  public servicosString: string[] = [];
   public telefones: any[];
 
   constructor(
     private router: Router,
-    private empresasServico: EmpresasService
+    private empresasServico: EmpresasService,
+    private servicosServico: ServicosService
   ) {
     this.navigation = this.router.getCurrentNavigation();
     const { empresa } = this.navigation?.extras.state;
@@ -24,16 +29,27 @@ export class EmpresaInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.empresasServico
-      .getEmpresasWithServicos(this.empresa.id)
-      .subscribe((emp) => {
-        emp.servicos.map((item) => {
+    this.servicosServico
+      .getServicosByEmpresaId(this.empresa.id)
+      .subscribe((servicos) => {
+        this.servicos = servicos;
+        servicos.map((item) => {
           const tipo = item.tipo.toUpperCase();
-          this.servicos.push(TIPO_SERVICO[tipo as keyof typeof TIPO_SERVICO]);
-
-          this.telefones = [...emp.telefone, ...emp.celular];
+          this.servicosString.push(
+            TIPO_SERVICO[tipo as keyof typeof TIPO_SERVICO]
+          );
+          this.telefones = this.getTelefones();
         });
       });
+  }
+
+  private getTelefones() {
+    const tel = [this.empresa.celular_1];
+    if (this.empresa.celular_2) tel.push(this.empresa.celular_2);
+    if (this.empresa.telefone_1) tel.push(this.empresa.telefone_1);
+    if (this.empresa.telefone_2) tel.push(this.empresa.telefone_2);
+
+    return tel;
   }
 
   goBack() {
@@ -44,7 +60,7 @@ export class EmpresaInfoComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       state: {
         empresa: empresa,
-        servicos: this.servicos,
+        servicos: this.servicos.map((item) => item.tipo),
       },
     };
     this.router.navigate(['_/abrir_chamado'], navigationExtras);

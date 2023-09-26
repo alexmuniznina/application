@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
 import { Equipamento } from 'src/app/dto/equipamento.dto';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
+import { DialogRemoveEquipamentoComponent } from './dialog-remove-equipamento/dialog-remove-equipamento/dialog-remove-equipamento.component';
 
 @Component({
   selector: 'app-equipamentos',
@@ -16,7 +18,8 @@ export class EquipamentosComponent {
 
   constructor(
     private router: Router,
-    private equipamentosService: EquipamentosService
+    private equipamentosService: EquipamentosService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -32,18 +35,29 @@ export class EquipamentosComponent {
       });
   }
 
+  public openRemoverEquipConfirmacao(equip) {
+    const dialogRef = this.dialog.open(DialogRemoveEquipamentoComponent, {
+      data: { equipamento: equip },
+      minHeight: '30vh',
+      maxHeight: '30vh',
+      minWidth: '55vw',
+      maxWidth: '55vw',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        const index = this.equipamentos.indexOf(equip);
+        this.equipamentosService.apagarEquipamento(equip.id).subscribe();
+      }
+      this.getEquipamentos();
+    });
+  }
+
   public apagarEquipamento(equip) {
-    const index = this.equipamentos.indexOf(equip);
-    this.equipamentosService.apagarEquipamento(equip.id).subscribe();
-    this.getEquipamentos();
+    this.openRemoverEquipConfirmacao(equip);
   }
 
   public addEquip() {
-    const navigationExtras: NavigationExtras = {
-      state: {
-        usuarioId: this.usuarioId,
-      },
-    };
-    this.router.navigate(['_/adicionar_equipamento'], navigationExtras);
+    this.router.navigate(['_/adicionar_equipamento']);
   }
 }

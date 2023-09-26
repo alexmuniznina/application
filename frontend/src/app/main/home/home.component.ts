@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Subject } from 'rxjs';
 import { Empresa } from 'src/app/dto/empresa.dto';
 import { Servico } from 'src/app/dto/servico.dto';
 import { EmpresasService } from 'src/app/services/empresas/empresas.service';
-import { ServicosService } from 'src/app/services/servicos/servicos.service';
+import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
 @Component({
   selector: 'app-home',
@@ -18,12 +17,13 @@ export class HomeComponent implements OnInit {
   public form: FormGroup;
 
   constructor(
-    private empresasService: EmpresasService,
-    private servicosService: ServicosService,
-    private formBuilder: FormBuilder
+    private empresaService: EmpresasService,
+    private formBuilder: FormBuilder,
+    private toolbarService: ToolbarService
   ) {}
 
   ngOnInit(): void {
+    this.toolbarService.setEnabled(true);
     this.form = this.formBuilder.group({
       name: [null],
       filters: [null],
@@ -32,33 +32,13 @@ export class HomeComponent implements OnInit {
 
   public pesquisar() {
     const { name, filters } = this.form.getRawValue();
+    const params = {};
 
-    // let servicos = <any>[];
-    // let empresas = <any>[];
+    if (name != null) params['nome'] = name;
+    if (filters != null) params['filtros'] = filters;
 
-    // filtrar empresas usando filtro de nome e serviços (backend)
-    // TO-DO
-
-    if (filters !== null) {
-      this.servicosService
-        .getServicosByDescricao(filters)
-        .subscribe((response) => {
-          this.servicos = <any>response;
-        });
-    } else {
-      this.servicosService.getServicos().subscribe((response) => {
-        this.servicos = <any>response;
-      });
-    }
-
-    if (name !== null) {
-      this.empresasService.getEmpresasByName(name).subscribe((response) => {
-        this.empresas = <any>response;
-      });
-    } else {
-      this.empresasService.getEmpresas().subscribe((response) => {
-        this.empresas = <any>response;
-      });
-    }
+    this.empresaService.getEmpresasByServicos(params).subscribe((empresas) => {
+      this.empresas = <any>empresas;
+    });
   }
 }

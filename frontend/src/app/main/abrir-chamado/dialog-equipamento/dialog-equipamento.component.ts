@@ -9,20 +9,20 @@ import { EquipamentoChamado } from '../../../dto/equipamento-chamado.dto';
   styleUrls: ['./dialog-equipamento.component.scss'],
 })
 export class DialogEquipamentoComponent {
-  equipChamado: EquipamentoChamado;
+  equipChamado: EquipamentoChamado[];
   form: FormGroup;
   checked: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<DialogEquipamentoComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: EquipamentoChamado,
+    @Inject(MAT_DIALOG_DATA) public data: EquipamentoChamado[],
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({
       equipamentos: new FormArray([]),
     });
 
-    this.equipChamado = [...data];
+    this.equipChamado = data.map((item) => item);
 
     this.addOptionsToForm();
   }
@@ -42,9 +42,9 @@ export class DialogEquipamentoComponent {
     const { name } = event.source;
 
     for (let option of this.equipChamado) {
-      if (name === option[0]) {
+      if (name === option.name) {
         const index = this.equipChamado.indexOf(option);
-        this.equipChamado[index][1] = checked;
+        this.equipChamado[index].added = checked;
       }
     }
   }

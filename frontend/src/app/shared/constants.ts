@@ -49,3 +49,39 @@ export enum TIPO_SERVICO {
   LIMPEZA = 'Limpeza',
   CONSERTO = 'Conserto',
 }
+
+export enum DIALOG_TYPE {
+  CHAMADO = 'chamado',
+  EQUIPAMENTO = 'equipamento',
+  ATUALIZA_USUARIO = 'atualizaUsuario',
+  NOVO_USUARIO = 'novoUsuario',
+}
+
+export enum ESTADOS {
+  AC = 'AC',
+  AL = 'AL',
+  AP = 'AP',
+  AM = 'AM',
+  BA = 'BA',
+  CE = 'CE',
+  ES = 'ES',
+  GO = 'GO',
+  MA = 'MA',
+  MT = 'MT',
+  MG = 'MG',
+  MS = 'MS',
+  PA = 'PA',
+  PB = 'PB',
+  PR = 'PR',
+  PE = 'PE',
+  PI = 'PI',
+  RJ = 'RJ',
+  RN = 'RN',
+  RS = 'RS',
+  RO = 'RO',
+  RR = 'RR',
+  SC = 'SC',
+  SP = 'SP',
+  SE = 'SE',
+  TO = 'TO',
+}

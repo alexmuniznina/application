@@ -4,14 +4,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { NavigationExtras, Router } from '@angular/router';
 import { DialogEquipamentoComponent } from './dialog-equipamento/dialog-equipamento.component';
 import { EquipamentoChamado } from '../../dto/equipamento-chamado.dto';
-import { Chamado } from 'src/app/dto/chamado.dto';
-import { faker } from '@faker-js/faker';
 import { ChamadosService } from 'src/app/services/chamados/chamados.service';
 import { Usuario } from 'src/app/dto/usuario.dto';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 import { catchError, throwError } from 'rxjs';
-import { DialogConfirmacaoComponent } from './dialog-confirmacao/dialog-confirmacao.component';
+import { DialogConfirmacaoComponent } from '../../shared/dialog-confirmacao/dialog-confirmacao.component';
 import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
+import { ChamadoPayload } from 'src/app/dto/chamado-payload.dto';
+import { DIALOG_TYPE } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-abrir-chamado',
@@ -23,12 +23,12 @@ export class AbrirChamadoComponent implements OnInit {
   public empresa;
   public servicos;
   public usuario: Usuario;
-  public equipamentosCliente: EquipamentoChamado = [];
+  public equipamentosCliente: EquipamentoChamado[] = [];
 
   payloadChamado;
   telefones: string[] = [];
   email;
-  equipamentosChamado: EquipamentoChamado = [];
+  equipamentosChamado: EquipamentoChamado[] = [];
   hasEquipAdded = false;
   isLoading;
   confirmacao = false;
@@ -58,18 +58,31 @@ export class AbrirChamadoComponent implements OnInit {
       .getEquipamentosByUserId(Number(localStorage.getItem('usuarioId')))
       .subscribe((equips) => {
         equips.map((item) => {
-          this.equipamentosCliente.push([item.descricao, false]);
+          this.equipamentosCliente.push({
+            id: item.id,
+            name: item.descricao,
+            added: false,
+          });
         });
-        this.equipamentosChamado = [...this.equipamentosCliente];
+        this.equipamentosChamado = this.equipamentosCliente.map((item) => item);
       });
 
     this.usuarioService
       .getUsuarioById(Number(localStorage.getItem('usuarioId')))
       .subscribe((resp) => {
         this.usuario = resp;
-        this.telefones = this.usuario.telefones;
+        this.telefones = this.getTelefonesUsuario();
         this.isLoading = false;
       });
+  }
+
+  private getTelefonesUsuario() {
+    const tel = [this.usuario.celular_1];
+    if (this.usuario.celular_2) tel.push(this.usuario.celular_2);
+    if (this.usuario.telefone_1) tel.push(this.usuario.telefone_1);
+    if (this.usuario.telefone_2) tel.push(this.usuario.telefone_2);
+
+    return tel;
   }
 
   goBack() {
@@ -83,24 +96,28 @@ export class AbrirChamadoComponent implements OnInit {
 
   openEquipDialog() {
     const dialogRef = this.dialog.open(DialogEquipamentoComponent, {
-      data: [...this.equipamentosChamado],
-      minHeight: '35vh',
-      maxHeight: '40vh',
+      data: this.equipamentosChamado.map((item) => item),
+      minHeight: '30vh',
+      maxHeight: '30vh',
       minWidth: '55vw',
       maxWidth: '55vw',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      this.equipamentosChamado = [...result];
-      this.hasEquipAdded = this.equipamentosChamado.some(
-        (equip) => equip[1] === true
-      );
+      const equips = result.map((item) => item);
+      this.hasEquipAdded = equips.some((equip) => equip.added === true);
+      this.equipamentosChamado = [...equips];
     });
   }
 
-  openConfirmaChamado(payload) {
+  openConfirmaChamado(result) {
     const dialogRef = this.dialog.open(DialogConfirmacaoComponent, {
-      data: { id: payload.id, empresa: this.empresa.nomeFantasia },
+      data: {
+        id: result.insertId,
+        title: 'Chamado Criado!',
+        type: DIALOG_TYPE.CHAMADO,
+        empresa: this.empresa.nome_fantasia,
+      },
       minHeight: '25vh',
       maxHeight: '40vh',
       minWidth: '55vw',
@@ -131,9 +148,9 @@ export class AbrirChamadoComponent implements OnInit {
         })
       )
       .subscribe({
-        next: (resp) => {
-          this.openConfirmaChamado(this.payloadChamado);
-          console.log('chamado criado com sucesso');
+        next: (result) => {
+          this.openConfirmaChamado(result);
+          console.log('Chamado criado com sucesso');
         },
         error: (err) => {
           console.log(err);
@@ -142,25 +159,24 @@ export class AbrirChamadoComponent implements OnInit {
   }
 
   getEquipamentosChamado(equipArr) {
-    const equips = equipArr.filter((equip) => equip[1] === true);
-    return equips.map((eq) => eq[0]);
+    return equipArr.filter((equip) => equip.added === true).map((e) => e.id);
   }
 
   apagarEquipamento(equip) {
     const index = this.equipamentosChamado.indexOf(equip);
-    this.equipamentosChamado[index][1] = false;
+    this.equipamentosChamado[index].added = false;
+    this.hasEquipAdded = this.equipamentosChamado.some(
+      (equip) => equip.added === true
+    );
   }
 
-  getPayload(payload): Chamado {
+  getPayload(payload): ChamadoPayload {
     return {
-      id: faker.number.int(),
       servicos: payload.servicos,
-      usuarioId: this.usuario.id,
-      empresaId: this.empresa.id,
+      usuario_id: this.usuario.id,
+      empresa_id: this.empresa.id,
       endereco: this.usuario.endereco,
-      equipamentos: payload.equipamentos,
-      criadoEm: new Date().toISOString(),
-      status: 'CRIADO',
+      equipamentos_id: payload.equipamentos,
       sintomas: payload.sintomas,
     };
   }

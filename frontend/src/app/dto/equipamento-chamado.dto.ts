@@ -1,1 +1,5 @@
-export type EquipamentoChamado = (string | boolean)[][];
+export type EquipamentoChamado = {
+  id: number;
+  name: string;
+  added: boolean;
+};
