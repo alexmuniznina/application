@@ -98,7 +98,7 @@ export class AbrirChamadoComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogEquipamentoComponent, {
       data: this.equipamentosChamado.map((item) => item),
       minHeight: '30vh',
-      maxHeight: '30vh',
+      maxHeight: '40vh',
       minWidth: '55vw',
       maxWidth: '55vw',
     });

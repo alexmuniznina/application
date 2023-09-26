@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Empresa } from 'src/app/dto/empresa.dto';
 import { Servico } from 'src/app/dto/servico.dto';
 import { EmpresasService } from 'src/app/services/empresas/empresas.service';
-import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
 @Component({
   selector: 'app-home',
@@ -18,12 +17,10 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private empresaService: EmpresasService,
-    private formBuilder: FormBuilder,
-    private toolbarService: ToolbarService
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
-    this.toolbarService.setEnabled(true);
     this.form = this.formBuilder.group({
       name: [null],
       filters: [null],

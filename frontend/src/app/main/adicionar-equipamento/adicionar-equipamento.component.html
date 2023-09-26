@@ -56,11 +56,10 @@
     <section>
       <div class="d-flex flex-column">
         <mat-checkbox
-          id="checkMesmoEnd"
           #mesmoEndereco
           checked
           color="primary"
-          (change)="toggleCheckbox(mesmoEndereco.checked)"
+          (change)="setResetEndereco(mesmoEndereco.checked)"
           >Mesmo endereço do cadastro?</mat-checkbox
         >
         <mat-form-field>
@@ -79,12 +78,13 @@
         Limpar
       </button>
       <button
+        [disabled]="!isFormValid"
         mat-flat-button
         class="col-5 mt-3"
         color="primary"
         (click)="salvar()"
       >
-        Salvar
+        Adicionar
       </button>
     </div>
   </div>

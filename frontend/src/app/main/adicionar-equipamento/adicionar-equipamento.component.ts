@@ -1,13 +1,7 @@
-import { Component } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { NavigationExtras, Router } from '@angular/router';
-import { faker } from '@faker-js/faker';
+import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
 import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
@@ -26,7 +20,8 @@ import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/di
   styleUrls: ['./adicionar-equipamento.component.scss'],
 })
 export class AdicionarEquipamentoComponent {
-  // public equipamentos;
+  @ViewChild('mesmoEndereco') checkbox;
+  public isFormValid: boolean;
   public form: FormGroup;
   private usuarioId: number;
   private endereco = '';
@@ -64,6 +59,10 @@ export class AdicionarEquipamentoComponent {
       this.form.controls['endereco'].setValue(usuario.endereco);
       this.endereco = usuario.endereco;
     });
+
+    this.form.valueChanges.subscribe(() => {
+      this.isFormValid = this.form.valid;
+    });
   }
 
   public goBack() {
@@ -71,8 +70,9 @@ export class AdicionarEquipamentoComponent {
   }
 
   public limpar() {
-    document.getElementById('checkMesmoEnd');
     this.form.reset();
+    this.checkbox.checked = true;
+    this.setResetEndereco(true);
   }
 
   private getDescricao(fields) {
@@ -83,7 +83,7 @@ export class AdicionarEquipamentoComponent {
       .concat(fields.volt ? ` ${fields.volt}V` : '');
   }
 
-  public toggleCheckbox(checked) {
+  public setResetEndereco(checked) {
     const enderecoControl = this.form.controls['endereco'];
     if (checked) {
       enderecoControl.enable();

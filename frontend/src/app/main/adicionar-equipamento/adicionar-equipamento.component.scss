@@ -18,3 +18,10 @@ section {
   font-weight: bold;
   margin-bottom: 8px;
 }
+
+:host {
+  button {
+    font-size: large;
+    height: 45px;
+  }
+}

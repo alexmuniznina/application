@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { SidenavService } from 'src/app/services/sidenav/sidenav.service';
+import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
 @Component({
   selector: 'app-main',
@@ -42,15 +43,24 @@ export class MainComponent {
     },
   ];
 
-  constructor(private sidenavService: SidenavService, private router: Router) {}
+  constructor(
+    private sidenavService: SidenavService,
+    private router: Router,
+    private toolbarService: ToolbarService
+  ) {}
 
   ngAfterViewInit() {
     this.sidenavService.setSidenav(this.sidenav);
   }
 
+  ngOnInit() {
+    this.toolbarService.setEnabled(true);
+  }
+
   public sair() {
     localStorage.clear();
     this.sidenav.close();
+    this.toolbarService.setEnabled(false);
     this.router.navigate(['_/login']);
   }
 }
