@@ -55,9 +55,9 @@ export class LoginComponent {
         const user = usuario;
         if (user?.senha === fields.senha) {
           localStorage.setItem('usuarioId', user.id.toString());
+          this.toolbarService.setEnabled(true);
           this.router.navigate(['_/home']);
         } else {
-          // to-do: se não encontrado, solta exceção
           this.loginFailed = true;
         }
       });

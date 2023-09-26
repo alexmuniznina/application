@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { Empresa } from 'src/app/dto/empresa.dto';
 import { Servico } from 'src/app/dto/servico.dto';
-import { EmpresasService } from 'src/app/services/empresas/empresas.service';
 import { ServicosService } from 'src/app/services/servicos/servicos.service';
 import { TIPO_SERVICO } from 'src/app/shared/constants';
 
@@ -20,7 +19,6 @@ export class EmpresaInfoComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private empresasServico: EmpresasService,
     private servicosServico: ServicosService
   ) {
     this.navigation = this.router.getCurrentNavigation();

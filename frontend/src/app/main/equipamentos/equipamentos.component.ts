@@ -1,8 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Equipamento } from 'src/app/dto/equipamento.dto';
-import { Usuario } from 'src/app/dto/usuario.dto';
 import { EquipamentosService } from 'src/app/services/equipamentos/equipamentos.service';
 import { DialogRemoveEquipamentoComponent } from './dialog-remove-equipamento/dialog-remove-equipamento/dialog-remove-equipamento.component';
 
