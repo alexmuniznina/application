@@ -28,7 +28,7 @@ Para rodar o projeto, será necessário seguir alguns passos:
 
 ### Clonar o projeto do GitHub
 Crie uma pasta em um diretório de preferência. Utilize o terminal para navegar até a pasta criada.
-Execute o seguinte comando no terminal: `git clone`
+Execute o seguinte comando no terminal:
+`git clone https://github.com/alexmuniznina/application.git`
 
-### Instalação do nvm
-Para instalar o nvm (node v
+### Instalação do node
