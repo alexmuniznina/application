@@ -13,8 +13,10 @@
     - [OK] adicionar equipamento
     - [OK] registrar usuario, e mostrar dialog de confirmação ao final
 - botão de voltar ou cancelar na tela de registro de usuário
-- ao passar o mouse no botão de abrir chamado, mostrar um label "Abrir Chamado" (se der tempo)
-- criar tela pra visualizar chamado (se der tempo)
+
+# OPCIONAL
+- ao passar o mouse no botão de abrir chamado, mostrar um label "Abrir Chamado"
+- criar tela pra visualizar chamado
 
 
 # BACKEND
@@ -30,4 +32,4 @@
     - [OK] update de dados-pessoais
     - [OK] adicionar-equipamento
     - [OK] registrar usuário
-- chaves secundárias no banco de dados
+- [OK] FOREIGN KEYS no banco de dados

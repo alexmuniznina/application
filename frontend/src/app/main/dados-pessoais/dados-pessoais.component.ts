@@ -251,6 +251,10 @@ export class DadosPessoaisComponent {
     });
   }
 
+  public cancelar() {
+    this.router.navigate(['_/login']);
+  }
+
   public salvar() {
     if (this.form.valid) {
       const usuarioPayload = this.form.getRawValue();

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
+import { HeaderService } from 'src/app/services/header/header.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
@@ -14,7 +15,8 @@ export class LoginComponent {
     private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router,
-    private toolbarService: ToolbarService
+    private toolbarService: ToolbarService,
+    private headerService: HeaderService
   ) {
     localStorage.clear();
     this.toolbarService.setEnabled(false);
@@ -55,6 +57,8 @@ export class LoginComponent {
         const user = usuario;
         if (user?.senha === fields.senha) {
           localStorage.setItem('usuarioId', user.id.toString());
+          this.headerService.setUsername(user.nome);
+          this.headerService.setAuthState(true);
           this.toolbarService.setEnabled(true);
           this.router.navigate(['_/home']);
         } else {
