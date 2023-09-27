@@ -12,7 +12,6 @@ O presente projeto funciona com as seguintes tecnologias e ferramentas:
 - **Node.js** como ambiente de backend
 - **Express** como framework de requisições http
 - **Docker** como plataforma de containers
-- **json-server** como ferramenta que auxiliou na simulação de um banco de dados
 - **MySql** como banco de dados
 - entre outras bibliotecas menores que foram utilizadas para realizar alguma função específica na aplicação
 
