@@ -15,22 +15,22 @@ async function init() {
               conn
                 .query(
                   `CREATE TABLE IF NOT EXISTS usuarios (
-                                id INT AUTO_INCREMENT PRIMARY KEY, 
-                                cpf VARCHAR(14) NOT NULL, 
-                                nome VARCHAR(255) NOT NULL, 
-                                endereco VARCHAR(255),
-                                complemento VARCHAR(100),
-                                bairro VARCHAR(100),
-                                cidade VARCHAR(100),
-                                estado ENUM("AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MG", "MS", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"),
-                                cep CHAR(9),
-                                celular_1 VARCHAR(15) NOT NULL,
-                                celular_2 VARCHAR(15),
-                                telefone_1 VARCHAR(15),
-                                telefone_2 VARCHAR(15),
-                                email VARCHAR(50) NOT NULL, 
-                                senha VARCHAR(20) NOT NULL, 
-                                criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL
+                      id INT AUTO_INCREMENT PRIMARY KEY, 
+                      cpf VARCHAR(14) NOT NULL, 
+                      nome VARCHAR(255) NOT NULL, 
+                      endereco VARCHAR(255),
+                      complemento VARCHAR(100),
+                      bairro VARCHAR(100),
+                      cidade VARCHAR(100),
+                      estado ENUM("AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MG", "MS", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC", "SP", "SE", "TO"),
+                      cep CHAR(9),
+                      celular_1 VARCHAR(15) NOT NULL,
+                      celular_2 VARCHAR(15),
+                      telefone_1 VARCHAR(15),
+                      telefone_2 VARCHAR(15),
+                      email VARCHAR(50) NOT NULL, 
+                      senha VARCHAR(20) NOT NULL, 
+                      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL
                             )`
                 )
                 .then(() => {
@@ -65,18 +65,18 @@ async function init() {
               conn
                 .query(
                   `CREATE TABLE IF NOT EXISTS empresas (
-                                id INT AUTO_INCREMENT PRIMARY KEY, 
-                                cnpj VARCHAR(18) NOT NULL,
-                                celular_1 VARCHAR(15) NOT NULL,
-                                celular_2 VARCHAR(15),
-                                telefone_1 VARCHAR(15),
-                                telefone_2 VARCHAR(15), 
-                                nome_fantasia VARCHAR(255) NOT NULL, 
-                                email VARCHAR(50) NOT NULL, 
-                                endereco VARCHAR(255),
-                                descricao_curta VARCHAR(255),
-                                sobre_nos TEXT,
-                                criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+                      id INT AUTO_INCREMENT PRIMARY KEY, 
+                      cnpj VARCHAR(18) NOT NULL,
+                      celular_1 VARCHAR(15) NOT NULL,
+                      celular_2 VARCHAR(15),
+                      telefone_1 VARCHAR(15),
+                      telefone_2 VARCHAR(15), 
+                      nome_fantasia VARCHAR(255) NOT NULL, 
+                      email VARCHAR(50) NOT NULL, 
+                      endereco VARCHAR(255),
+                      descricao_curta VARCHAR(255),
+                      sobre_nos TEXT,
+                      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
                             )`
                 )
                 .then(() => {
@@ -107,13 +107,14 @@ async function init() {
               conn
                 .query(
                   `CREATE TABLE IF NOT EXISTS servicos (
-                                id INT AUTO_INCREMENT PRIMARY KEY, 
-                                tipo ENUM("LIMPEZA", "CONSERTO", "INSTALACAO", "ELETRICA") NOT NULL,
-                                empresa_id INT NOT NULL,
-                                descricao VARCHAR(255) NOT NULL,
-                                valor DECIMAL(10,2),
-                                tempo_execucao VARCHAR(30)
-                                )`
+                      id INT AUTO_INCREMENT PRIMARY KEY, 
+                      tipo ENUM("LIMPEZA", "CONSERTO", "INSTALACAO", "ELETRICA") NOT NULL,
+                      empresa_id INT NOT NULL,
+                      descricao VARCHAR(255) NOT NULL,
+                      valor DECIMAL(10,2),
+                      tempo_execucao VARCHAR(30),
+                      FOREIGN KEY (empresa_id) REFERENCES empresas(id)
+                      )`
                 )
                 .then(() => {
                   json[key].forEach((item) => {
@@ -138,16 +139,17 @@ async function init() {
               conn
                 .query(
                   `CREATE TABLE IF NOT EXISTS equipamentos (
-                                id INT AUTO_INCREMENT PRIMARY KEY,
-                                usuario_id INT NOT NULL,
-                                descricao VARCHAR(255) NOT NULL,
-                                marca VARCHAR(50) NOT NULL,
-                                btu VARCHAR(6) NOT NULL,
-                                comodo VARCHAR(100),
-                                volt ENUM("110", "220"),
-                                num_serie VARCHAR(50),
-                                endereco VARCHAR(255)
-                            )`
+                      id INT AUTO_INCREMENT PRIMARY KEY,
+                      usuario_id INT NOT NULL,
+                      descricao VARCHAR(255) NOT NULL,
+                      marca VARCHAR(50) NOT NULL,
+                      btu VARCHAR(6) NOT NULL,
+                      comodo VARCHAR(100),
+                      volt ENUM("110", "220"),
+                      num_serie VARCHAR(50),
+                      endereco VARCHAR(255),
+                      FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+                  )`
                 )
                 .then(() => {
                   json[key].forEach((item) => {
@@ -175,15 +177,18 @@ async function init() {
               conn
                 .query(
                   `CREATE TABLE IF NOT EXISTS chamados (
-                                id INT AUTO_INCREMENT PRIMARY KEY,
-                                usuario_id INT NOT NULL,
-                                empresa_id INT NOT NULL,
-                                endereco VARCHAR(255),
-                                servicos VARCHAR(255),
-                                equipamentos_chamado_id INT,
-                                sintomas TEXT,
-                                status ENUM("CRIADO", "VISITA", "ORCAMENTO", "EXECUTANDO", "APROVACAO", "FINALIZADO") NOT NULL DEFAULT ("CRIADO"),
-                                criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+                      id INT AUTO_INCREMENT PRIMARY KEY,
+                      usuario_id INT NOT NULL,
+                      empresa_id INT NOT NULL,
+                      endereco VARCHAR(255),
+                      servicos VARCHAR(255),
+                      equipamentos_chamado_id INT,
+                      sintomas TEXT,
+                      status ENUM("CRIADO", "VISITA", "ORCAMENTO", "EXECUTANDO", "APROVACAO", "FINALIZADO") NOT NULL DEFAULT ("CRIADO"),
+                      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                      FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+                      FOREIGN KEY (empresa_id) REFERENCES empresas(id),
+                      FOREIGN KEY (equipamentos_chamado_id) REFERENCES equipamentos_chamado(id)
                             )`
                 )
                 .then(() => {

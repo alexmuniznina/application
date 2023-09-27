@@ -1,4 +1,4 @@
-header {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,6 +7,12 @@ header {
   background-color: rgb(233, 229, 229);
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
   z-index: 3;
+
+  .header-title {
+    margin-top: 30px;
+    margin-left: 90px;
+    font-size: 30px;
+  }
 }
 
 .title {

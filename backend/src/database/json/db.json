@@ -408,140 +408,6 @@
       "endereco": ""
     }
   ],
-  "chamados": [
-    {
-      "id": 1,
-      "usuario_id": 4,
-      "empresa_id": 1,
-      "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
-      "servicos": "limpeza",
-      "equipamentos_chamado_id": 1,
-      "sintomas": "asdh",
-      "status": "APROVACAO",
-      "criado_em": "2023-08-18T00:09:52.187Z"
-    },
-    {
-      "id": 2,
-      "usuario_id": 6,
-      "empresa_id": 2,
-      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
-      "servicos": "elétrica",
-      "equipamentos_chamado_id": 2,
-      "sintomas": "56y3456",
-      "status": "FINALIZADO",
-      "criado_em": "2023-08-18T02:58:05.247Z"
-    },
-    {
-      "id": 3,
-      "usuario_id": 6,
-      "empresa_id": 2,
-      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
-      "servicos": "conserto",
-      "equipamentos_chamado_id": 3,
-      "sintomas": "asovduhasn 89vah ds",
-      "status": "CRIADO",
-      "criado_em": "2023-08-18T03:20:56.500Z"
-    },
-    {
-      "id": 4,
-      "usuario_id": 1,
-      "empresa_id": 3,
-      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "servicos": "instalação",
-      "equipamentos_chamado_id": 4,
-      "sintomas": "jkjkjkjkjkjkjkjkjk",
-      "status": "CRIADO",
-      "criado_em": "2023-08-07T03:23:52.229Z"
-    },
-    {
-      "id": 5,
-      "usuario_id": 1,
-      "empresa_id": 6,
-      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "servicos": "instalação",
-      "equipamentos_chamado_id": 5,
-      "sintomas": "",
-      "status": "CRIADO",
-      "criado_em": "2023-06-30T03:28:06.680Z"
-    },
-    {
-      "id": 6,
-      "usuario_id": 5,
-      "empresa_id": 4,
-      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "servicos": "elétrica, instalação",
-      "equipamentos_chamado_id": 6,
-      "sintomas": "asdasd",
-      "status": "CRIADO",
-      "criado_em": "2023-06-10T03:30:06.381Z"
-    },
-    {
-      "id": 7,
-      "usuario_id": 3,
-      "empresa_id": 5,
-      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
-      "servicos": "limpeza",
-      "equipamentos_chamado_id": 7,
-      "sintomas": "asdasd",
-      "status": "VISITA",
-      "criado_em": "2023-05-03T03:32:10.707Z"
-    },
-    {
-      "id": 8,
-      "usuario_id": 3,
-      "empresa_id": 3,
-      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
-      "servicos": "elétrica",
-      "equipamentos_chamado_id": 8,
-      "sintomas": "",
-      "status": "EXECUTANDO",
-      "criado_em": "2023-05-20T03:33:44.276Z"
-    },
-    {
-      "id": 9,
-      "usuario_id": 5,
-      "empresa_id": 1,
-      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
-      "servicos": "instalação",
-      "equipamentos_chamado_id": 9,
-      "sintomas": "",
-      "status": "CRIADO",
-      "criado_em": "2023-07-18T03:34:48.822Z"
-    },
-    {
-      "id": 10,
-      "usuario_id": 2,
-      "empresa_id": 5,
-      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
-      "servicos": "conserto",
-      "equipamentos_chamado_id": 10,
-      "sintomas": "",
-      "status": "VISITA",
-      "criado_em": "2023-08-12T03:36:02.596Z"
-    },
-    {
-      "id": 11,
-      "usuario_id": 2,
-      "empresa_id": 3,
-      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
-      "servicos": "limpeza",
-      "equipamentos_chamado_id": 11,
-      "sintomas": "o aparelho não gela",
-      "status": "EXECUTANDO",
-      "criado_em": "2023-09-09T16:07:13.535Z"
-    },
-    {
-      "id": 12,
-      "usuario_id": 4,
-      "empresa_id": 1,
-      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
-      "servicos": null,
-      "equipamentos_chamado_id": 12,
-      "sintomas": "",
-      "status": "CRIADO",
-      "criado_em": "2023-09-12T03:43:31.226Z"
-    }
-  ],
   "equipamentos_chamado": [
     {
       "id": 1,
@@ -698,6 +564,140 @@
       "equipamento_id_8": null,
       "equipamento_id_9": null,
       "equipamento_id_10": null
+    }
+  ],
+  "chamados": [
+    {
+      "id": 1,
+      "usuario_id": 4,
+      "empresa_id": 1,
+      "endereco": "R. Guatemala Prq Nacoes, 191 - Cj Pq Das Nacoes, Manaus - AM, 69028-210",
+      "servicos": "limpeza",
+      "equipamentos_chamado_id": 1,
+      "sintomas": "asdh",
+      "status": "APROVACAO",
+      "criado_em": "2023-08-18T00:09:52.187Z"
+    },
+    {
+      "id": 2,
+      "usuario_id": 6,
+      "empresa_id": 2,
+      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
+      "servicos": "elétrica",
+      "equipamentos_chamado_id": 2,
+      "sintomas": "56y3456",
+      "status": "FINALIZADO",
+      "criado_em": "2023-08-18T02:58:05.247Z"
+    },
+    {
+      "id": 3,
+      "usuario_id": 6,
+      "empresa_id": 2,
+      "endereco": "R. Maranata, 6 - Petrópolis, Manaus - AM, 69067-302",
+      "servicos": "conserto",
+      "equipamentos_chamado_id": 3,
+      "sintomas": "asovduhasn 89vah ds",
+      "status": "CRIADO",
+      "criado_em": "2023-08-18T03:20:56.500Z"
+    },
+    {
+      "id": 4,
+      "usuario_id": 1,
+      "empresa_id": 3,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "instalação",
+      "equipamentos_chamado_id": 4,
+      "sintomas": "jkjkjkjkjkjkjkjkjk",
+      "status": "CRIADO",
+      "criado_em": "2023-08-07T03:23:52.229Z"
+    },
+    {
+      "id": 5,
+      "usuario_id": 1,
+      "empresa_id": 6,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "instalação",
+      "equipamentos_chamado_id": 5,
+      "sintomas": "",
+      "status": "CRIADO",
+      "criado_em": "2023-06-30T03:28:06.680Z"
+    },
+    {
+      "id": 6,
+      "usuario_id": 5,
+      "empresa_id": 4,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "elétrica, instalação",
+      "equipamentos_chamado_id": 6,
+      "sintomas": "asdasd",
+      "status": "CRIADO",
+      "criado_em": "2023-06-10T03:30:06.381Z"
+    },
+    {
+      "id": 7,
+      "usuario_id": 3,
+      "empresa_id": 5,
+      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
+      "servicos": "limpeza",
+      "equipamentos_chamado_id": 7,
+      "sintomas": "asdasd",
+      "status": "VISITA",
+      "criado_em": "2023-05-03T03:32:10.707Z"
+    },
+    {
+      "id": 8,
+      "usuario_id": 3,
+      "empresa_id": 3,
+      "endereco": "Tv. Henoch Réis, 288 - Da Paz, Manaus - AM, 69048-594",
+      "servicos": "elétrica",
+      "equipamentos_chamado_id": 8,
+      "sintomas": "",
+      "status": "EXECUTANDO",
+      "criado_em": "2023-05-20T03:33:44.276Z"
+    },
+    {
+      "id": 9,
+      "usuario_id": 5,
+      "empresa_id": 1,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "servicos": "instalação",
+      "equipamentos_chamado_id": 9,
+      "sintomas": "",
+      "status": "CRIADO",
+      "criado_em": "2023-07-18T03:34:48.822Z"
+    },
+    {
+      "id": 10,
+      "usuario_id": 2,
+      "empresa_id": 5,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "servicos": "conserto",
+      "equipamentos_chamado_id": 10,
+      "sintomas": "",
+      "status": "VISITA",
+      "criado_em": "2023-08-12T03:36:02.596Z"
+    },
+    {
+      "id": 11,
+      "usuario_id": 2,
+      "empresa_id": 3,
+      "endereco": "R. Ovídio Gomes Monteiro, 400 - Alvorada 3, Manaus - AM, 69037-578",
+      "servicos": "limpeza",
+      "equipamentos_chamado_id": 11,
+      "sintomas": "o aparelho não gela",
+      "status": "EXECUTANDO",
+      "criado_em": "2023-09-09T16:07:13.535Z"
+    },
+    {
+      "id": 12,
+      "usuario_id": 4,
+      "empresa_id": 1,
+      "endereco": "R. Afrânio de Castro, 20 - Japiim, Manaus - AM, 69077-350",
+      "servicos": null,
+      "equipamentos_chamado_id": 12,
+      "sintomas": "",
+      "status": "CRIADO",
+      "criado_em": "2023-09-12T03:43:31.226Z"
     }
   ]
 }
