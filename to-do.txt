@@ -12,7 +12,7 @@
     - [OK] mostrar dialog de confirmação no update do usuário
     - [OK] adicionar equipamento
     - [OK] registrar usuario, e mostrar dialog de confirmação ao final
-- botão de voltar ou cancelar na tela de registro de usuário
+- [OK] botão de voltar ou cancelar na tela de registro de usuário
 
 # OPCIONAL
 - ao passar o mouse no botão de abrir chamado, mostrar um label "Abrir Chamado"
@@ -33,3 +33,6 @@
     - [OK] adicionar-equipamento
     - [OK] registrar usuário
 - [OK] FOREIGN KEYS no banco de dados
+- [OK] adicionar scripts de criação das tabelas no código
+- [OK] verificar se a tabela peças precisa de foreign key de empresa ou orçamento
+- adicionar foreign key do orçamento na tabela de chamados

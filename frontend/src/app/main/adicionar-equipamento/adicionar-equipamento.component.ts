@@ -102,9 +102,9 @@ export class AdicionarEquipamentoComponent {
         equipamento: result.descricao,
       },
       minHeight: '30vh',
-      maxHeight: '30vh',
+      maxHeight: '70vh',
       minWidth: '55vw',
-      maxWidth: '55vw',
+      maxWidth: '90vw',
     });
 
     dialogRef.afterClosed().subscribe(() => {

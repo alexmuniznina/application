@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 import { DIALOG_TYPE, ESTADOS } from '../../shared/constants';
 import { DialogConfirmacaoComponent } from 'src/app/shared/dialog-confirmacao/dialog-confirmacao.component';
 import { catchError, throwError } from 'rxjs';
+import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
+import { AuthService } from 'src/app/services/header/auth.service';
 
 @Component({
   selector: 'app-dados-pessoais',
@@ -125,10 +127,16 @@ export class DadosPessoaisComponent {
     private formBuilder: FormBuilder,
     private usuariosService: UsuariosService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private toolbarService: ToolbarService,
+    private authService: AuthService
   ) {
     if (localStorage.getItem('isCreating') === 'true') {
       this.isCreating = true;
+    }
+
+    if (!this.authService.getAuthState()) {
+      this.toolbarService.setEnabled(false);
     }
   }
 
@@ -238,9 +246,9 @@ export class DadosPessoaisComponent {
     const dialogRef = this.dialog.open(DialogConfirmacaoComponent, {
       data: { id: payload.insertId, title: payload.title, type: payload.type },
       minHeight: '30vh',
-      maxHeight: '30vh',
+      maxHeight: '70vh',
       minWidth: '55vw',
-      maxWidth: '55vw',
+      maxWidth: '90vw',
     });
 
     dialogRef.afterClosed().subscribe(() => {
@@ -252,7 +260,11 @@ export class DadosPessoaisComponent {
   }
 
   public cancelar() {
-    this.router.navigate(['_/login']);
+    if (this.authService.getAuthState()) {
+      this.router.navigate(['_/home']);
+    } else {
+      this.router.navigate(['_/login']);
+    }
   }
 
   public salvar() {

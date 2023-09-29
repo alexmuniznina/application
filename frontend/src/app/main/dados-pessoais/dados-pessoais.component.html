@@ -1,6 +1,7 @@
 <form [formGroup]="form">
   <div class="container">
-    <h1 class="title">Dados Pessoais</h1>
+    <h1 *ngIf="isCreating" class="title">Criar Usuário</h1>
+    <h1 *ngIf="!isCreating" class="title">Dados Pessoais</h1>
 
     <div *ngFor="let field of formFields">
       <mat-form-field *ngIf="field.type === 'input'" class="col-12">

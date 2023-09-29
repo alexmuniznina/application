@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   public form: FormGroup;
 
   constructor(
-    private empresaService: EmpresasService,
+    private empresasService: EmpresasService,
     private formBuilder: FormBuilder
   ) {}
 
@@ -24,6 +24,10 @@ export class HomeComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: [null],
       filters: [null],
+    });
+
+    this.empresasService.getEmpresas().subscribe((empresas) => {
+      this.empresas = <any>empresas;
     });
   }
 
@@ -34,7 +38,7 @@ export class HomeComponent implements OnInit {
     if (name != null) params['nome'] = name;
     if (filters != null) params['filtros'] = filters;
 
-    this.empresaService.getEmpresasByServicos(params).subscribe((empresas) => {
+    this.empresasService.getEmpresasByServicos(params).subscribe((empresas) => {
       this.empresas = <any>empresas;
     });
   }

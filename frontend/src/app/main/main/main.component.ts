@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
-import { HeaderService } from 'src/app/services/header/header.service';
+import { AuthService } from 'src/app/services/header/auth.service';
 import { SidenavService } from 'src/app/services/sidenav/sidenav.service';
 import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 
@@ -13,7 +13,6 @@ import { ToolbarService } from 'src/app/services/toolbar/toolbar.service';
 })
 export class MainComponent {
   @ViewChild('sidenav') sidenav: MatSidenav;
-  public username;
   public userAutenticado;
 
   public menuList = [
@@ -50,7 +49,7 @@ export class MainComponent {
     private sidenavService: SidenavService,
     private router: Router,
     private toolbarService: ToolbarService,
-    private headerService: HeaderService
+    private AuthService: AuthService
   ) {}
 
   ngAfterViewInit() {
@@ -59,8 +58,7 @@ export class MainComponent {
 
   ngOnInit() {
     this.toolbarService.setEnabled(true);
-    this.headerService.getAuthState().subscribe((isAuth) => {
-      this.username = this.headerService.getUsername();
+    this.AuthService.getAuthState().subscribe((isAuth) => {
       this.userAutenticado = isAuth;
     });
   }
@@ -68,8 +66,7 @@ export class MainComponent {
   public sair() {
     localStorage.clear();
     this.sidenav.close();
-    this.headerService.setAuthState(false);
-    this.headerService.setUsername('');
+    this.AuthService.setAuthState(false);
     this.toolbarService.setEnabled(false);
     this.router.navigate(['_/login']);
   }

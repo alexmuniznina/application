@@ -253,6 +253,168 @@ async function init() {
                   throw err;
                 });
               break;
+            case "enderecos":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS enderecos (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    usuario_id INT NOT NULL,
+                    endereco VARCHAR(255) NOT NULL,
+                    complemento VARCHAR(100),
+                    bairro VARCHAR(100) NOT NULL,
+                    cidade VARCHAR(100) NOT NULL,
+                    estado ENUM('AC','AL','AP','AM','BA','CE','ES','GO','MA','MT','MG','MS','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO') NOT NULL,
+                    cep CHAR(9) NOT NULL,
+                    FOREIGN KEY usuario_id(usuario_id) REFERENCES usuarios(id) 
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "avaliacao_usuario":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS avaliacao_usuario (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    nota INT NOT NULL,
+                    comentario TEXT NOT NULL,
+                    usuario_id INT NOT NULL,
+                    empresa_id INT NOT NULL,
+                    chamado_id INT NOT NULL,
+                    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                    FOREIGN KEY usuario_id(usuario_id) REFERENCES usuarios(id),
+                    FOREIGN KEY empresa_id(empresa_id) REFERENCES empresas(id),
+                    FOREIGN KEY chamado_id(chamado_id) REFERENCES chamados(id)
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "avaliacao_empresa":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS avaliacao_empresa (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    nota INT NOT NULL,
+                    comentario TEXT NOT NULL,
+                    usuario_id INT NOT NULL,
+                    empresa_id INT NOT NULL,
+                    chamado_id INT NOT NULL,
+                    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                    FOREIGN KEY usuario_id(usuario_id) REFERENCES usuarios(id),
+                    FOREIGN KEY empresa_id(empresa_id) REFERENCES empresas(id),
+                    FOREIGN KEY chamado_id(chamado_id) REFERENCES chamados(id)
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "servicos_orcamento":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS servicos_orcamento (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    servico_id_1 INT,
+                    servico_id_2 INT,
+                    servico_id_3 INT,
+                    servico_id_4 INT,
+                    servico_id_5 INT,
+                    servico_id_6 INT,
+                    servico_id_7 INT,
+                    servico_id_8 INT,
+                    servico_id_9 INT,
+                    servico_id_10 INT
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "mensagens":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS mensagens (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    chamado_id INT NOT NULL,
+                    mensagem TEXT NOT NULL,
+                    usuario_id INT NOT NULL,
+                    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                    FOREIGN KEY usuario_id(usuario_id) REFERENCES usuarios(id),
+                    FOREIGN KEY chamado_id(chamado_id) REFERENCES chamados(id)
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "pecas":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS pecas (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    descricao VARCHAR(255) NOT NULL,
+                    unidade VARCHAR(20) NOT NULL,
+                    valor DECIMAL(10,2) NOT NULL,
+                    empresa_id INT NOT NULL,
+                    FOREIGN KEY empresa_id(empresa_id) REFERENCES empresas(id)
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "pecas_orcamento":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS pecas_orcamento (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    peca_id_1 INT,
+                    peca_id_2 INT,
+                    peca_id_3 INT,
+                    peca_id_4 INT,
+                    peca_id_5 INT,
+                    peca_id_6 INT,
+                    peca_id_7 INT,
+                    peca_id_8 INT,
+                    peca_id_9 INT,
+                    peca_id_10 INT
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
+            case "orcamentos":
+              conn
+                .query(
+                  `CREATE TABLE IF NOT EXISTS orcamentos (
+                      id INT AUTO_INCREMENT PRIMARY KEY,
+                      status ENUM('APROVADO', 'REJEITADO', 'ENVIADO') NOT NULL,
+                      validade DATE,
+                      pecas_orcamento_id INT,
+                      servicos_orcamento_id INT,
+                      chamado_id INT NOT NULL,
+                      criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+                      FOREIGN KEY pecas_orcamento_id(pecas_orcamento_id) REFERENCES pecas_orcamento(id),
+                      FOREIGN KEY servicos_orcamento_id(servicos_orcamento_id) REFERENCES servicos_orcamento(id),
+                      FOREIGN KEY chamado_id(chamado_id) REFERENCES chamados(id)
+                  )`
+                )
+                .then()
+                .catch((err) => {
+                  throw err;
+                });
+              break;
             default:
               break;
           }

@@ -16,4 +16,17 @@ module.exports = {
 
     res.status(200).send(row[0]);
   },
+
+  async getEmpresas(req, res) {
+    const connection = await db.connect();
+
+    const [rows] = await connection
+      .query(`SELECT * FROM empresas ORDER BY nome_fantasia`)
+      .then()
+      .catch((err) => {
+        if (err) throw new Error(err.message);
+      });
+
+    res.status(200).send(rows);
+  },
 };

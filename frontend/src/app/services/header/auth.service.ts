@@ -4,9 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class HeaderService {
+export class AuthService {
   private isAutenticated: BehaviorSubject<boolean>;
-  private username: string;
 
   constructor() {
     this.isAutenticated = new BehaviorSubject<boolean>(false);
@@ -16,15 +15,7 @@ export class HeaderService {
     this.isAutenticated.next(state);
   }
 
-  setUsername(name: string): void {
-    this.username = name;
-  }
-
   getAuthState(): Observable<boolean> {
     return this.isAutenticated.asObservable();
-  }
-
-  getUsername(): string {
-    return this.username;
   }
 }
