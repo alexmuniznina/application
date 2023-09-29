@@ -54,10 +54,19 @@ export class ChamadosComponent {
   pesquisar() {
     const text = this.form.get('nomeEmpresa')?.value;
 
-    this.chamadosService
-      .getChamadosByEmpresaNome(this.usuarioId, text)
-      .subscribe((chamados) => {
-        this.chamados = chamados;
-      });
+    if (text !== null) {
+      this.chamadosService
+        .getChamadosByEmpresaNome(this.usuarioId, text)
+        .subscribe((chamados) => {
+          this.chamados = chamados;
+        });
+    } else {
+      console.log(text);
+      this.chamadosService
+        .getChamadosByUsuario(this.usuarioId)
+        .subscribe((chamados) => {
+          this.chamados = chamados;
+        });
+    }
   }
 }

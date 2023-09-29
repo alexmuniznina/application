@@ -14,7 +14,8 @@ module.exports = (app) => {
   app.put("/usuarios/:usuario_id", usuarios.updateUsuario);
 
   // endpoints da tela home
-  app.get("/home", home.getEmpresas);
+  app.get("/home", home.getEmpresasByNomeServicos);
+  app.get("/empresas", empresas.getEmpresas);
 
   // endpoints da tela de chamados
   app.get("/servicos", servicos.getServicosByEmpresaId);

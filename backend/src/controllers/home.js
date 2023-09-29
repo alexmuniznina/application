@@ -1,7 +1,7 @@
 const db = require("../database/connection/connect");
 
 module.exports = {
-  async getEmpresas(req, res) {
+  async getEmpresasByNomeServicos(req, res) {
     const connection = await db.connect();
     const { nome, filtros } = req.query;
 

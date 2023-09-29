@@ -98,9 +98,9 @@ export class AbrirChamadoComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogEquipamentoComponent, {
       data: this.equipamentosChamado.map((item) => item),
       minHeight: '30vh',
-      maxHeight: '40vh',
+      maxHeight: '70vh',
       minWidth: '55vw',
-      maxWidth: '55vw',
+      maxWidth: '90vw',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -118,10 +118,10 @@ export class AbrirChamadoComponent implements OnInit {
         type: DIALOG_TYPE.CHAMADO,
         empresa: this.empresa.nome_fantasia,
       },
-      minHeight: '25vh',
-      maxHeight: '40vh',
+      minHeight: '30vh',
+      maxHeight: '70vh',
       minWidth: '55vw',
-      maxWidth: '55vw',
+      maxWidth: '90vw',
     });
 
     dialogRef.afterClosed().subscribe(() => {

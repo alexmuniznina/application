@@ -1,8 +1,8 @@
 .imgEmpresa {
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 10px;
 }
 
@@ -13,10 +13,11 @@ mat-card {
 
 .criado-em {
   display: flex;
-  width: 90px;
-  height: 23px;
   justify-content: center;
   align-items: center;
+  font-size: 11px;
+  width: 80px;
+  height: 23px;
   border-radius: 4px;
   background-color: #333333;
   color: azure;

@@ -24,16 +24,6 @@ export class EmpresasService {
     return this.http.get<any>(`${this.url}/empresas/${id}`);
   }
 
-  getEmpresaChamadosByNome(nome: string): Observable<Empresa> {
-    return this.http.get<any>(
-      `${this.url}/empresas?nomeFantasia_like=${nome}&_embed=chamados`
-    );
-  }
-
-  getEmpresasWithServicos(id: number) {
-    return this.http.get<any>(`${this.url}/empresas/${id}?_embed=servicos`);
-  }
-
   getEmpresasByServicos(params?) {
     if (params) {
       return this.http.get(`${this.url}/home`, { params });
